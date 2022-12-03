@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/categories/"/>
+  <link rel="canonical" href="http://example.com/tags/verilog/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,19 +32,17 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>所有分类 - 我的博客</title>
+  <title>标签：Verilog - 我的博客</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="个人博客、kirigayakazima - xuaner - 我的博客">
   
 <meta property="og:type" content="website">
-<meta property="og:title" content="所有分类">
-<meta property="og:url" content="http://example.com/categories/index.html">
+<meta property="og:title" content="我的博客">
+<meta property="og:url" content="http://example.com/tags/Verilog/index.html">
 <meta property="og:site_name" content="我的博客">
 <meta property="og:description" content="个人博客、kirigayakazima">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-11-26T11:23:35.091Z">
-<meta property="article:modified_time" content="2022-11-26T11:23:35.091Z">
 <meta property="article:author" content="xuaner">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
@@ -2505,7 +2503,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper category search' style="display: none;">
+      <div id="none" class='cover-wrapper  search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg"></div>
 
@@ -2591,46 +2589,98 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div id="l_main" class=''>
   
     
-      <div class='post-wrapper'>
-        <article id="cat" class="post article white-box reveal shadow floatable blur">
-          <h2>所有分类</h2>
-          <div class="all-cats">
-            
-              
-                <a class="" href="/categories/%E6%95%B0%E5%AD%97IC/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;数字IC</span>
-                  <span class="title">
-                    (3)
-                  </span>
-                </a>
-              
-                <a class=" child" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;静态时序分析</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E6%B5%8B%E8%AF%95/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;测试</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                  <span><i class='fa-solid fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;深度学习</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-            
-          </div>
-          <br>
+      
+  <section class="post-list">
+    
+      
+        
           
-        </article>
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/03/芯动力——高质量Verilog设计/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="我的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="我的博客">
+    <meta itemprop="description" content="个人博客、kirigayakazima">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/"  itemprop="url">
+        芯动力——高质量Verilog设计
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        高质量verilog设计可综合语句
+
+always
+if-else
+case
+assign
+
+if语句if-else​语句映射为多路选择器
+不同的if-else​结构会导致不同的电路结构，根据约束不同，设计：先加法器后选择器；先选择器后加法器
+加法器的面积比选择器大，但是先加法器后选择器的延时小。
+​
+单独的if-else​语句没有优先级，会逐一检查，多个if​语句之间具有优先级，多个选择器...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2022-12-03T21:06:07+08:00">2022-12-03</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/">数字IC</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E5%AD%97IC/" itemprop="url"><span itemprop="name">数字IC</span></a>
+            </span>
+          
+        
       </div>
+      
+        <div>
+          <a class='readmore' href='/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+    
+  </section>
+  
+    
+  
+
+
     
   
 </div>
@@ -2641,38 +2691,138 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
+<section class="widget blogger desktop mobile pjax">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">我的博客</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:519033432@qq.com"
+              class="social fa-solid fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kirigayakazima"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=551934240"
+              class="social fa-solid fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+
+  
+    
+    
+      
+  
+  <section class="widget category desktop pjax">
+    
+  <header>
+    
+      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E5%AD%97IC/" href="/categories/%E6%95%B0%E5%AD%97IC/"
+            active-action="action-categoriesE695B0E5AD97IC"
+            ><div class='name'>数字IC</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/"
+            active-action="action-categoriesE695B0E5AD97ICE99D99E68081E697B6E5BA8FE58886E69E90"
+            ><div class='name'>静态时序分析</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%B5%8B%E8%AF%95/" href="/categories/%E6%B5%8B%E8%AF%95/"
+            active-action="action-categoriesE6B58BE8AF95"
+            ><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE6B7B1E5BAA6E5ADA6E4B9A0"
+            ><div class='name'>深度学习</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+    
+  
+
+  
+    
+    
+      
+  
+  <section class="widget tagcloud desktop mobile pjax">
+    
+  <header>
+    
+      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/FIFO/" style="font-size: 14px; color: #999">FIFO</a> <a href="/tags/TCL/" style="font-size: 14px; color: #999">TCL</a> <a href="/tags/Verilog/" style="font-size: 14px; color: #999">Verilog</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/%E6%95%B0%E5%AD%97IC/" style="font-size: 24px; color: #555">数字IC</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E5%8C%BA/" style="font-size: 14px; color: #999">测试区</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" style="font-size: 14px; color: #999">静态时序分析</a>
+    </div>
+  </section>
+
+
     
   
 
 
 <div class="widget-sticky pjax">
 
-  
-  
-
-
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
-
-  
-
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3430,7 +3580,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"所有分类","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/categories/index.html"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/categories/index.html","wordCount":0,"datePublished":"2022-11-26T11:23:35.091Z","dateModified":"2022-11-26T11:23:35.091Z","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/tags/Verilog/","name":"Verilog"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
