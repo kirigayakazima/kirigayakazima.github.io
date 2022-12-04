@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/archives/2022/11/"/>
+  
+  <link rel="canonical" href="http://example.com/2022/12/04/markdown语法/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,18 +32,22 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档：2022/11 - 我的博客</title>
-  <meta name="keywords" content="null">
+  <title>Markdown语法 - 我的博客</title>
+  <meta name="keywords" content="实用工具,Markdown,null">
   <meta desc name="description" content="个人博客、kirigayakazima - xuaner - 我的博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://example.com/archives/2022/11/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown语法">
+<meta property="og:url" content="http://example.com/2022/12/04/Markdown%E8%AF%AD%E6%B3%95/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="个人博客、kirigayakazima">
+<meta property="og:description" content="标题123# 一级标题## 二级标题### 三级标题  列表123456+ 无序列表1+ 无序列表2- 无序列表3- 无序列表4* 无序列表5* 无序列表6  121. 有序列表12. 有序列表2  123* [ ] 任务列表1* [ ] 任务列表2* [ ] 任务列表3  块123456‍&#96;&#96;&#96; 代码块‍&#96;&#96;&#96;&#96;标记块&#96;&gt; 引述  超链接1![可选](url) 图片超链接  上下标1234">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-12-04T12:20:02.000Z">
+<meta property="article:modified_time" content="2022-12-04T12:22:35.136Z">
 <meta property="article:author" content="xuaner">
+<meta property="article:tag" content="实用工具">
+<meta property="article:tag" content="Markdown">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2214,7 +2218,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2503,7 +2507,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg"></div>
 
@@ -2586,26 +2590,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/27/TCL语法快速上手/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/04/Markdown语法/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="我的博客">
   </span>
@@ -2614,210 +2600,367 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客、kirigayakazima">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/11/27/TCL%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/"  itemprop="url">
-        TCL入门
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        变量123456789101112131415161718#置换变量set a &#x27;snow&#x27;puts $a #打印a的值#命令置换#[]内部是一个独立tcl语句set a [expr 3+4]puts $a#结果为7#转义字符puts &#x27;a\tb&#x27;puts &#x27;a\nb&#x27;#添加后缀puts $&#123;a&#125;_1#打印7_1...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        Markdown语法
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="" rel="nofollow">
+    <img itemprop="image" src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">玄儿</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/">实用工具</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" itemprop="url"><span itemprop="name">实用工具</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-11-27T22:35:27+08:00">2022-11-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/">数字IC</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/">静态时序分析</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%97IC/" itemprop="url"><span itemprop="name">数字IC</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">静态时序分析</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-12-04T20:20:02+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年12月4日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">+</span> 无序列表1</span><br><span class="line"><span class="bullet">+</span> 无序列表2</span><br><span class="line"><span class="bullet">-</span> 无序列表3</span><br><span class="line"><span class="bullet">-</span> 无序列表4</span><br><span class="line"><span class="bullet">*</span> 无序列表5</span><br><span class="line"><span class="bullet">*</span> 无序列表6</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 有序列表1</span><br><span class="line"><span class="bullet">2.</span> 有序列表2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">*</span> [ ] 任务列表1</span><br><span class="line"><span class="bullet">*</span> [ ] 任务列表2</span><br><span class="line"><span class="bullet">*</span> [ ] 任务列表3</span><br></pre></td></tr></table></figure>
+
+<h2 id="块"><a href="#块" class="headerlink" title="块"></a>块</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">‍<span class="code">``` 代码块‍```</span></span><br><span class="line"><span class="code">`标记块`</span></span><br><span class="line"></span><br><span class="line"><span class="quote">&gt; 引述</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">可选</span>](<span class="link">url</span>) 图片超链接</span><br></pre></td></tr></table></figure>
+
+<h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">直接写在内容中,只取``中间内容</span><br><span class="line">下标:<span class="code">`$a_2$`</span> </span><br><span class="line">上标:<span class="code">`$a^2$`</span></span><br><span class="line"></span><br><span class="line">html格式,需要转义</span><br><span class="line">下标：a<span class="language-xml"><span class="tag">&lt;<span class="name">sub</span>&gt;</span></span>2<span class="language-xml"><span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span></span><br><span class="line">上标：a<span class="language-xml"><span class="tag">&lt;<span class="name">sup</span>&gt;</span></span>2<span class="language-xml"><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">Markdown自带,推荐</span><br><span class="line">下标 ：θ~1~ </span><br><span class="line">上标 ：θ^2^</span><br></pre></td></tr></table></figure>
+
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">| 符号 |       功能       |</span><br><span class="line">| :----: | :----------------: |</span><br><span class="line">|  *  |    零次或多次    |</span><br><span class="line">|  +  |    一次或多次    |</span><br><span class="line">|  ？  |    零次或一次    |</span><br><span class="line">|  ^  |  匹配字符串开头  |</span><br><span class="line">|  $  |  匹配字符串结尾  |</span><br><span class="line">|  \s  |     表示空格     |</span><br><span class="line">|  .  | 匹配任意一个字符 |</span><br><span class="line">|  \w  |   匹配一个字符   |</span><br><span class="line">|  \d  |   匹配一个数字   |</span><br></pre></td></tr></table></figure>
+
+<h2 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">中间写公式</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<h1 id="Emoji表情"><a href="#Emoji表情" class="headerlink" title="Emoji表情"></a>Emoji表情</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`:中间填入对应的字符:`</span></span><br><span class="line"><span class="code">`:sneezing_face:`</span></span><br><span class="line">:sneezing<span class="emphasis">_face:</span></span><br></pre></td></tr></table></figure>
+
+<p>🤧</p>
+<p>或者使用<code>win + .</code>​调出<code>emoji</code>​表情</p>
+<table>
+<thead>
+<tr>
+<th align="center">表情</th>
+<th align="center">代码</th>
+<th align="center">表情</th>
+<th align="center">代码</th>
+<th align="center">表情</th>
+<th align="center">代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">🤧</td>
+<td align="center"><code>:sneezing_face:</code>​</td>
+<td align="center">🤶</td>
+<td align="center"><code>:mrs_claus:</code>​</td>
+<td align="center">🍈</td>
+<td align="center"><code>:melon:</code>​</td>
+</tr>
+<tr>
+<td align="center">😠</td>
+<td align="center"><code>:angry:</code>​</td>
+<td align="center">🤓</td>
+<td align="center"><code>:nerd_face:</code>​</td>
+<td align="center">🥝</td>
+<td align="center"><code>:kiwi_fruit:</code>​</td>
+</tr>
+<tr>
+<td align="center">👼</td>
+<td align="center"><code>:angle:</code>​</td>
+<td align="center">😣</td>
+<td align="center"><code>:persevere:</code>​</td>
+<td align="center">🌶</td>
+<td align="center"><code>:hot_pepper:</code>​</td>
+</tr>
+<tr>
+<td align="center">😧</td>
+<td align="center"><code>:anguished:</code>​</td>
+<td align="center">👿</td>
+<td align="center"><code>:imp:</code>​</td>
+<td align="center">🌭</td>
+<td align="center"><code>:sneezing_face:</code>​</td>
+</tr>
+<tr>
+<td align="center">😲</td>
+<td align="center"><code>:astonished:</code>​</td>
+<td align="center">🎃</td>
+<td align="center"><code>:ack_o_lantern:</code>​</td>
+<td align="center">🍔</td>
+<td align="center"><code>:hamburger:</code>​</td>
+</tr>
+<tr>
+<td align="center">🤢</td>
+<td align="center"><code>:nauseated_face:</code>​</td>
+<td align="center">🍅</td>
+<td align="center"><code>:tomato:</code>​</td>
+<td align="center">🍩</td>
+<td align="center"><code>:doughnut:</code>​</td>
+</tr>
+<tr>
+<td align="center">🤠</td>
+<td align="center"><code>:cowboy_hat_face:</code>​</td>
+<td align="center">🍊</td>
+<td align="center"><code>:tangerin:</code>​</td>
+<td align="center">🥕</td>
+<td align="center"><code>:carrot:</code>​</td>
+</tr>
+<tr>
+<td align="center">😵</td>
+<td align="center"><code>:dizzy_face:</code>​</td>
+<td align="center">🍍</td>
+<td align="center"><code>:pineapple:</code>​</td>
+<td align="center">🍌</td>
+<td align="center"><code>:banana:</code>​</td>
+</tr>
+<tr>
+<td align="center">😁</td>
+<td align="center"><code>:grin:</code>​</td>
+<td align="center">🍑</td>
+<td align="center"><code>:peach:</code>​</td>
+<td align="center">🥑</td>
+<td align="center"><code>:avocado:</code>​</td>
+</tr>
+<tr>
+<td align="center">😷</td>
+<td align="center"><code>:mask:</code>​</td>
+<td align="center">🍋</td>
+<td align="center"><code>:lemon:</code>​</td>
+<td align="center">💩</td>
+<td align="center"><code>:poop:</code>​</td>
+</tr>
+<tr>
+<td align="center">🐴</td>
+<td align="center"><code>:horse:</code>​</td>
+<td align="center">🎠</td>
+<td align="center"><code>:carousel_horse:</code>​</td>
+<td align="center">🐼</td>
+<td align="center"><code>:panda_face:</code>​</td>
+</tr>
+<tr>
+<td align="center">🐎</td>
+<td align="center"><code>:racehorse:</code>​</td>
+<td align="center">🦄</td>
+<td align="center"><code>:unicorn:</code>​</td>
+<td align="center">🐵</td>
+<td align="center"><code>:sneezing_face:</code>​</td>
+</tr>
+<tr>
+<td align="center">🏇</td>
+<td align="center"><code>:horse_racing:</code>​</td>
+<td align="center">🐷</td>
+<td align="center"><code>:pig:</code>​</td>
+<td align="center">🐸</td>
+<td align="center"><code>:frog:</code>​</td>
+</tr>
+<tr>
+<td align="center">🦊</td>
+<td align="center"><code>:fox_face:</code>​</td>
+<td align="center">🐉</td>
+<td align="center"><code>:dragon:</code>​</td>
+<td align="center">🤡</td>
+<td align="center"><code>:clown_face:</code>​</td>
+</tr>
+<tr>
+<td align="center">🐶</td>
+<td align="center"><code>:dog:</code>​</td>
+<td align="center">🐮</td>
+<td align="center"><code>:COW:</code>​</td>
+<td align="center">🐔</td>
+<td align="center"><code>:chicken:</code>​</td>
+</tr>
+</tbody></table>
+<p>‍</p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2022/11/27/TCL%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-04T20:22:35+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年12月4日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/27/FIFO/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="我的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="我的博客">
-    <meta itemprop="description" content="个人博客、kirigayakazima">
-  </span>
+          
   
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/11/27/FIFO/"  itemprop="url">
-        FIFO
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>实用工具</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Markdown/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Markdown</p></a></div>
+  <span hidden itemprop="keywords">实用工具 Markdown</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        FIFOFIFO（First In First Out）是一种数据缓冲器
-异步FIFO同步FIFO可以看做异步FIFO的一个特例
-异步FIFO可以分为
-
-写时钟域地址管理
-读时钟域地址管理
-读时钟域读地址到写时钟域的格雷码同步
-写时钟域写地址到读时钟域的格雷码同步
-写时钟域的满和将满信号的产生
-读时钟域的空和将空信号的产生
-
-格雷码
-避免采样时钟问题
-
-引入格雷码，格雷码相邻地址只有1bit...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/12/04/Markdown%E8%AF%AD%E6%B3%95/&title=Markdown语法 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/12/04/Markdown%E8%AF%AD%E6%B3%95/&title=Markdown语法 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/12/04/Markdown%E8%AF%AD%E6%B3%95/&title=Markdown语法 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-11-27T20:39:03+08:00">2022-11-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/">数字IC</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%97IC/" itemprop="url"><span itemprop="name">数字IC</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/11/27/FIFO/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/26/测试/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="我的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="我的博客">
-    <meta itemprop="description" content="个人博客、kirigayakazima">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/11/26/%E6%B5%8B%E8%AF%95/"  itemprop="url">
-        测试博客
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        第一篇测试博客
 
+
+        
       
+    </div>
+    <!-- Custom Files bottomMeta begin -->
     
+    <!-- Custom Files bottomMeta end -->
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-11-26T20:41:21+08:00">2022-11-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%B5%8B%E8%AF%95/" itemprop="url"><span itemprop="name">测试</span></a>
-            </span>
-          
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2022/11/26/%E6%B5%8B%E8%AF%95/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/'>
+          <p class='title'>芯动力——高质量Verilog设计<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>高质量verilog设计可综合语句
+
+always
+if-else
+case
+assign
+
+if语句if-else​语句映射为多路选择器
+不同的if-else​结构会导致不同的电路结构，根据约...</p>
+        </a>
       
     </div>
   
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
+  <!-- Custom Files postEnd begin-->
   
-    
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
   
 
 
-	
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2826,143 +2969,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">我的博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:519033432@qq.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/kirigayakazima"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=551934240"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"
-            active-action="action-categoriesE5AE9EE794A8E5B7A5E585B7"
-            ><div class='name'>实用工具</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E5%AD%97IC/" href="/categories/%E6%95%B0%E5%AD%97IC/"
-            active-action="action-categoriesE695B0E5AD97IC"
-            ><div class='name'>数字IC</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/"
-            active-action="action-categoriesE695B0E5AD97ICE99D99E68081E697B6E5BA8FE58886E69E90"
-            ><div class='name'>静态时序分析</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B5%8B%E8%AF%95/" href="/categories/%E6%B5%8B%E8%AF%95/"
-            active-action="action-categoriesE6B58BE8AF95"
-            ><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
-            active-action="action-categoriesE6B7B1E5BAA6E5ADA6E4B9A0"
-            ><div class='name'>深度学习</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/FIFO/" style="font-size: 14px; color: #999">FIFO</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/TCL/" style="font-size: 14px; color: #999">TCL</a> <a href="/tags/Verilog/" style="font-size: 14px; color: #999">Verilog</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" style="font-size: 14px; color: #999">实用工具</a> <a href="/tags/%E6%95%B0%E5%AD%97IC/" style="font-size: 24px; color: #555">数字IC</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E5%8C%BA/" style="font-size: 14px; color: #999">测试区</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" style="font-size: 14px; color: #999">静态时序分析</a>
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E9%A2%98"><span class="toc-text">标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-text">列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%97"><span class="toc-text">块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="toc-text">超链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="toc-text">上下标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-text">表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="toc-text">数学公式</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2990,13 +3038,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3005,14 +3054,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -3720,7 +3769,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/archives/2022/","name":"2022年"}},{"@type":"ListItem","position":4,"item":{"@id":"http://example.com/archives/2022/11/","name":"11月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/实用工具/","name":"实用工具"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/04/Markdown语法/","name":"Markdown语法"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Markdown语法","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/04/Markdown%E8%AF%AD%E6%B3%95/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/04/Markdown%E8%AF%AD%E6%B3%95/","wordCount":0,"datePublished":"2022-12-04T12:20:02.000Z","dateModified":"2022-12-04T12:22:35.136Z","articleSection":"实用工具","keywords":"实用工具,Markdown","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
