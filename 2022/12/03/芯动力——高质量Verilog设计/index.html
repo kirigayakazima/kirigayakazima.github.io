@@ -44,7 +44,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-03T13:06:07.000Z">
-<meta property="article:modified_time" content="2022-12-03T13:07:08.200Z">
+<meta property="article:modified_time" content="2022-12-06T12:21:15.440Z">
 <meta property="article:author" content="xuaner">
 <meta property="article:tag" content="数字IC">
 <meta property="article:tag" content="Verilog">
@@ -1792,7 +1792,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1670156630786),
+    lastupdate: new Date(1670329296633),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2753,7 +2753,40 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>硬件思维方式，代码不再是一行行的代码而是一块一块的硬件模块</li>
 <li>对所需实现的硬件电路“胸有成竹”，有足够的数电基础</li>
 </ul>
+<h2 id="降低延时"><a href="#降低延时" class="headerlink" title="降低延时"></a>降低延时</h2><p>尽可能将延时高的模块放在后面</p>
+<h3 id="RTL编码面积"><a href="#RTL编码面积" class="headerlink" title="RTL编码面积"></a>RTL编码面积</h3><p>减小设计面积：</p>
+<ul>
+<li>成本降低、功耗降低</li>
+<li>特别是对于<code>FPGA</code>​的设计，直接决着<code>FPGA</code>​的选型</li>
+<li>估计设计使用资源的数量，知道设计中哪些部分占用了较大的面积</li>
+</ul>
+<p>触发器的数量有功能决定，很难减少，面积则很好估计</p>
+<p>组合逻辑—》<code>RTL</code>​代码—》各种操作符</p>
+<p>必须使用复杂运算符，需要考虑能否使用资源共享。</p>
+<p>多比特操作，应该看一看这个信号的所有比特是否都需要参与操作，如果不是则可以只对需要的部分比特进行操作。</p>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202212062019510.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202212062019510.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="多比特操作">​</p>
+<p><code>addr&lt;=addr+32;</code>​—》<code>addr[7:5]&lt;=addr[7:5]+1;</code>​ <code>addr[4:0]&lt;=addr[4:0]+0;</code>​</p>
+<h3 id="RTL编码功耗"><a href="#RTL编码功耗" class="headerlink" title="RTL编码功耗"></a>RTL编码功耗</h3><p>$$<br>p_d&#x3D;∑afCV^2<br>$$</p>
+<p>p<del>d</del>是电路割点功耗总和，a是该点电路翻转次数，f是电路工作频率，C是该点电容，V表示电压值</p>
+<p><code>RTL</code>​无法改变负载电容、工作电压，只能考虑尽可能降低电路翻转频率</p>
+<p>主要措施：</p>
+<ul>
+<li>门控时钟</li>
+<li>增加使能信号，使得部分电路只有在需要工作时才工作；</li>
+<li>对芯片各个模块进行控制，在需要工作时才工作；</li>
+<li>除了有用信号和时钟的翻转会消耗功耗组合逻辑产生的毛刺也会大量消耗功耗。<br>但是，毛刺在设计中无法避免，因此，只有尽量减少毛刺在电路中的传播，才可以减少功耗。<br>即，在设计中，尽量把产生毛刺的电路放在传播路径的最后。另外，可以使用一些减少毛刺的技术。</li>
+</ul>
 <p>‍</p>
+<h3 id="RTL编码布线"><a href="#RTL编码布线" class="headerlink" title="RTL编码布线"></a>RTL编码布线</h3><ul>
+<li>但即使使用最好的布局工具，还是可能出现无法布通的情况。</li>
+<li>如果可以在<code>RTL</code>​编码阶段考虑代码可能对布线产生的影响就可能避免最后出现无法布通的情况</li>
+</ul>
+<h2 id="RTL设计指导原则"><a href="#RTL设计指导原则" class="headerlink" title="RTL设计指导原则"></a>RTL设计指导原则</h2><p>指导原则：</p>
+<ol>
+<li>面积与速度互换</li>
+<li>乒乓操作</li>
+<li>流水线设计</li>
+</ol>
 
   </div>
   
@@ -2778,10 +2811,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-03T21:07:08+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-06T20:21:15+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年12月3日</p>
+    <p>更新于：2022年12月6日</p>
   </a>
 </div>
 
@@ -2920,7 +2953,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E8%B4%A8%E9%87%8Fverilog%E8%AE%BE%E8%AE%A1"><span class="toc-text">高质量verilog设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="toc-text">if语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#case%E8%AF%AD%E5%8F%A5"><span class="toc-text">case语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Latch%E8%AF%AD%E5%8F%A5"><span class="toc-text">Latch语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E9%87%8D%E5%A4%8D%E5%88%A9%E7%94%A8"><span class="toc-text">资源重复利用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%AF%AD%E5%8F%A5"><span class="toc-text">赋值语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%BB%BC%E5%90%88%E9%A3%8E%E6%A0%BC"><span class="toc-text">可综合风格</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E8%B4%A8%E9%87%8Fverilog%E8%AE%BE%E8%AE%A1"><span class="toc-text">高质量verilog设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="toc-text">if语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#case%E8%AF%AD%E5%8F%A5"><span class="toc-text">case语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Latch%E8%AF%AD%E5%8F%A5"><span class="toc-text">Latch语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E9%87%8D%E5%A4%8D%E5%88%A9%E7%94%A8"><span class="toc-text">资源重复利用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%AF%AD%E5%8F%A5"><span class="toc-text">赋值语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%BB%BC%E5%90%88%E9%A3%8E%E6%A0%BC"><span class="toc-text">可综合风格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%8D%E4%BD%8E%E5%BB%B6%E6%97%B6"><span class="toc-text">降低延时</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RTL%E7%BC%96%E7%A0%81%E9%9D%A2%E7%A7%AF"><span class="toc-text">RTL编码面积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RTL%E7%BC%96%E7%A0%81%E5%8A%9F%E8%80%97"><span class="toc-text">RTL编码功耗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RTL%E7%BC%96%E7%A0%81%E5%B8%83%E7%BA%BF"><span class="toc-text">RTL编码布线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RTL%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%AF%BC%E5%8E%9F%E5%88%99"><span class="toc-text">RTL设计指导原则</span></a></li></ol>
     </div>
   </section>
 
@@ -3700,7 +3733,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数字IC/","name":"数字IC"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/03/芯动力——高质量Verilog设计/","name":"芯动力——高质量Verilog设计"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"芯动力——高质量Verilog设计","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/","wordCount":0,"datePublished":"2022-12-03T13:06:07.000Z","dateModified":"2022-12-03T13:07:08.200Z","articleSection":"数字IC","keywords":"数字IC,Verilog","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数字IC/","name":"数字IC"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/03/芯动力——高质量Verilog设计/","name":"芯动力——高质量Verilog设计"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"芯动力——高质量Verilog设计","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/","wordCount":0,"datePublished":"2022-12-03T13:06:07.000Z","dateModified":"2022-12-06T12:21:15.440Z","articleSection":"数字IC","keywords":"数字IC,Verilog","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
