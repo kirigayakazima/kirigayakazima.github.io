@@ -44,7 +44,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-14T12:41:35.000Z">
-<meta property="article:modified_time" content="2022-12-14T12:42:54.166Z">
+<meta property="article:modified_time" content="2022-12-23T05:58:54.294Z">
 <meta property="article:author" content="xuaner">
 <meta property="article:tag" content="数字IC">
 <meta property="article:tag" content="时序">
@@ -1792,7 +1792,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1671694821718),
+    lastupdate: new Date(1671775152630),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2733,7 +2733,44 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td align="center">输入的脉冲时间的距离必须<br />保持两个接收时钟周期以上<br /></td>
 </tr>
 </tbody></table>
+<p>‍单bit信号跨时钟域传输</p>
+<ul>
+<li>信号从快时钟域到慢时钟域过渡时，慢时钟将可能无法对变化太快的信号实现正确采样</li>
+<li>上述同步器法对两个时钟之间的关系要求很严格，而“结绳法”适合任何时钟域的过渡。</li>
+</ul>
+<p>将快时钟信号的脉冲周期延长，等到慢时钟同步采样后再“解绳”，还原为原来的脉冲周期宽度。</p>
+<p>在慢时钟采样快时钟的时候，结绳法适合采样数据较少即脉冲间隔较大的控制信号。<br>即脉冲间隔Ta&gt;3Tb；即等待3个clkB时钟后，完成复位，才允许下一个输入脉冲。</p>
+<h3 id="快时钟到慢时钟"><a href="#快时钟到慢时钟" class="headerlink" title="快时钟到慢时钟"></a>快时钟到慢时钟</h3><p>结绳就是将单脉冲延长，以方便采集到数据</p>
+<ul>
+<li>利用脉冲的边沿做时钟</li>
+<li>利用脉冲的电平（部分场合要求最小脉冲宽度）做选择器或者异步复位，置位。</li>
+</ul>
+<p>另外的关键点就是什么时候结绳结束（采集到了数据就要让对方回到初始状态）</p>
+<ul>
+<li>利用采集到的脉冲做异步复位，置位</li>
+<li>利用采集到的脉冲再次结绳采集做握手响应信号</li>
+</ul>
+<p>特点</p>
+<ul>
+<li>结绳法可以解决快时钟域向慢时钟域过渡的问题，且其适用的范围很广</li>
+<li>结绳法实现较为复杂，特别是其效率不高，在对设计性能要求较高的场合应该慎用</li>
+</ul>
+<h3 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h3><p>数据流大多具有连续性，即背靠背传输；数据流要求信号具有较快的传输速度；</p>
+<p>通常使用<code>SRAM</code>​和<code>FIFO</code>​解决传输问题</p>
+<h3 id="打两拍"><a href="#打两拍" class="headerlink" title="打两拍"></a>打两拍</h3><p>将地址总线打两拍<br>●为了避免亚稳态传播<br>不能消除亚稳态现象<br>●因为时钟异步，亚稳态不可避免，但是可以极大降低亚稳态传播的概率<br>低频情况<br>●STA不需要分析这里的异步时序，因为寄存器都可以在一拍内将亚稳态消除，恢复到正常0&#x2F;1态。<br>高频情况<br>●不一定，尤其在28m工艺以下，需要检查两级触发器的延迟保证延迟低，提高系统<code>MTBF</code>​。</p>
 <p>‍</p>
+<h3 id="同步复位异步释放"><a href="#同步复位异步释放" class="headerlink" title="同步复位异步释放"></a>同步复位异步释放</h3><p>时序电路必须有复位，组合逻辑电路不需要复位</p>
+<h3 id="两段式FSM"><a href="#两段式FSM" class="headerlink" title="两段式FSM"></a>两段式FSM</h3><p>两段式<code>FSM</code>​描述方法<br>其输出一般使用组合逻辑描述，而组合逻辑易产生毛刺等不稳定因素。</p>
+<p>如果时序允许插入一个额外的时钟节拍，用于消除毛刺</p>
+<p>当不允许使用额外节拍，则改为使用三段式<code>FSM</code>​</p>
+<p>三段式<code>FSM</code>​优势</p>
+<ul>
+<li>使<code>FSM</code>​做到了同步寄存器输出</li>
+<li>消除了组合逻辑输出的不稳定与毛刺的隐患</li>
+<li>更利于时序路径分组</li>
+<li>在<code>FPGA/CPLD</code>​等可编程逻辑器件上的综合与布局布线效果更佳</li>
+</ul>
+<p>一段式、两段式、三段式分别使用1、2、3个<code>always</code>​块，反之则不成立</p>
 
   </div>
   
@@ -2758,10 +2795,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-14T20:42:54+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-23T13:58:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年12月14日</p>
+    <p>更新于：2022年12月23日</p>
   </a>
 </div>
 
@@ -2901,7 +2938,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="toc-text">同步电路设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%9A%E7%A8%B3%E6%80%81"><span class="toc-text">亚稳态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E6%B2%BF%E6%A3%80%E6%B5%8B%E5%90%8C%E6%AD%A5%E5%99%A8"><span class="toc-text">边沿检测同步器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%89%E5%86%B2%E5%90%8C%E6%AD%A5%E5%99%A8"><span class="toc-text">脉冲同步器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E5%99%A8%E6%AF%94%E8%BE%83"><span class="toc-text">同步器比较</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="toc-text">同步电路设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%9A%E7%A8%B3%E6%80%81"><span class="toc-text">亚稳态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E6%B2%BF%E6%A3%80%E6%B5%8B%E5%90%8C%E6%AD%A5%E5%99%A8"><span class="toc-text">边沿检测同步器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%89%E5%86%B2%E5%90%8C%E6%AD%A5%E5%99%A8"><span class="toc-text">脉冲同步器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E5%99%A8%E6%AF%94%E8%BE%83"><span class="toc-text">同步器比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E6%97%B6%E9%92%9F%E5%88%B0%E6%85%A2%E6%97%B6%E9%92%9F"><span class="toc-text">快时钟到慢时钟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-text">数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E4%B8%A4%E6%8B%8D"><span class="toc-text">打两拍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E5%A4%8D%E4%BD%8D%E5%BC%82%E6%AD%A5%E9%87%8A%E6%94%BE"><span class="toc-text">同步复位异步释放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E6%AE%B5%E5%BC%8FFSM"><span class="toc-text">两段式FSM</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3681,7 +3718,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数字IC/","name":"数字IC"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/14/芯动力——同步时序电路/","name":"芯动力——同步时序电路"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"芯动力——同步时序电路","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/14/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/14/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF/","wordCount":0,"datePublished":"2022-12-14T12:41:35.000Z","dateModified":"2022-12-14T12:42:54.166Z","articleSection":"数字IC","keywords":"数字IC,时序","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数字IC/","name":"数字IC"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/12/14/芯动力——同步时序电路/","name":"芯动力——同步时序电路"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"芯动力——同步时序电路","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/12/14/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/12/14/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF/","wordCount":0,"datePublished":"2022-12-14T12:41:35.000Z","dateModified":"2022-12-23T05:58:54.294Z","articleSection":"数字IC","keywords":"数字IC,时序","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
