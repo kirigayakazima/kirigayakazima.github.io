@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/friends/"/>
+  <link rel="canonical" href="http://example.com/2023/01/03/静态时序分析——建立保持时间/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,20 +32,22 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>我的朋友们 - 我的博客</title>
-  <meta name="keywords" content="null">
+  <title>静态时序分析——建立保持时间 - 我的博客</title>
+  <meta name="keywords" content="数字IC,静态时序分析,null">
   <meta desc name="description" content="个人博客、kirigayakazima - xuaner - 我的博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的朋友们">
-<meta property="og:url" content="http://example.com/friends/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="静态时序分析——建立保持时间">
+<meta property="og:url" content="http://example.com/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="个人博客、kirigayakazima">
+<meta property="og:description" content="建立时间公式 $$T_{lanuch}+T_{ck2q}+T_{dp}&lt;T_{capture}+T_{cycle}-T_{setup}$$ ​ 如果组合逻辑的延时最大值也满足这个公式，则所有都满足，通常用组合逻辑最大延时检查建立时间 使用组合逻辑最小延时检查保持时间 输入端口到寄存器公式 $$slack&#x3D;T_{capture}+T_{cycle}-T_{setup}-T_{unce">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-11-26T13:14:18.757Z">
-<meta property="article:modified_time" content="2022-11-26T13:14:18.757Z">
+<meta property="article:published_time" content="2023-01-03T06:05:42.000Z">
+<meta property="article:modified_time" content="2023-01-03T06:06:13.340Z">
 <meta property="article:author" content="xuaner">
+<meta property="article:tag" content="数字IC">
+<meta property="article:tag" content="静态时序分析">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2505,7 +2507,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper friends search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg"></div>
 
@@ -2588,8 +2590,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article id="friends" class="md post article article-entry l_friends white-box reveal shadow floatable blur article-type-friends" itemscope itemprop="blogPost">
-    
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/03/静态时序分析——建立保持时间/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="我的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="我的博客">
+    <meta itemprop="description" content="个人博客、kirigayakazima">
+  </span>
+  
 
 
   
@@ -2602,7 +2612,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        我的朋友们
+        静态时序分析——建立保持时间
       </h1>
       <div class='new-meta-box'>
         
@@ -2619,14 +2629,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/">数字IC</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/">静态时序分析</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%95%B0%E5%AD%97IC/" itemprop="url"><span itemprop="name">数字IC</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">静态时序分析</span></a>
+      </span>
+    
+  </div>
+
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-11-26T21:14:18+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-01-03T14:05:42+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2022年11月26日</p>
+    <p>发布于：2023年1月3日</p>
   </a>
 </div>
 
@@ -2647,68 +2671,51 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-    
-    
-      
-        <div class='friends-group'>
-          <br>
-          <h2 class='friend-header'>
-            朋友
-          </h2>
-          
-            <p>当然是好朋友啦</p>
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="建立时间"><a href="#建立时间" class="headerlink" title="建立时间"></a>建立时间</h2><p>公式</p>
+<p>$$<br>T_{lanuch}+T_{ck2q}+T_{dp}&lt;T_{capture}+T_{cycle}-T_{setup}<br>$$</p>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202212300941176.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202212300941176.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="时序公式">​</p>
+<p>如果组合逻辑的延时最大值也满足这个公式，则所有都满足，通常用组合逻辑最大延时检查建立时间</p>
+<p>使用组合逻辑最小延时检查保持时间</p>
+<h3 id="输入端口到寄存器"><a href="#输入端口到寄存器" class="headerlink" title="输入端口到寄存器"></a>输入端口到寄存器</h3><p>公式</p>
+<p>$$<br>slack&#x3D;T_{capture}+T_{cycle}-T_{setup}-T_{uncertainty}-(T_{lanuch}+T_{ck2q}+T_{dp})&gt;0<br>$$</p>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202301022237071.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202301022237071.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="计算余量大于零即可">​</p>
+<h3 id="输出端口到寄存器"><a href="#输出端口到寄存器" class="headerlink" title="输出端口到寄存器"></a>输出端口到寄存器</h3><p>公式</p>
+<p>$$<br>slack&#x3D;T_{capture}+T_{cycle}-T_{setup}-T_{uncertainty}-T_{output_delay}-(T_{lanuch}+T_{ck2q}+T_{dp})&gt;0<br>$$</p>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202301022238602.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202301022238602.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="余量大于零">​</p>
+<h2 id="保持时间"><a href="#保持时间" class="headerlink" title="保持时间"></a>保持时间</h2><ul>
+<li>捕获路径边沿比发射路径边沿晚一个时钟周期</li>
+<li>保持时间和时钟周期无关</li>
+<li>保持时间不能计算频率，只能用建立时间去计算</li>
+</ul>
+<p>公式</p>
+<p>$$<br>T_{lanuch}+T_{ck2q}+T_{dp}&gt;T_{capture}+T_{hold}<br>$$</p>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202301031243348.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202301031243348.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="保持时间公式"></p>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202301031244597.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202301031244597.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="实例">​</p>
+<p>建立时间和保持时间的区别</p>
+<ul>
+<li>保持时间的检查边沿都是同一个边沿</li>
+<li>建立时间的检查边沿捕获的边沿要比发射的边沿晚一个时钟周期</li>
+<li>保持时间的检查通常在建立时间检查的前一个上升沿</li>
+</ul>
 
-          
-          
-            <div class='friend-content'>
-              
-                
-                  <a class='friend-card'
-                    target="_blank" rel="external noopener noreferrer" href="https://blog.canye365.cn/">
-                    <div class='friend-left'>
-                      
-                        <img class='avatar' src='https://image.canye365.cn/img/logo.jpg'/>
-                      
-                    </div>
-                    <div class='friend-right'>
-                      <p class="friend-name">夜夜</p>
-                      
-                      
-                        <div class='friend-tags-wrapper'>
-                          <p class="tags">残夜的博客</p>
-                        </div>
-                      
-                    </div>
-                  </a>
-                
-              
-                
-                  <a class='friend-card'
-                    target="_blank" rel="external noopener noreferrer" href="https://shroot.dev/">
-                    <div class='friend-left'>
-                      
-                        <img class='avatar' src='https://shroot.dev/img/logo.png'/>
-                      
-                    </div>
-                    <div class='friend-right'>
-                      <p class="friend-name">PlaeBuleYK</p>
-                      
-                      
-                        <div class='friend-tags-wrapper'>
-                          <p class="tags">YK的博客</p>
-                        </div>
-                      
-                    </div>
-                  </a>
-                
-              
-            </div>
-          
-        </div>
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-    
-    <br><br>
-    
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
     
 
 
@@ -2716,10 +2723,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-26T21:14:18+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-01-03T14:06:13+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年11月26日</p>
+    <p>更新于：2023年1月3日</p>
   </a>
 </div>
 
@@ -2727,6 +2734,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E5%AD%97IC/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>数字IC</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>静态时序分析</p></a></div>
+  <span hidden itemprop="keywords">数字IC 静态时序分析</span>
+
 
         
       
@@ -2738,7 +2749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/friends/index.html&title=我的朋友们 - 我的博客&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/&title=静态时序分析——建立保持时间 - 我的博客&summary="
           
           >
           
@@ -2750,7 +2761,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/friends/index.html&title=我的朋友们 - 我的博客&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/&title=静态时序分析——建立保持时间 - 我的博客&summary="
           
           >
           
@@ -2762,7 +2773,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/friends/index.html&title=我的朋友们 - 我的博客&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/&title=静态时序分析——建立保持时间 - 我的博客&summary="
           
           >
           
@@ -2789,11 +2800,38 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  </article>
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/12/27/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E9%80%BB%E8%BE%91%E7%BB%BC%E5%90%88/'>
+          <p class='title'>静态时序分析——逻辑综合<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>逻辑综合三个阶段：转译、优化、映射
+时序路径约束
+输入到寄存器的路径
+寄存器到寄存器之间的路径
+寄存器到输出的路径
+输入直接到输出的路径
+
+12create_clock-period 10 [g...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
 
   
 
   
+
+
 
 
 
@@ -2815,9 +2853,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B%E6%97%B6%E9%97%B4"><span class="toc-text">建立时间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E7%AB%AF%E5%8F%A3%E5%88%B0%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">输入端口到寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%AB%AF%E5%8F%A3%E5%88%B0%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">输出端口到寄存器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4"><span class="toc-text">保持时间</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2864,13 +2912,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3594,7 +3643,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"我的朋友们","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/friends/index.html"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/friends/index.html","wordCount":0,"datePublished":"2022-11-26T13:14:18.757Z","dateModified":"2022-11-26T13:14:18.757Z","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数字IC/","name":"数字IC"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/数字IC/静态时序分析/","name":"静态时序分析"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/01/03/静态时序分析——建立保持时间/","name":"静态时序分析——建立保持时间"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"静态时序分析——建立保持时间","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/","wordCount":0,"datePublished":"2023-01-03T06:05:42.000Z","dateModified":"2023-01-03T06:06:13.340Z","articleSection":"数字IC","keywords":"数字IC,静态时序分析","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
