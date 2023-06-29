@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  
-  <link rel="canonical" href="http://example.com/2023/05/11/c52-day03/"/>
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="http://example.com/tags/stm32/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,21 +32,18 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>C52-day03 - 我的博客</title>
-  <meta name="keywords" content="51单片机,null">
+  <title>标签：STM32 - 我的博客</title>
+  <meta name="keywords" content="null">
   <meta desc name="description" content="个人博客、kirigayakazima - xuaner - 我的博客">
   
-<meta property="og:type" content="article">
-<meta property="og:title" content="C52-day03">
-<meta property="og:url" content="http://example.com/2023/05/11/C52-day03/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="我的博客">
+<meta property="og:url" content="http://example.com/tags/STM32/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="虚拟串口代码​ 123456789101112131415161718192021222324252627282930313233343536373839404142434445&#x2F;* time:2023-05-10COM*&#x2F;# include &quot;reg51.h&quot;unsigned char recdat &#x3D; 0, flag &#x3D; 0;void initscon()&amp;#123;">
+<meta property="og:description" content="个人博客、kirigayakazima">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-05-11T01:42:43.000Z">
-<meta property="article:modified_time" content="2023-05-11T01:45:49.992Z">
 <meta property="article:author" content="xuaner">
-<meta property="article:tag" content="51单片机">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2506,7 +2503,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper post search' style="display: none;">
+      <div id="none" class='cover-wrapper  search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg"></div>
 
@@ -2588,9 +2585,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
+
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/11/C52-day03/">
+  
+    
+      
+  <section class="post-list">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/29/FreeRTOS-01-移植/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="我的博客">
   </span>
@@ -2599,261 +2612,80 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客、kirigayakazima">
   </span>
   
-
-
+  
   
     <span hidden>
       <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  <div class="article-meta" id="top">
+  
     
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/06/29/FreeRTOS-01-%E7%A7%BB%E6%A4%8D/"  itemprop="url">
+        FreeRTOS-01-移植
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
     
-    
-      <h1 class="title" itemprop="name headline">
-        C52-day03
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a itemprop="url" class='author' href="" rel="nofollow">
-    <img itemprop="image" src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">玄儿</p>
-  </a>
-</div>
+      
+        堆和栈堆栈返回地址保存在栈中
+添加串口打印功能
+去掉无关代码、LCD等
 
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url"><span itemprop="name">单片机</span></a>
-      </span>
+增加串口打印功能
+
+初始化串口
+实现fputc
+
+
+
+标准库移植将官方RTOS代码移植到STM32F103C8T6
+常见变量类型TaskHandle_t​是任务句柄类型，指针类型，原型为void *​
+StackType_t​是任务堆栈类型，整型类型，原型为uint32_t​
+StackTask_t​是任务块类型，结构...
+      
     
   </div>
-
-
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-06-29T10:29:02+08:00">2023-06-29</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url"><span itemprop="name">单片机</span></a>
+            </span>
           
         
-          
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-05-11T09:42:43+08:00">
-  <a class='notlink'>
-    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2023年5月11日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-
-
-          
-        
-        <!-- Custom Files topMeta begin-->
-        
-        <!-- Custom Files topMeta end-->
       </div>
-    
-  </div>
-
-
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <h2 id="虚拟串口"><a href="#虚拟串口" class="headerlink" title="虚拟串口"></a>虚拟串口</h2><p><strong>代码</strong>​</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">time:2023-05-10</span></span><br><span class="line"><span class="comment">COM</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;reg51.h&quot;</span></span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> recdat = <span class="number">0</span>, flag = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">initscon</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    SCON = <span class="number">0X50</span>; <span class="comment">// 0101 0000</span></span><br><span class="line">    TMOD = <span class="number">0X20</span>; <span class="comment">// 0010 0000</span></span><br><span class="line">    TH1 = <span class="number">256</span> - <span class="number">3</span>;</span><br><span class="line">    TL1 = <span class="number">256</span> - <span class="number">3</span>;</span><br><span class="line">    ES = <span class="number">1</span>;</span><br><span class="line">    EA = <span class="number">1</span>;</span><br><span class="line">    TR1 = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">scon_isr</span><span class="params">()</span> interrupt 4     <span class="comment">// COM interrupt</span></span><br><span class="line">&#123;</span><br><span class="line">    recdat = SBUF;</span><br><span class="line">    RI = <span class="number">0</span>;</span><br><span class="line">    flag = <span class="number">1</span>;                </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">senddat</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    SBUF = recdat;</span><br><span class="line">    <span class="keyword">while</span>(!TI);</span><br><span class="line">    TI = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    initscon();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (flag == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            senddat();</span><br><span class="line">            flag = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202305100841905.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202305100841905.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">​</p>
-<h2 id="LCD1602"><a href="#LCD1602" class="headerlink" title="LCD1602"></a>LCD1602</h2><p>常用指令码</p>
-<ol>
-<li><strong>0X38:设置16 * 2 显示，5*7点阵， 8位数据接口</strong></li>
-<li><strong>0X0C：设置开显示，不显示光标</strong></li>
-<li><strong>0X06:写一个字符后地址指针加1</strong></li>
-<li><strong>0X01: 显示清0，数据指针清0</strong></li>
-<li><strong>0X80:LCD第一行的起始地址</strong></li>
-<li><strong>0X80+0X40:LCD第二行的起始地址</strong></li>
-</ol>
-<p>‍</p>
-<blockquote>
-<p>LCD1602功能</p>
-</blockquote>
-<ol>
-<li><p><code>RS</code>​，片选</p>
-<ul>
-<li><code>RS=0</code>​，输入命令，不显示字符</li>
-<li><code>RS=1</code>​，写入数据，显示字符</li>
-</ul>
-</li>
-<li><p><code>RW</code>​，读写操作</p>
-<ul>
-<li><code>RW=0</code>​，写操作</li>
-<li><code>RW=1</code>​，读操作</li>
-</ul>
-</li>
-<li><p><code>E</code>​，使能端，高电平有效</p>
-</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">time:2023-05-10</span></span><br><span class="line"><span class="comment">LCD display</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;reg51.h&quot;</span></span></span><br><span class="line">sbit RS = P3^<span class="number">0</span>;</span><br><span class="line">sbit RW = P3^<span class="number">1</span>;</span><br><span class="line">sbit E = P3^<span class="number">2</span>;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> str[] = &#123;<span class="string">&quot;xuaner&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">0</span>; j&lt;<span class="number">120</span>; j++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// write sign</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">writecom</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> com)</span></span><br><span class="line">&#123;</span><br><span class="line">    RS = <span class="number">0</span>;</span><br><span class="line">    RW = <span class="number">0</span>;</span><br><span class="line">    E = <span class="number">0</span>;	<span class="comment">//P3^2 is low ---&gt;E is high</span></span><br><span class="line">    P2 = com;</span><br><span class="line">    delay(<span class="number">5</span>);      <span class="comment">// delay</span></span><br><span class="line">    E = <span class="number">1</span>;</span><br><span class="line">    E = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// write Data</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">writedate</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> date)</span></span><br><span class="line">&#123;</span><br><span class="line">    RS = <span class="number">1</span>;</span><br><span class="line">    RW = <span class="number">0</span>;</span><br><span class="line">    E = <span class="number">0</span>;</span><br><span class="line">    P2 = date;</span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    E = <span class="number">1</span>;</span><br><span class="line">    E = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// initial</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">initlcd</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    writecom(<span class="number">0x38</span>);</span><br><span class="line">    writecom(<span class="number">0x0c</span>);</span><br><span class="line">    writecom(<span class="number">0x06</span>);</span><br><span class="line">    writecom(<span class="number">0x01</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">display</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    writecom(<span class="number">0x80</span>);     <span class="comment">// second line：0x80 + 0x40</span></span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    <span class="comment">/* one Char display</span></span><br><span class="line"><span class="comment">    writedate(&#x27;x&#x27;);</span></span><br><span class="line"><span class="comment">    delay(5);  </span></span><br><span class="line"><span class="comment">    writedate(&#x27;u&#x27;);</span></span><br><span class="line"><span class="comment">    delay(5);</span></span><br><span class="line"><span class="comment">    writedate(a&#x27;);</span></span><br><span class="line"><span class="comment">    delay(5);</span></span><br><span class="line"><span class="comment">    writedate(&#x27;n&#x27;);</span></span><br><span class="line"><span class="comment">    delay(5);</span></span><br><span class="line"><span class="comment">    writedate(e&#x27;);</span></span><br><span class="line"><span class="comment">    delay(5);</span></span><br><span class="line"><span class="comment">    writedate(&#x27;r&#x27;);</span></span><br><span class="line"><span class="comment">    delay(5);</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="comment">// string display</span></span><br><span class="line">    <span class="keyword">while</span> (str[i] != <span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        writedate (str[i]);</span><br><span class="line">        delay(<span class="number">5</span>);</span><br><span class="line">        i++;</span><br><span class="line">    &#125;     </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    initlcd();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        display();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202305100946134.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202305100946134.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">​</p>
-<h3 id="LCD时钟"><a href="#LCD时钟" class="headerlink" title="LCD时钟"></a>LCD时钟</h3><p><strong>代码</strong>​</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">time:2023-05-10</span></span><br><span class="line"><span class="comment">simple clk</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;reg51.h&quot;</span></span></span><br><span class="line">sbit RS = P3^<span class="number">0</span>;</span><br><span class="line">sbit RW = P3^<span class="number">1</span>;</span><br><span class="line">sbit E = P3^<span class="number">2</span>;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">int</span> hour = <span class="number">9</span>, min = <span class="number">54</span>, sec = <span class="number">0</span>;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> str[] = &#123;<span class="string">&quot;0123456789&quot;</span>&#125;;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> str1[] = &#123;<span class="string">&quot;xuaner CLK&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">0</span>; j&lt;<span class="number">120</span>; j++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">writecom</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> com)</span></span><br><span class="line">&#123;</span><br><span class="line">    RS = <span class="number">0</span>;</span><br><span class="line">    RW = <span class="number">0</span>;</span><br><span class="line">    E = <span class="number">0</span>;</span><br><span class="line">    P2 = com;</span><br><span class="line">    delay(<span class="number">5</span>);   </span><br><span class="line">    E = <span class="number">1</span>;</span><br><span class="line">    E = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">writedate</span><span class="params">(<span class="type">unsigned</span> <span class="type">char</span> date)</span></span><br><span class="line">&#123;</span><br><span class="line">    RS = <span class="number">1</span>;</span><br><span class="line">    RW = <span class="number">0</span>;</span><br><span class="line">    E = <span class="number">0</span>;</span><br><span class="line">    P2 = date;</span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    E = <span class="number">1</span>;</span><br><span class="line">    E = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">initlcd</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    writecom(<span class="number">0x38</span>);</span><br><span class="line">    writecom(<span class="number">0x0c</span>);</span><br><span class="line">    writecom(<span class="number">0x06</span>);</span><br><span class="line">    writecom(<span class="number">0x01</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">display</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> temp0 = <span class="number">0</span>, temp1 = <span class="number">0</span>, temp2 = <span class="number">0</span>, temp3 = <span class="number">0</span>, temp4 = <span class="number">0</span>, temp5 = <span class="number">0</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> i = <span class="number">0</span>;</span><br><span class="line">    temp0 = hour / <span class="number">10</span>;</span><br><span class="line">    temp1 = hour % <span class="number">10</span>;</span><br><span class="line">    temp2 = min / <span class="number">10</span>;</span><br><span class="line">    temp3 = min % <span class="number">10</span>;</span><br><span class="line">    temp4 = sec / <span class="number">10</span>;</span><br><span class="line">    temp5 = sec % <span class="number">10</span>;</span><br><span class="line">    writecom(<span class="number">0X80</span>);</span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    <span class="keyword">while</span>(str1[i] != <span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        writedate(str1[i]);</span><br><span class="line">        delay(<span class="number">5</span>);</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    writecom(<span class="number">0X80</span> + <span class="number">0X40</span> + <span class="number">4</span>);</span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    writedate(str[temp0]);</span><br><span class="line">    delay(<span class="number">5</span>);  </span><br><span class="line">    writedate(str[temp1]);</span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    writedate(<span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    writedate(str[temp2]);</span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    writedate(str[temp3]);</span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    writedate(<span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    writedate(str[temp4]);</span><br><span class="line">    delay(<span class="number">5</span>);</span><br><span class="line">    writedate(str[temp5]);</span><br><span class="line">    delay(<span class="number">5</span>);  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">inittimer</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    TMOD = <span class="number">0x01</span>;</span><br><span class="line">    TH0 = (<span class="number">65536</span><span class="number">-50000</span>)/<span class="number">256</span>;     <span class="comment">// 50ms</span></span><br><span class="line">    TL0 = (<span class="number">65536</span><span class="number">-50000</span>)%<span class="number">256</span>;</span><br><span class="line">    ET0 = <span class="number">1</span>;</span><br><span class="line">    EA = <span class="number">1</span>;</span><br><span class="line">    TR0 = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">timer0_isr</span><span class="params">()</span> interrupt 1</span><br><span class="line">&#123;</span><br><span class="line">    TH0 = (<span class="number">65536</span><span class="number">-50000</span>)/<span class="number">256</span>;     <span class="comment">// 50ms</span></span><br><span class="line">    TL0 = (<span class="number">65536</span><span class="number">-50000</span>)%<span class="number">256</span>;</span><br><span class="line">    count++;</span><br><span class="line">    <span class="keyword">if</span> (count == <span class="number">20</span>)    <span class="comment">// 1s</span></span><br><span class="line">    &#123;</span><br><span class="line">        sec = sec + <span class="number">1</span>;</span><br><span class="line">        count = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sec == <span class="number">60</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        min = min + <span class="number">1</span>;</span><br><span class="line">        sec = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (min == <span class="number">60</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        hour = hour + <span class="number">1</span>;</span><br><span class="line">        min = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (hour == <span class="number">24</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        hour = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    initlcd();</span><br><span class="line">    inittimer();</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        display();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202305101013839.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202305101013839.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">​</p>
-<h3 id="点阵显示"><a href="#点阵显示" class="headerlink" title="点阵显示"></a>点阵显示</h3><p><strong>代码</strong>​</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">time:2023-05-10</span></span><br><span class="line"><span class="comment">matrix</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;reg51.h&quot;</span></span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> code tab[] = &#123; <span class="number">0x00</span>, <span class="number">0x7e</span>, <span class="number">0xff</span>, <span class="number">0xc3</span>, <span class="number">0xc3</span>, <span class="number">0xff</span>, <span class="number">0x7e</span>, <span class="number">0x00</span>,   <span class="comment">// 0</span></span><br><span class="line">                             <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x43</span>, <span class="number">0xff</span>, <span class="number">0xff</span>, <span class="number">0x03</span>, <span class="number">0x00</span>, <span class="number">0x00</span>,   <span class="comment">// 1</span></span><br><span class="line">                             <span class="number">0x00</span>, <span class="number">0x63</span>, <span class="number">0xc7</span>, <span class="number">0xcf</span>, <span class="number">0xdb</span>, <span class="number">0xf3</span>, <span class="number">0x63</span>, <span class="number">0x00</span>,   <span class="comment">// 2</span></span><br><span class="line">                             <span class="number">0x00</span>, <span class="number">0x42</span>, <span class="number">0xdb</span>, <span class="number">0xdb</span>, <span class="number">0xdb</span>, <span class="number">0xff</span>, <span class="number">0x66</span>, <span class="number">0x00</span>,   <span class="comment">// 3</span></span><br><span class="line">                             <span class="number">0x00</span>, <span class="number">0x3e</span>, <span class="number">0x46</span>, <span class="number">0xff</span>, <span class="number">0xff</span>, <span class="number">0x06</span>, <span class="number">0x06</span>, <span class="number">0x00</span>,   <span class="comment">// 4</span></span><br><span class="line">                           &#125;;   </span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> row[] = &#123;<span class="number">0x01</span>, <span class="number">0x02</span>, <span class="number">0x04</span>, <span class="number">0x08</span>, <span class="number">0x10</span>, <span class="number">0x20</span>, <span class="number">0x40</span>, <span class="number">0x80</span>&#125;;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> num = <span class="number">0</span>, flag = <span class="number">0</span>;</span><br><span class="line">sbit key0 = P1^<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">key</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (flag == <span class="number">0</span> &amp;&amp; key0 == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        flag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (flag == <span class="number">1</span> &amp;&amp; key0 == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        num++;</span><br><span class="line">        flag = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (num == <span class="number">5</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        num = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">matrix</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">8</span>*num; i&lt;<span class="number">8</span>*(num+<span class="number">1</span>); i++)    </span><br><span class="line">    &#123; </span><br><span class="line">        P3 = ~row[i<span class="number">-8</span>*num];</span><br><span class="line">        P2 = tab[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        matrix();</span><br><span class="line">        key();  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202305101034882.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202305101034882.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">​</p>
-<p>‍</p>
-<h2 id="DA转换"><a href="#DA转换" class="headerlink" title="DA转换"></a>DA转换</h2><p><strong>代码</strong>​</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">time:2023-05-10</span></span><br><span class="line"><span class="comment">DA</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&quot;reg51.h&quot;</span></span></span><br><span class="line"><span class="type">unsigned</span> <span class="type">int</span> value = <span class="number">100</span>, flag = <span class="number">0</span>;</span><br><span class="line">sbit key0 = P1^<span class="number">0</span>;</span><br><span class="line">sbit key1 = P1^<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">key</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (key0 == <span class="number">0</span> &amp;&amp; flag == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        flag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (flag == <span class="number">1</span> &amp;&amp; key0 == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        value += <span class="number">10</span>;</span><br><span class="line">        flag = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (key1 == <span class="number">0</span> &amp;&amp; flag == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        flag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (flag == <span class="number">1</span> &amp;&amp; key1 == <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        value -= <span class="number">10</span>;</span><br><span class="line">        flag = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">delay</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>, j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">0</span>; j&lt;<span class="number">120</span>; j++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*  pwm</span></span><br><span class="line"><span class="comment">void PWM()</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    P2 = 0;</span></span><br><span class="line"><span class="comment">delay(100);         // duty cycle :change delay</span></span><br><span class="line"><span class="comment">    P2 = 255;</span></span><br><span class="line"><span class="comment">    delay(value);</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">stair</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;<span class="number">255</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        P2 = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">255</span>; i&lt;<span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        P2 = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// PWM();</span></span><br><span class="line">        stair(); <span class="comment">// sawtooth wave</span></span><br><span class="line">        key();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202305101110589.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202305101110589.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
       
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-      <!-- 打赏组件 -->
+        <div>
+          <a class='readmore' href='/2023/06/29/FreeRTOS-01-%E7%A7%BB%E6%A4%8D/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
       
     </div>
   
-  
-    
 
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-11T09:45:49+08:00">
-  <a class='notlink'>
-    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年5月11日</p>
-  </a>
 </div>
 
+          </div>
         
       
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>51单片机</p></a></div>
-  <span hidden itemprop="keywords">51单片机</span>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
     
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/05/11/C52-day03/&title=C52-day03 - 我的博客&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
+  </section>
+  
     
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/05/11/C52-day03/&title=C52-day03 - 我的博客&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
+  
+
+
     
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/05/11/C52-day03/&title=C52-day03 - 我的博客&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-    <!-- Custom Files bottomMeta begin -->
-    
-    <!-- Custom Files bottomMeta end -->
-  </div>
-
-
   
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2023/05/16/C52-day04/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>C52-day04</p>
-          <p class='content'>AD转换‍
-代码​
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748...</p>
-        </a>
-      
-      
-        <a class='next' href='/2023/05/10/C52-day02/'>
-          <p class='title'>C52-day02<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>矩阵键盘代码​
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
-</article>
-
-
-  
-
-  
-
-
-
-
-
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2862,48 +2694,158 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
+<section class="widget blogger desktop mobile pjax">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">我的博客</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:519033432@qq.com"
+              class="social fa-solid fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kirigayakazima"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=551934240"
+              class="social fa-solid fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+
+  
+    
+    
+      
+  
+  <section class="widget category desktop pjax">
+    
+  <header>
+    
+      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"
+            active-action="action-categoriesE58D95E78987E69CBA"
+            ><div class='name'>单片机</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"
+            active-action="action-categoriesE5AE9EE794A8E5B7A5E585B7"
+            ><div class='name'>实用工具</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E5%AD%97IC/" href="/categories/%E6%95%B0%E5%AD%97IC/"
+            active-action="action-categoriesE695B0E5AD97IC"
+            ><div class='name'>数字IC</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%95%B0%E5%AD%97IC/%E5%B8%B8%E8%A7%81%E5%99%A8%E4%BB%B6/" href="/categories/%E6%95%B0%E5%AD%97IC/%E5%B8%B8%E8%A7%81%E5%99%A8%E4%BB%B6/"
+            active-action="action-categoriesE695B0E5AD97ICE5B8B8E8A781E599A8E4BBB6"
+            ><div class='name'>常见器件</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%95%B0%E5%AD%97IC/%E6%95%B0%E7%94%B5/" href="/categories/%E6%95%B0%E5%AD%97IC/%E6%95%B0%E7%94%B5/"
+            active-action="action-categoriesE695B0E5AD97ICE695B0E794B5"
+            ><div class='name'>数电</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/"
+            active-action="action-categoriesE695B0E5AD97ICE99D99E68081E697B6E5BA8FE58886E69E90"
+            ><div class='name'>静态时序分析</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%B5%8B%E8%AF%95/" href="/categories/%E6%B5%8B%E8%AF%95/"
+            active-action="action-categoriesE6B58BE8AF95"
+            ><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
+            active-action="action-categoriesE6B7B1E5BAA6E5ADA6E4B9A0"
+            ><div class='name'>深度学习</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+    
+  
+
+  
+    
+    
+      
+  
+  <section class="widget tagcloud desktop mobile pjax">
+    
+  <header>
+    
+      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 21.5px; color: #666">51单片机</a> <a href="/tags/FIFO/" style="font-size: 14px; color: #999">FIFO</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/STM32/" style="font-size: 14px; color: #999">STM32</a> <a href="/tags/TCL/" style="font-size: 14px; color: #999">TCL</a> <a href="/tags/Verilog/" style="font-size: 16.5px; color: #888">Verilog</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" style="font-size: 14px; color: #999">实用工具</a> <a href="/tags/%E5%B8%B8%E8%A7%81%E5%99%A8%E4%BB%B6/" style="font-size: 14px; color: #999">常见器件</a> <a href="/tags/%E6%95%B0%E5%AD%97IC/" style="font-size: 24px; color: #555">数字IC</a> <a href="/tags/%E6%95%B0%E7%94%B5/" style="font-size: 14px; color: #999">数电</a> <a href="/tags/%E6%97%B6%E5%BA%8F/" style="font-size: 14px; color: #999">时序</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E5%8C%BA/" style="font-size: 14px; color: #999">测试区</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" style="font-size: 19px; color: #777">静态时序分析</a>
+    </div>
+  </section>
+
+
     
   
 
 
 <div class="widget-sticky pjax">
 
-  
-  
-
-
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E4%B8%B2%E5%8F%A3"><span class="toc-text">虚拟串口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LCD1602"><span class="toc-text">LCD1602</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LCD%E6%97%B6%E9%92%9F"><span class="toc-text">LCD时钟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E9%98%B5%E6%98%BE%E7%A4%BA"><span class="toc-text">点阵显示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DA%E8%BD%AC%E6%8D%A2"><span class="toc-text">DA转换</span></a></li></ol>
-    </div>
-  </section>
-
-  
-
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2931,14 +2873,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
-
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=true;
+  pdata.ispage=false;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3531,73 +3472,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
-        <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typesetPromise();
-  }
-</script>
-
-        <script>
-  // https://www.micdz.cn/article/katex-on-volantis/
-  if (typeof renderMathInElement == "undefined") {
-    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/katex.min.css")
-    function pjax_katex() {
-      volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/contrib/auto-render.min.js").then(()=>{
-        renderMathInElement(document.body);
-      })
-    }
-    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/katex.min.js").then(pjax_katex)
-    volantis.pjax.push(pjax_katex)
-  }
-</script>
-
-
 </pjax>
 
 <script>
@@ -3729,7 +3603,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/单片机/","name":"单片机"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/05/11/C52-day03/","name":"C52-day03"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"C52-day03","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/05/11/C52-day03/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/05/11/C52-day03/","wordCount":0,"datePublished":"2023-05-11T01:42:43.000Z","dateModified":"2023-05-11T01:45:49.992Z","articleSection":"单片机","keywords":"51单片机","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/tags/STM32/","name":"STM32"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
