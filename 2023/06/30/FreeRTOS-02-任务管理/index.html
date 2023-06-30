@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/tags/"/>
+  
+  <link rel="canonical" href="http://example.com/2023/06/30/freertos-02-任务管理/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,20 +32,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>所有标签 - 我的博客</title>
-  <meta name="keywords" content="null">
+  <title>FreeRTOS-02-任务管理 - 我的博客</title>
+  <meta name="keywords" content="STM32,null">
   <meta desc name="description" content="个人博客、kirigayakazima - xuaner - 我的博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="所有标签">
-<meta property="og:url" content="http://example.com/tags/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FreeRTOS-02-任务管理">
+<meta property="og:url" content="http://example.com/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="个人博客、kirigayakazima">
+<meta property="og:description" content="任务管理系统中任务运行调度方式 每个任务都是在独立的堆栈环境运行，运行的任务越多需要的堆栈空间越多。  任务之间的切换是基于抢占优先级的，高优先级抢占低优先级  任务切换的寻找方式  基于链表，从高往低查，任务创建时已经完成排序 计算前导零指令CLZ​，直接读出优先级任务(stm32​使用这种方式)   相同优先级任务则采用时间片轮转，无更高优先级任务情况下。   任务状态创建的任务一般有四种状态">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-11-26T11:25:18.529Z">
-<meta property="article:modified_time" content="2022-11-26T11:25:18.529Z">
+<meta property="article:published_time" content="2023-06-30T02:23:38.000Z">
+<meta property="article:modified_time" content="2023-06-30T02:26:10.123Z">
 <meta property="article:author" content="xuaner">
+<meta property="article:tag" content="STM32">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2505,7 +2506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper tag search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg"></div>
 
@@ -2587,23 +2588,288 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/30/FreeRTOS-02-任务管理/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="我的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="我的博客">
+    <meta itemprop="description" content="个人博客、kirigayakazima">
+  </span>
   
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
     
-      <div class='post-wrapper'>
-        <article id="tag" class="post article white-box reveal shadow floatable blur">
-          <h2>所有标签</h2>
-          <div class="all-tags">
-            
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag">51单片机</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FIFO/" rel="tag">FIFO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STM32/" rel="tag">STM32</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCL/" rel="tag">TCL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="tag">实用工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E8%A7%81%E5%99%A8%E4%BB%B6/" rel="tag">常见器件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%97IC/" rel="tag">数字IC</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E7%94%B5/" rel="tag">数电</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%B6%E5%BA%8F/" rel="tag">时序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E5%8C%BA/" rel="tag">测试区</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" rel="tag">静态时序分析</a><span class="tag-list-count">3</span></li></ul>
-          </div>
-          <br>
+    
+    
+      <h1 class="title" itemprop="name headline">
+        FreeRTOS-02-任务管理
+      </h1>
+      <div class='new-meta-box'>
+        
           
-        </article>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="" rel="nofollow">
+    <img itemprop="image" src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">玄儿</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url"><span itemprop="name">单片机</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-06-30T10:23:38+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2023年6月30日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
     
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="任务管理"><a href="#任务管理" class="headerlink" title="任务管理"></a>任务管理</h2><h3 id="系统中任务运行调度方式"><a href="#系统中任务运行调度方式" class="headerlink" title="系统中任务运行调度方式"></a>系统中任务运行调度方式</h3><ol>
+<li><p>每个任务都是在<strong>独立</strong>的堆栈环境运行，运行的任务越多需要的堆栈空间越多。</p>
+</li>
+<li><p>任务之间的切换是基于抢占优先级的，高优先级抢占低优先级</p>
+</li>
+<li><p>任务切换的寻找方式</p>
+<ul>
+<li>基于链表，从高往低查，任务创建时已经完成排序</li>
+<li>计算前导零指令<code>CLZ</code>​，直接读出优先级任务(<code>stm32</code>​使用这种方式)</li>
+</ul>
+</li>
+<li><p>相同优先级任务则采用时间片轮转，无更高优先级任务情况下。</p>
+</li>
+</ol>
+<h3 id="任务状态"><a href="#任务状态" class="headerlink" title="任务状态"></a>任务状态</h3><p>创建的任务一般有四种状态</p>
+<ol>
+<li><p>就绪态：新创建的任务处于该状态，等待调度器调度</p>
+</li>
+<li><p>运行态：正在运行的任务，运行的是最高优先级的就绪态任务</p>
+</li>
+<li><p>阻塞态：不在就绪态列表中，处于中断或等待</p>
+</li>
+<li><p>挂起态：</p>
+<ul>
+<li>挂起态任务调度器不可见</li>
+<li>使用<code>vTaskSuspend()</code>​进入挂起态</li>
+<li>使用<code>vTaskResume()</code>​或<code>vTaskResumeFromISR()</code>​从挂起态恢复</li>
+<li>和阻塞态的区别在于：挂起态用于长时间不处理的任务；阻塞态的任务系统需要判断是否<code>超时</code>​</li>
+</ul>
+</li>
+</ol>
+<h3 id="常见任务操作函数"><a href="#常见任务操作函数" class="headerlink" title="常见任务操作函数"></a>常见任务操作函数</h3><ol>
+<li><p><code>vTaskSuspend()</code>​任务挂起：等效于该任务被“冻结”或者“休眠”</p>
+</li>
+<li><p><code>vTaskSuspendAll()</code>​全任务挂起</p>
+</li>
+<li><p><code>vTaskResume()</code>​任务恢复：将被挂起的任务恢复</p>
+</li>
+<li><p><code>vTaskResumeFromISR()</code>​中断专用任务恢复</p>
+<ul>
+<li>无论使用几次<code>vTaskSuspend()</code>​，只需要使用一次恢复函数即可恢复</li>
+<li>需要配置<code>INCLUDE_vTaskResumeFromISR 1</code>​的宏定义</li>
+</ul>
+</li>
+<li><p><code>vTaskResumeAll()</code>​全任务恢复</p>
+</li>
+<li><p><code>vTaskDelete()</code>​任务删除</p>
+</li>
+<li><p><code>vTaskDelay()</code>​任务延时，延时时间为<code>Systick</code>​</p>
+</li>
+<li><p><code>vTaskDelayUntil()</code>​任务绝对延时</p>
+</li>
+</ol>
+<h3 id="设计一个任务管理"><a href="#设计一个任务管理" class="headerlink" title="设计一个任务管理"></a>设计一个任务管理</h3><p>通过2个<code>Button</code>​控制一个<code>LED</code>​灯任务的挂起和恢复，需要注意的是：按键检测最好设计成通用函数，保留<code>GPIO</code>​和<code>Pin</code>​让每个按键的检测尽量避免耦合</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//按下状态,0为低有效道通,此处根据接线而定</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> KEY_ON 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> KEY_OFF 1</span></span><br><span class="line"></span><br><span class="line"><span class="type">uint8_t</span> <span class="title function_">Key_Scan</span><span class="params">(GPIO_TypeDef* GPIOx,<span class="type">uint16_t</span> GPIO_Pin)</span></span><br><span class="line">&#123;	</span><br><span class="line">	<span class="comment">/*检测是否有按键按下 */</span></span><br><span class="line">	<span class="keyword">if</span>(GPIO_ReadInputDataBit(GPIOx,GPIO_Pin) == KEY_ON  )  </span><br><span class="line">	&#123;	 </span><br><span class="line">		<span class="comment">/*等待按键释放 */</span></span><br><span class="line">		<span class="keyword">while</span>(GPIO_ReadInputDataBit(GPIOx,GPIO_Pin) == KEY_ON );   </span><br><span class="line">		<span class="keyword">return</span> 	KEY_ON ;	 </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> KEY_OFF;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>建立一个按键检测的任务，根据按键检测来判断是否导通，然后其中一个按键用于挂起任务，另一个按键用于恢复任务。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">KEY_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>( Key_Scan(GPIOB,GPIO_Pin_1) == <span class="number">0</span> )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">/* Button1 被按下 */</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;按下开启键，LED0任务挂起\r\n&quot;</span>);</span><br><span class="line">			vTaskSuspend(LED0_Task_Handle);<span class="comment">/* 挂起LED任务 */</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;挂起成功\r\n&quot;</span>);</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">if</span>( Key_Scan(GPIOB,GPIO_Pin_10) == <span class="number">0</span>  )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">/* Button1 被按下 */</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;按下关闭键，LED0任务恢复\r\n&quot;</span>);</span><br><span class="line">			vTaskResume(LED0_Task_Handle);<span class="comment">/* 恢复LED任务！ */</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;恢复成功\r\n&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		vTaskDelay(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>‍</p>
+<p>‍</p>
+
+  </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-06-30T10:26:10+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年6月30日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STM32/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>STM32</p></a></div>
+  <span hidden itemprop="keywords">STM32</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/&title=FreeRTOS-02-任务管理 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/&title=FreeRTOS-02-任务管理 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/&title=FreeRTOS-02-任务管理 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/06/29/FreeRTOS-01-%E7%A7%BB%E6%A4%8D/'>
+          <p class='title'>FreeRTOS-01-移植<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>堆和栈堆栈返回地址保存在栈中
+添加串口打印功能
+去掉无关代码、LCD等
+
+增加串口打印功能
+
+初始化串口
+实现fputc
+
+
+
+标准库移植将官方标准库移植到STM32F103C8T6
+常见变量类...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2622,9 +2888,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-text">任务管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%AD%E4%BB%BB%E5%8A%A1%E8%BF%90%E8%A1%8C%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F"><span class="toc-text">系统中任务运行调度方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="toc-text">任务状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E4%BB%BB%E5%8A%A1%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0"><span class="toc-text">常见任务操作函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-text">设计一个任务管理</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -2671,13 +2947,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3270,6 +3547,73 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+        <script>
+  // https://www.micdz.cn/article/katex-on-volantis/
+  if (typeof renderMathInElement == "undefined") {
+    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/katex.min.css")
+    function pjax_katex() {
+      volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/contrib/auto-render.min.js").then(()=>{
+        renderMathInElement(document.body);
+      })
+    }
+    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/katex.min.js").then(pjax_katex)
+    volantis.pjax.push(pjax_katex)
+  }
+</script>
+
+
 </pjax>
 
 <script>
@@ -3401,7 +3745,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"所有标签","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/tags/index.html"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/tags/index.html","wordCount":0,"datePublished":"2022-11-26T11:25:18.529Z","dateModified":"2022-11-26T11:25:18.529Z","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/单片机/","name":"单片机"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/06/30/FreeRTOS-02-任务管理/","name":"FreeRTOS-02-任务管理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"FreeRTOS-02-任务管理","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/","wordCount":0,"datePublished":"2023-06-30T02:23:38.000Z","dateModified":"2023-06-30T02:26:10.123Z","articleSection":"单片机","keywords":"STM32","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
