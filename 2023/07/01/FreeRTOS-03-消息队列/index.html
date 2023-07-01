@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/categories/数字ic/静态时序分析/"/>
+  
+  <link rel="canonical" href="http://example.com/2023/07/01/freertos-03-消息队列/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,18 +32,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>分类：静态时序分析 - 我的博客</title>
-  <meta name="keywords" content="null">
+  <title>FreeRTOS-03-消息队列 - 我的博客</title>
+  <meta name="keywords" content="STM32,null">
   <meta desc name="description" content="个人博客、kirigayakazima - xuaner - 我的博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://example.com/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FreeRTOS-03-消息队列">
+<meta property="og:url" content="http://example.com/2023/07/01/FreeRTOS-03-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="个人博客、kirigayakazima">
+<meta property="og:description" content="消息队列消息队列是一种用于线程间通信的技术，在FreeRTOS​中则用于任务间通信，其中的任务可以视为线程。 支持先进先出、后进先出 消息队列运行机制 创建消息队列单独划分一个内存空间，内存大小&#x3D;控制块大小+单个消息空间*队列长度，然后初始化消息队列，空间大小无法更改。  初始化后，内存空间中会包含头指针等信息，消耗部分内存，删除消息队列后空间释放。  每个空间存放不大于uxItemSi">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-07-01T02:32:35.000Z">
+<meta property="article:modified_time" content="2023-07-01T02:32:56.899Z">
 <meta property="article:author" content="xuaner">
+<meta property="article:tag" content="STM32">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2503,7 +2506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg"></div>
 
@@ -2585,29 +2588,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/03/静态时序分析——建立保持时间/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/01/FreeRTOS-03-消息队列/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="我的博客">
   </span>
@@ -2616,220 +2599,297 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="个人博客、kirigayakazima">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/"  itemprop="url">
-        静态时序分析——建立保持时间
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        建立时间公式
-$$T_{lanuch}+T_{ck2q}+T_{dp}&lt;T_{capture}+T_{cycle}-T_{setup}$$
-​
-如果组合逻辑的延时最大值也满足这个公式，则所有都满足，通常用组合逻辑最大延时检查建立时间
-使用组合逻辑最小延时检查保持时间
-输入端口到寄存器公式
-$$slack&#x3D;T_{capture}+T_{cycle}-T_{setup}-T_{u...
-      
+    
+      <h1 class="title" itemprop="name headline">
+        FreeRTOS-03-消息队列
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="" rel="nofollow">
+    <img itemprop="image" src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">玄儿</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url"><span itemprop="name">单片机</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-01-03T14:05:42+08:00">2023-01-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/">数字IC</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/">静态时序分析</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%97IC/" itemprop="url"><span itemprop="name">数字IC</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">静态时序分析</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-07-01T10:32:35+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2023年7月1日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h2><p>消息队列是一种用于线程间通信的技术，在<code>FreeRTOS</code>​中则用于任务间通信，其中的任务可以视为线程。</p>
+<p>支持先进先出、后进先出</p>
+<h3 id="消息队列运行机制"><a href="#消息队列运行机制" class="headerlink" title="消息队列运行机制"></a>消息队列运行机制</h3><ol>
+<li><p>创建消息队列单独划分一个内存空间，内存大小&#x3D;控制块大小+单个消息空间*队列长度，然后初始化消息队列，空间大小无法更改。</p>
+</li>
+<li><p>初始化后，内存空间中会包含头指针等信息，消耗部分内存，删除消息队列后空间释放。</p>
+</li>
+<li><p>每个空间存放不大于<code>uxItemSize</code>​ 的任意类型数据。</p>
+</li>
+<li><p>队列未满，消息会被拷贝到队列末尾。紧急消息则发送至队列首。</p>
+</li>
+<li><p>当有任务请求队列消息时，任务变为阻塞态在等待时间内等待消息，若消息空间内无消息直至超时，则任务变为就绪态，否则接收消息变为就绪态。</p>
+</li>
+<li><p>消息队列不再使用后，应该及时删除，释放资源。</p>
+</li>
+<li><p>任务等待消息的几种状态</p>
+<ol>
+<li><p>即刻型：任务等待消息，若队列中没有消息，任务直接变为就绪态，不再等待消息。</p>
+</li>
+<li><p>等待型：任务变为阻塞态，在等待时间内等待队列消息，若有消息则接收并变为就绪态，若无就超时变为就绪态。</p>
+</li>
+<li><p>无限型：任务一直等待消息，直到消息出现。</p>
+</li>
+</ol>
+<ul>
+<li>注意事项：<strong>只有任务才能进入阻塞态，中断不能进入阻塞态，中断有单独的消息函数</strong></li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202306301510943.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202306301510943.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">​</p>
+<h3 id="队列常见函数"><a href="#队列常见函数" class="headerlink" title="队列常见函数"></a>队列常见函数</h3><ol>
+<li><p><code>xQueueCreate()</code>​创建一个队列返回一个指针类型的句柄</p>
+<ul>
+<li>使用的是动态内存，需要开启<code>configSUPPORT_DYNAMIC_ALLOCATION 1</code>​宏定义</li>
+<li>创建的时候，申请内存是连续的，保证队列控制块和消息空间的连续</li>
+</ul>
+</li>
+<li><p><code>xQueueStaticCreate()</code>​使用静态内存创建一个队列</p>
+</li>
+<li><p><code>vQueueDelete()</code>​队列删除</p>
+</li>
+<li><p><code>xQueueSend()</code>​向队列发送消息，以拷贝的形式在队列尾部加入一个消息，不能在中断中使用</p>
+</li>
+<li><p><code>xQueueSendToBack()</code>​和<code>xQueueSend()</code>​等效</p>
+</li>
+<li><p><code>xQueueSendFromISR()</code>​用于中断中向队列尾部发送一个消息</p>
+</li>
+<li><p><code>xQueueSendToBackFromISR()</code>​和<code>xQueueSendFromISR()</code>​等效</p>
+</li>
+<li><p><code>xQueueGenericSend()</code>​通用消息队列发送，是上述发送的原型</p>
+</li>
+<li><p><code>xQueueGenericSendFromISR()</code>​中断通用消息队列发送，中断发送的原型</p>
+</li>
+<li><p><code>xQueueReceive()</code>​从队列中接收消息，并将消息删除，将消息拷贝至缓冲区</p>
+</li>
+<li><p><code>xQueuePeek()</code>​从队列中接收消息，不删除消息</p>
+</li>
+<li><p><code>xQueueReceiveFromISR()</code>​中断中使用</p>
+</li>
+<li><p><code>xQueuePeekFromISR()</code>​中断中使用</p>
+</li>
+<li><p><code>xQueueGenericReceive()</code>​通用接收消息，上述的原型</p>
+</li>
+</ol>
+<h3 id="创建队列"><a href="#创建队列" class="headerlink" title="创建队列"></a>创建队列</h3><p>设计2个<code>Button</code>​任务，通过按键发送不同的<code>Data</code>​数据，然后将发送的<code>Data</code>​数据在另一个任务中接收，最终在串口显示</p>
+<blockquote>
+<p>队列消息句柄，创建一个引用，并不是创建一个真实的队列消息，同时设置队列的属性</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个Queue句柄</span></span><br><span class="line">QueueHandle_t Test_Queue=<span class="literal">NULL</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> QUEUE_LEN 4			<span class="comment">//队列长度</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> QUEUE_SIZE 4		<span class="comment">//单个消息空间大小</span></span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>创建一个真实的队列</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个Queue队列</span></span><br><span class="line">Test_Queue=xQueueCreate((UBaseType_t)QUEUE_LEN,(UBaseType_t)QUEUE_SIZE);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>接收数据任务</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Receive_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn=pdTRUE;</span><br><span class="line">	<span class="type">uint32_t</span> r_queue;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//消息队列句柄，缓冲区，等待时间：一直等待</span></span><br><span class="line">		xReturn = xQueueReceive(Test_Queue,&amp;r_queue,portMAX_DELAY);</span><br><span class="line">		<span class="keyword">if</span>(xReturn==pdTRUE)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;本次接收到的消息是%d\r\n&quot;</span>,r_queue);</span><br><span class="line">		&#125;<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;数据接收错误，错误代码:0x%l\r\n&quot;</span>,xReturn);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Button控制发送数据任务</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Send_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn=pdTRUE;</span><br><span class="line">	<span class="type">uint32_t</span> send_data1=<span class="number">1</span>;</span><br><span class="line">	<span class="type">uint32_t</span> send_data2=<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN1)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;发送消息send_data1\r\n&quot;</span>);</span><br><span class="line">			<span class="comment">//消息队列句柄，数据，等待时间：0</span></span><br><span class="line">			xReturn = xQueueSend(Test_Queue,&amp;send_data1,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (xReturn==pdTRUE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;消息send_data1发送成功\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN2)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;发送消息send_data2\r\n&quot;</span>);</span><br><span class="line">			xReturn = xQueueSend(Test_Queue,&amp;send_data2,<span class="number">0</span>);</span><br><span class="line">			<span class="keyword">if</span> (xReturn==pdTRUE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;消息send_data2发送成功\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		vTaskDelay(<span class="number">20</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>‍</p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-01T10:32:56+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年7月1日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/27/静态时序分析——逻辑综合/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="我的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="我的博客">
-    <meta itemprop="description" content="个人博客、kirigayakazima">
-  </span>
+          
   
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/12/27/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E9%80%BB%E8%BE%91%E7%BB%BC%E5%90%88/"  itemprop="url">
-        静态时序分析——逻辑综合
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STM32/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>STM32</p></a></div>
+  <span hidden itemprop="keywords">STM32</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        逻辑综合三个阶段：转译、优化、映射
-时序路径约束
-输入到寄存器的路径
-寄存器到寄存器之间的路径
-寄存器到输出的路径
-输入直接到输出的路径
-
-12create_clock-period 10 [get_ports Clk]set_dont_touch_network [get_clocks Clk]
-
-对所有定义的时钟网络设置为dont_touch​，即综合的时候不对Clk​信号优化。
-如果不...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/07/01/FreeRTOS-03-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/&title=FreeRTOS-03-消息队列 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/07/01/FreeRTOS-03-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/&title=FreeRTOS-03-消息队列 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/07/01/FreeRTOS-03-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/&title=FreeRTOS-03-消息队列 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-12-27T18:33:14+08:00">2022-12-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/">数字IC</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/">静态时序分析</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%97IC/" itemprop="url"><span itemprop="name">数字IC</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">静态时序分析</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/12/27/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E9%80%BB%E8%BE%91%E7%BB%BC%E5%90%88/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/27/TCL语法快速上手/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="我的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="我的博客">
-    <meta itemprop="description" content="个人博客、kirigayakazima">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
+    </div>
+    <!-- Custom Files bottomMeta begin -->
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/11/27/TCL%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/"  itemprop="url">
-        TCL入门
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        变量123456789101112131415161718#置换变量set a &#x27;snow&#x27;puts $a #打印a的值#命令置换#[]内部是一个独立tcl语句set a [expr 3+4]puts $a#结果为7#转义字符puts &#x27;a\tb&#x27;puts &#x27;a\nb&#x27;#添加后缀puts $&#123;a&#125;_1#打印7_1...
-      
-    
+    <!-- Custom Files bottomMeta end -->
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-11-27T22:35:27+08:00">2022-11-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/">数字IC</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/">静态时序分析</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%97IC/" itemprop="url"><span itemprop="name">数字IC</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">静态时序分析</span></a>
-            </span>
-          
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2022/11/27/TCL%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/'>
+          <p class='title'>FreeRTOS-02-任务管理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>任务管理系统中任务运行调度方式
+每个任务都是在独立的堆栈环境运行，运行的任务越多需要的堆栈空间越多。
+
+任务之间的切换是基于抢占优先级的，高优先级抢占低优先级
+
+任务切换的寻找方式
+
+基于链表，...</p>
+        </a>
       
     </div>
   
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
+  <!-- Custom Files postEnd begin-->
   
-    
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
   
 
 
-    
-  
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2838,158 +2898,48 @@ $$slack&#x3D;T_{capture}+T_{cycle}-T_{setup}-T_{u...
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">我的博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:519033432@qq.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/kirigayakazima"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=551934240"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"
-            active-action="action-categoriesE58D95E78987E69CBA"
-            ><div class='name'>单片机</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"
-            active-action="action-categoriesE5AE9EE794A8E5B7A5E585B7"
-            ><div class='name'>实用工具</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E5%AD%97IC/" href="/categories/%E6%95%B0%E5%AD%97IC/"
-            active-action="action-categoriesE695B0E5AD97IC"
-            ><div class='name'>数字IC</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%97IC/%E5%B8%B8%E8%A7%81%E5%99%A8%E4%BB%B6/" href="/categories/%E6%95%B0%E5%AD%97IC/%E5%B8%B8%E8%A7%81%E5%99%A8%E4%BB%B6/"
-            active-action="action-categoriesE695B0E5AD97ICE5B8B8E8A781E599A8E4BBB6"
-            ><div class='name'>常见器件</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%97IC/%E6%95%B0%E7%94%B5/" href="/categories/%E6%95%B0%E5%AD%97IC/%E6%95%B0%E7%94%B5/"
-            active-action="action-categoriesE695B0E5AD97ICE695B0E794B5"
-            ><div class='name'>数电</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/"
-            active-action="action-categoriesE695B0E5AD97ICE99D99E68081E697B6E5BA8FE58886E69E90"
-            ><div class='name'>静态时序分析</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B5%8B%E8%AF%95/" href="/categories/%E6%B5%8B%E8%AF%95/"
-            active-action="action-categoriesE6B58BE8AF95"
-            ><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
-            active-action="action-categoriesE6B7B1E5BAA6E5ADA6E4B9A0"
-            ><div class='name'>深度学习</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 21.5px; color: #666">51单片机</a> <a href="/tags/FIFO/" style="font-size: 14px; color: #999">FIFO</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/STM32/" style="font-size: 19px; color: #777">STM32</a> <a href="/tags/TCL/" style="font-size: 14px; color: #999">TCL</a> <a href="/tags/Verilog/" style="font-size: 16.5px; color: #888">Verilog</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" style="font-size: 14px; color: #999">实用工具</a> <a href="/tags/%E5%B8%B8%E8%A7%81%E5%99%A8%E4%BB%B6/" style="font-size: 14px; color: #999">常见器件</a> <a href="/tags/%E6%95%B0%E5%AD%97IC/" style="font-size: 24px; color: #555">数字IC</a> <a href="/tags/%E6%95%B0%E7%94%B5/" style="font-size: 14px; color: #999">数电</a> <a href="/tags/%E6%97%B6%E5%BA%8F/" style="font-size: 14px; color: #999">时序</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E5%8C%BA/" style="font-size: 14px; color: #999">测试区</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" style="font-size: 19px; color: #777">静态时序分析</a>
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="toc-text">消息队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">消息队列运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0"><span class="toc-text">队列常见函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%98%9F%E5%88%97"><span class="toc-text">创建队列</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3017,13 +2967,14 @@ $$slack&#x3D;T_{capture}+T_{cycle}-T_{setup}-T_{u...
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3616,6 +3567,73 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+        <script>
+  // https://www.micdz.cn/article/katex-on-volantis/
+  if (typeof renderMathInElement == "undefined") {
+    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/katex.min.css")
+    function pjax_katex() {
+      volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/contrib/auto-render.min.js").then(()=>{
+        renderMathInElement(document.body);
+      })
+    }
+    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/katex.min.js").then(pjax_katex)
+    volantis.pjax.push(pjax_katex)
+  }
+</script>
+
+
 </pjax>
 
 <script>
@@ -3747,7 +3765,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/静态时序分析/","name":"静态时序分析"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/单片机/","name":"单片机"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/07/01/FreeRTOS-03-消息队列/","name":"FreeRTOS-03-消息队列"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"FreeRTOS-03-消息队列","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/07/01/FreeRTOS-03-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/07/01/FreeRTOS-03-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/","wordCount":0,"datePublished":"2023-07-01T02:32:35.000Z","dateModified":"2023-07-01T02:32:56.899Z","articleSection":"单片机","keywords":"STM32","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
