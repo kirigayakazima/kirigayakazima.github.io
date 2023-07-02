@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2023/06/29/freertos-01-移植/"/>
+  <link rel="canonical" href="http://example.com/2023/07/02/freertos-04-信号量/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,19 +32,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>FreeRTOS-01-移植 - 我的博客</title>
+  <title>FreeRTOS-04-信号量 - 我的博客</title>
   <meta name="keywords" content="STM32,null">
   <meta desc name="description" content="个人博客、kirigayakazima - xuaner - 我的博客">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="FreeRTOS-01-移植">
-<meta property="og:url" content="http://example.com/2023/06/29/FreeRTOS-01-%E7%A7%BB%E6%A4%8D/index.html">
+<meta property="og:title" content="FreeRTOS-04-信号量">
+<meta property="og:url" content="http://example.com/2023/07/02/FreeRTOS-04-%E4%BF%A1%E5%8F%B7%E9%87%8F/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="堆和栈堆栈返回地址保存在栈中 添加串口打印功能 去掉无关代码、LCD等  增加串口打印功能  初始化串口 实现fputc    标准库移植将官方标准库移植到STM32F103C8T6 常见变量类型TaskHandle_t​是任务句柄类型，指针类型，原型为void *​ StackType_t​是任务堆栈类型，整型类型，原型为uint32_t​ StackTask_t​是任务块类型，结构体，原型为x">
+<meta property="og:description" content="信号量信号量类似于裸机开发中的标志位，用于任务间通信的变量，或者成为标志位。 临界资源：任何时刻只能被一个任务访问的资源 二值信号量运行机制 类似于互斥量，但是没有互斥量的优先级继承机制 偏向于同步功能，任务与任务的同步，任务与中断的同步 等效于一个只有一个消息的队列，只存在两种状态：有消息或者无消息 信号被获取时为0，被释放时为1 二值信号量无效时，有其他任务获取信号量，则任务进入阻塞态">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-06-29T06:52:44.000Z">
-<meta property="article:modified_time" content="2023-06-29T06:57:32.061Z">
+<meta property="article:published_time" content="2023-07-02T13:49:30.000Z">
+<meta property="article:modified_time" content="2023-07-02T13:50:11.352Z">
 <meta property="article:author" content="xuaner">
 <meta property="article:tag" content="STM32">
 <meta name="twitter:card" content="summary">
@@ -2590,7 +2590,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/29/FreeRTOS-01-移植/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/02/FreeRTOS-04-信号量/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="我的博客">
   </span>
@@ -2611,7 +2611,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        FreeRTOS-01-移植
+        FreeRTOS-04-信号量
       </h1>
       <div class='new-meta-box'>
         
@@ -2642,10 +2642,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-06-29T14:52:44+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-07-02T21:49:30+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2023年6月29日</p>
+    <p>发布于：2023年7月2日</p>
   </a>
 </div>
 
@@ -2668,41 +2668,103 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="堆和栈"><a href="#堆和栈" class="headerlink" title="堆和栈"></a>堆和栈</h2><h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>返回地址保存在栈中</p>
-<h2 id="添加串口打印功能"><a href="#添加串口打印功能" class="headerlink" title="添加串口打印功能"></a>添加串口打印功能</h2><ul>
-<li><p>去掉无关代码、LCD等</p>
-</li>
-<li><p>增加串口打印功能</p>
-<ul>
-<li>初始化串口</li>
-<li>实现fputc</li>
-</ul>
-</li>
-</ul>
-<h2 id="标准库移植"><a href="#标准库移植" class="headerlink" title="标准库移植"></a>标准库移植</h2><p>将官方标准库移植到STM32F103C8T6</p>
-<h2 id="常见变量类型"><a href="#常见变量类型" class="headerlink" title="常见变量类型"></a>常见变量类型</h2><p><code>TaskHandle_t</code>​是任务句柄类型，指针类型，原型为<code>void *</code>​</p>
-<p><code>StackType_t</code>​是任务堆栈类型，整型类型，原型为<code>uint32_t</code>​</p>
-<p><code>StackTask_t</code>​是任务块类型，结构体，原型为<code>xSTATIC_TCB</code>​结构体</p>
-<h2 id="移植注意事项"><a href="#移植注意事项" class="headerlink" title="移植注意事项"></a>移植注意事项</h2><h3 id="FreeRTOSConfig-h"><a href="#FreeRTOSConfig-h" class="headerlink" title="FreeRTOSConfig.h"></a>FreeRTOSConfig.h</h3><p>配置中断服务</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/****************************************************************</span></span><br><span class="line"><span class="comment">            FreeRTOS与中断服务函数有关的配置选项,映射端口                     </span></span><br><span class="line"><span class="comment">****************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> xPortPendSVHandler 	PendSV_Handler</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> vPortSVCHandler 	SVC_Handler</span></span><br></pre></td></tr></table></figure>
+    <h2 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h2><p>信号量类似于裸机开发中的标志位，用于任务间通信的变量，或者成为标志位。</p>
+<p>临界资源：任何时刻只能被一个任务访问的资源</p>
+<h3 id="二值信号量运行机制"><a href="#二值信号量运行机制" class="headerlink" title="二值信号量运行机制"></a>二值信号量运行机制</h3><ol>
+<li>类似于互斥量，但是没有互斥量的优先级继承机制</li>
+<li>偏向于同步功能，任务与任务的同步，任务与中断的同步</li>
+<li>等效于一个只有一个消息的队列，只存在两种状态：有消息或者无消息</li>
+<li>信号被获取时为0，被释放时为1</li>
+<li>二值信号量无效时，有其他任务获取信号量，则任务进入阻塞态</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307021107006.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307021107006.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<ol start="6">
+<li>某时刻信号量被中断或任务释放时，其他进入阻塞态的最高优先级任务进入就绪态</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307021109619.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307021109619.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>‍</p>
+<h3 id="计数信号量运行机制"><a href="#计数信号量运行机制" class="headerlink" title="计数信号量运行机制"></a>计数信号量运行机制</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用计数信号量需要开启宏定义</span></span><br><span class="line"><span class="comment">//开启计数信号量</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_COUNTING_SEMAPHORES   1</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Serial-c"><a href="#Serial-c" class="headerlink" title="Serial.c"></a>Serial.c</h3><p>注意串口波特率一致性</p>
-<p>尽量使用<code>printf</code>​而不使用自定义<code>Serial_Printf</code>​</p>
-<h3 id="main-c"><a href="#main-c" class="headerlink" title="main.c"></a>main.c</h3><p>注意开启<code>vTaskStartScheduler</code>​</p>
-<h2 id="创建任务"><a href="#创建任务" class="headerlink" title="创建任务"></a>创建任务</h2><h3 id="静态SARM内存"><a href="#静态SARM内存" class="headerlink" title="静态SARM内存"></a>静态SARM内存</h3><p>需要开启静态内存</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//支持静态内存</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configSUPPORT_STATIC_ALLOCATION					1	</span></span><br></pre></td></tr></table></figure>
-
-<p>静态内存任务开启区函数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">LEDTask_Handle = xTaskCreateStatic((TaskFunction_t)LED_Task,	<span class="comment">//任务LED</span></span><br><span class="line">				(<span class="type">const</span> <span class="type">char</span>*)<span class="string">&quot;LED_Task&quot;</span>,	<span class="comment">//任务名</span></span><br><span class="line">				(<span class="type">uint32_t</span>)<span class="number">128</span>,			<span class="comment">//堆栈大小</span></span><br><span class="line">				(<span class="type">void</span>*)<span class="literal">NULL</span>,			<span class="comment">//传给函数的参数</span></span><br><span class="line">				(UBaseType_t)<span class="number">4</span>,			<span class="comment">//任务优先级</span></span><br><span class="line">				(StackType_t *)LED_Task_Stack,	<span class="comment">//任务堆栈</span></span><br><span class="line">				(StaticTask_t *)&amp;LED_Task_TCB);	<span class="comment">//任务控制块</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="动态SARM内存"><a href="#动态SARM内存" class="headerlink" title="动态SARM内存"></a>动态SARM内存</h3><p>不开启静态内存</p>
-<p>动态内存任务开启函数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xReturn = xTaskCreate((TaskFunction_t)LED_Task,		<span class="comment">//任务LED</span></span><br><span class="line">			(<span class="type">const</span> <span class="type">char</span>*)<span class="string">&quot;LED_Task&quot;</span>,	<span class="comment">//任务名</span></span><br><span class="line">			(<span class="type">uint16_t</span>)<span class="number">512</span>,			<span class="comment">//堆栈大小</span></span><br><span class="line">			(<span class="type">void</span>*)<span class="literal">NULL</span>,			<span class="comment">//传给函数的参数</span></span><br><span class="line">			(UBaseType_t)<span class="number">2</span>,			<span class="comment">//任务优先级</span></span><br><span class="line">			(TaskHandle_t *)&amp;LEDTask_Handle);<span class="comment">//任务控制块指针</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>当事件发生时，信号量被释放，计数值加一</li>
+<li>当事件被处理时，信号量被取走，计数值减一</li>
+<li>信号计数值表示还未处理事件数量</li>
+<li>使用完资源必须返还信号量，信号量为0时表示无资源可用</li>
+<li>可用于资源管理，允许多个任务获取信号量进行资源访问，当访问个数到达最大时，其他任务进入阻塞态，直到有任务释放资源，类似于二值信号量访问资源的过程</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307021113175.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307021113175.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="互斥信号量运行机制"><a href="#互斥信号量运行机制" class="headerlink" title="互斥信号量运行机制"></a>互斥信号量运行机制</h3><ol>
+<li>特殊的二值信号量，拥有优先级继承机制</li>
+<li>信号量创建之初为满，使用临界资源时，先获取信号量使其为空，防止其他任务使用临界资源。</li>
+<li>低优先级任务申请互斥量，高优先级任务申请不到进入阻塞态，低优先级任务临时继承高优先级的优先级。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307021729397.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307021729397.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<ol start="4">
+<li>适用于可能引发优先级翻转的场景</li>
+<li>可递归使用，形成递归互斥量，任务可能会多次获取互斥量的情况下。这样可以避免同一任务多次递归持有而造成死锁的问题。</li>
+<li>互斥量不能在中断使用，优先级继承只在普通任务中有效，同一时期只能有一个任务获取互斥量进行资源访问</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307021739505.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307021739505.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="递归信号量运行机制"><a href="#递归信号量运行机制" class="headerlink" title="递归信号量运行机制"></a>递归信号量运行机制</h3><ol>
+<li>获取递归信号量的任务可以重复获取该量，拥有该量的所有权</li>
+<li>递归几次就要返还几次，有点类似任务的挂起和恢复之间的关系</li>
+</ol>
+<p>‍</p>
+<h3 id="信号常见函数"><a href="#信号常见函数" class="headerlink" title="信号常见函数"></a>信号常见函数</h3><ol>
+<li><code>xSemaphoreCreateBinary()</code>​创建二值信号量，返回一个句柄，函数原型<code>xQueueGenericCreate()</code>​</li>
+<li><code>xSemaphoreCreateCounting()</code>​创建计数信号量，返回一个句柄，原型​<code>xQueueGenericCreate()</code>​</li>
+<li><code>xSemaphoreGive()</code>​释放信号量，可用于二值信号量、互斥信号量、计数信号量的任务释放，不能用于递归信号量，原型<code>xQueueGenericSend()</code>​</li>
+<li><code>xSemaphoreGiveFromISR()</code>​用于中断的释放信号量，只能用于二值信号量、计数信号量，原型<code>xQueueGiveFromISR()</code>​</li>
+<li><code>xSemaphoreTake</code>​获取信号量，可用于二值信号量、互斥信号量、计数信号量的任务获取，不能用于递归信号量，原型<code>xQueueGenericReceive()</code>​，该操作类似任务访问队列消息的过程。</li>
+<li><code>xSemaphoreTakeFromISR()</code>​，用于中断的获取信号量，只能用于二值信号量、计数信号量</li>
+</ol>
+<h3 id="创建二值信号量"><a href="#创建二值信号量" class="headerlink" title="创建二值信号量"></a>创建二值信号量</h3><p>设计1个<code>Button</code>​任务，通过按键发送控制<code>LED0</code>​的开关，二值量操作信息通过串口显示</p>
+<blockquote>
+<p>二值量句柄，创建一个引用，并不是创建一个真实的二值量</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个二值信号量句柄</span></span><br><span class="line">SemaphoreHandle_t Binary_Handle=<span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">//发送和接收任务-信号量</span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Receive_Semaph_Task</span><span class="params">(<span class="type">void</span> *paramter)</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Send_Semaph_Task</span><span class="params">(<span class="type">void</span> *paramter)</span>;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p><strong>注意</strong>动态和静态的开启函数区别，参数不同，参数类型也不同。</p>
+<p>创建一个真实的二值量</p>
 </blockquote>
-<h3 id="多任务"><a href="#多任务" class="headerlink" title="多任务"></a>多任务</h3><p>多任务相较于单任务，区别只在任务开启的个数，对应参数填好，开启任务即可实现多任务。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个二值信号量</span></span><br><span class="line">Binary_Handle = xSemaphoreCreateBinary();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>接收数据任务控制LED0</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Receive_Semaph_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn=pdPASS;</span><br><span class="line">	<span class="type">uint32_t</span> r_queue;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//获取二值信号量</span></span><br><span class="line">		xReturn = xSemaphoreTake(Binary_Handle,portMAX_DELAY);</span><br><span class="line">		<span class="keyword">if</span>(xReturn==pdPASS)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;二值信号量获取成功\r\n&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		LED0_Turn();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Button控制发送数据任务</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Send_Semaph_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn=pdTRUE;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN1)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//先释放一下二值信号量</span></span><br><span class="line">			xReturn = xSemaphoreGive(Binary_Handle);</span><br><span class="line">			<span class="keyword">if</span> (xReturn==pdTRUE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;二值信号量释放成功\r\n&quot;</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;二值信号量释放失败\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN2)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//先释放一下二值信号量</span></span><br><span class="line">			xReturn = xSemaphoreGive(Binary_Handle);</span><br><span class="line">			<span class="keyword">if</span> (xReturn==pdTRUE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;二值信号量释放成功\r\n&quot;</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;二值信号量释放失败\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">		vTaskDelay(<span class="number">20</span>);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建计数二值量"><a href="#创建计数二值量" class="headerlink" title="创建计数二值量"></a>创建计数二值量</h3><p>设计2个<code>Button</code>​任务，通过按键<code>BTN1</code>​申请车位，按键<code>BTN2</code>​释放车位，最大车位5</p>
+<blockquote>
+<p>开启宏定义</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//开启计数信号量</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_COUNTING_SEMAPHORES   1</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>计数信号量句柄，创建一个引用，并不是创建一个真实的计数信号量</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个计数信号量句柄</span></span><br><span class="line">SemaphoreHandle_t CountSem_Handle=<span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">//计数信号量-申请释放车位</span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Take_Task</span><span class="params">(<span class="type">void</span> *paramter)</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Give_Task</span><span class="params">(<span class="type">void</span> *paramter)</span>;</span><br><span class="line"><span class="comment">//计数信号量-申请释放车位任务句柄</span></span><br><span class="line"><span class="type">static</span> TaskHandle_t Take_Task_Handle=<span class="literal">NULL</span>;</span><br><span class="line"><span class="type">static</span> TaskHandle_t Give_Task_Handle=<span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>创建一个真实的计数信号量</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个计数信号量</span></span><br><span class="line">CountSem_Handle =xSemaphoreCreateCounting(<span class="number">5</span>,	<span class="comment">//最大车位5</span></span><br><span class="line">					<span class="number">5</span>);	<span class="comment">//当前空闲车位5</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>BTN1控制申请车位</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Take_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn=pdTRUE;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN1)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//获取计数信号量</span></span><br><span class="line">			xReturn = xSemaphoreTake(CountSem_Handle,</span><br><span class="line">						<span class="number">0</span>);		<span class="comment">//等待时间：0</span></span><br><span class="line">			<span class="keyword">if</span> (xReturn==pdTRUE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;BTN1按下，申请车位成功\r\n&quot;</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;BTN1按下，车位已满，申请车位失败\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		vTaskDelay(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>BTN2释放车位</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Give_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn=pdTRUE;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN2)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//获取计数信号量</span></span><br><span class="line">			xReturn = xSemaphoreGive(CountSem_Handle);	</span><br><span class="line">			<span class="keyword">if</span> (xReturn==pdTRUE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;BTN2按下，释放一个车位\r\n&quot;</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;BTN2按下，无车位可被释放\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		vTaskDelay(<span class="number">20</span>);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>‍</p>
 
   </div>
@@ -2728,10 +2790,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-06-29T14:57:32+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-02T21:50:11+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年6月29日</p>
+    <p>更新于：2023年7月2日</p>
   </a>
 </div>
 
@@ -2754,7 +2816,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/06/29/FreeRTOS-01-%E7%A7%BB%E6%A4%8D/&title=FreeRTOS-01-移植 - 我的博客&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/07/02/FreeRTOS-04-%E4%BF%A1%E5%8F%B7%E9%87%8F/&title=FreeRTOS-04-信号量 - 我的博客&summary="
           
           >
           
@@ -2766,7 +2828,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/06/29/FreeRTOS-01-%E7%A7%BB%E6%A4%8D/&title=FreeRTOS-01-移植 - 我的博客&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/07/02/FreeRTOS-04-%E4%BF%A1%E5%8F%B7%E9%87%8F/&title=FreeRTOS-04-信号量 - 我的博客&summary="
           
           >
           
@@ -2778,7 +2840,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/06/29/FreeRTOS-01-%E7%A7%BB%E6%A4%8D/&title=FreeRTOS-01-移植 - 我的博客&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/07/02/FreeRTOS-04-%E4%BF%A1%E5%8F%B7%E9%87%8F/&title=FreeRTOS-04-信号量 - 我的博客&summary="
           
           >
           
@@ -2811,23 +2873,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>FreeRTOS-02-任务管理</p>
-          <p class='content'>任务管理系统中任务运行调度方式
-每个任务都是在独立的堆栈环境运行，运行的任务越多需要的堆栈空间越多。
-
-任务之间的切换是基于抢占优先级的，高优先级抢占低优先级
-
-任务切换的寻找方式
-
-基于链表，...</p>
-        </a>
       
-      
-        <a class='next' href='/2023/05/23/C52-day05/'>
-          <p class='title'>C52-day05<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>高级定时器应用PWM调制LED灯并驱动电机代码​
-123456789101112131415161718192021222324252627282930313233343536373839404...</p>
+        <a class='next' href='/2023/07/01/FreeRTOS-03-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/'>
+          <p class='title'>FreeRTOS-03-消息队列<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>消息队列消息队列是一种用于线程间通信的技术，在FreeRTOS​中则用于任务间通信，其中的任务可以视为线程。
+支持先进先出、后进先出
+消息队列运行机制
+创建消息队列单独划分一个内存空间，内存大小...</p>
         </a>
       
     </div>
@@ -2874,7 +2926,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%92%8C%E6%A0%88"><span class="toc-text">堆和栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86"><span class="toc-text">堆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88"><span class="toc-text">栈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0%E5%8A%9F%E8%83%BD"><span class="toc-text">添加串口打印功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E5%BA%93%E7%A7%BB%E6%A4%8D"><span class="toc-text">标准库移植</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="toc-text">常见变量类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E6%A4%8D%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">移植注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FreeRTOSConfig-h"><span class="toc-text">FreeRTOSConfig.h</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Serial-c"><span class="toc-text">Serial.c</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#main-c"><span class="toc-text">main.c</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1"><span class="toc-text">创建任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81SARM%E5%86%85%E5%AD%98"><span class="toc-text">静态SARM内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81SARM%E5%86%85%E5%AD%98"><span class="toc-text">动态SARM内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%BB%BB%E5%8A%A1"><span class="toc-text">多任务</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="toc-text">信号量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%80%BC%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">二值信号量运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E6%95%B0%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">计数信号量运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%92%E6%96%A5%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">互斥信号量运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E4%BF%A1%E5%8F%B7%E9%87%8F%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">递归信号量运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0"><span class="toc-text">信号常见函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%8C%E5%80%BC%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="toc-text">创建二值信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%AE%A1%E6%95%B0%E4%BA%8C%E5%80%BC%E9%87%8F"><span class="toc-text">创建计数二值量</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -3721,7 +3773,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/单片机/","name":"单片机"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/06/29/FreeRTOS-01-移植/","name":"FreeRTOS-01-移植"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"FreeRTOS-01-移植","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/06/29/FreeRTOS-01-%E7%A7%BB%E6%A4%8D/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/06/29/FreeRTOS-01-%E7%A7%BB%E6%A4%8D/","wordCount":0,"datePublished":"2023-06-29T06:52:44.000Z","dateModified":"2023-06-29T06:57:32.061Z","articleSection":"单片机","keywords":"STM32","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/单片机/","name":"单片机"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/07/02/FreeRTOS-04-信号量/","name":"FreeRTOS-04-信号量"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"FreeRTOS-04-信号量","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/07/02/FreeRTOS-04-%E4%BF%A1%E5%8F%B7%E9%87%8F/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/07/02/FreeRTOS-04-%E4%BF%A1%E5%8F%B7%E9%87%8F/","wordCount":0,"datePublished":"2023-07-02T13:49:30.000Z","dateModified":"2023-07-02T13:50:11.352Z","articleSection":"单片机","keywords":"STM32","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
