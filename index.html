@@ -1788,7 +1788,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1688305820888),
+    lastupdate: new Date(1688390357343),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2677,13 +2677,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         信号量信号量类似于裸机开发中的标志位，用于任务间通信的变量，或者成为标志位。
 临界资源：任何时刻只能被一个任务访问的资源
+递归信号量和互斥量都实现继承优先级机制，降低优先级反转的危害
 二值信号量运行机制
 类似于互斥量，但是没有互斥量的优先级继承机制
 偏向于同步功能，任务与任务的同步，任务与中断的同步
 等效于一个只有一个消息的队列，只存在两种状态：有消息或者无消息
-信号被获取时为0，被释放时为1
-二值信号量无效时，有其他任务获取信号量，则任务进入阻塞态
-...
+信号被获取时为0，被释放时为...
       
     
   </div>
