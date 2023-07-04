@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/about/"/>
+  <link rel="canonical" href="http://example.com/2023/07/04/freertos-05-事件/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,20 +32,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>关于 - 我的博客</title>
-  <meta name="keywords" content="null">
+  <title>FreeRTOS-05-事件 - 我的博客</title>
+  <meta name="keywords" content="STM32,null">
   <meta desc name="description" content="个人博客、kirigayakazima - xuaner - 我的博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FreeRTOS-05-事件">
+<meta property="og:url" content="http://example.com/2023/07/04/FreeRTOS-05-%E4%BA%8B%E4%BB%B6/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="欢迎你">
+<meta property="og:description" content="事件事件是一种任务间通信的技术，和信号量不同，可以实现一对多，多对多的通信，但是不涉及数据的传输。  configUSE_16_BIT_TICKS​ 开启后，uxEventBits​为16位，8位存储事件组；未开启时，uxEventBits​为32位，24位存储事件组。 事件只与任务相关联，事件之间彼此独立。 事件只同于同步，不涉及数据传输。 事件无队列消息性质，多次向同一任务发送事件，若未被读取">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2022-11-26T14:02:29.242Z">
-<meta property="article:modified_time" content="2022-11-26T14:02:29.242Z">
+<meta property="article:published_time" content="2023-07-04T13:53:11.000Z">
+<meta property="article:modified_time" content="2023-07-04T13:53:32.949Z">
 <meta property="article:author" content="xuaner">
+<meta property="article:tag" content="STM32">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2224,6 +2225,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
         <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
         
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+        
       </ul>
     </div>
 		<div class="nav-main">
@@ -2503,7 +2506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper docs search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg"></div>
 
@@ -2585,9 +2588,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-<div id="l_main" class=' no_sidebar'>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-docs" id="docs" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/about/index.html">
+<div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/04/FreeRTOS-05-事件/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="我的博客">
   </span>
@@ -2607,18 +2610,122 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-      <span hidden itemprop="name headline">
+      <h1 class="title" itemprop="name headline">
+        FreeRTOS-05-事件
+      </h1>
+      <div class='new-meta-box'>
         
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="" rel="nofollow">
+    <img itemprop="image" src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">玄儿</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url"><span itemprop="name">单片机</span></a>
       </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-07-04T21:53:11+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2023年7月4日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
 
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <div class="note quote"><p><strong></strong></p><p>欢迎你</p></div>
+    <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>事件是一种任务间通信的技术，和信号量不同，可以实现一对多，多对多的通信，但是不涉及数据的传输。</p>
+<ol>
+<li><code>configUSE_16_BIT_TICKS</code>​ 开启后，<code>uxEventBits</code>​为16位，8位存储事件组；未开启时，<code>uxEventBits</code>​为32位，24位存储事件组。</li>
+<li>事件只与任务相关联，事件之间彼此独立。</li>
+<li>事件只同于同步，不涉及数据传输。</li>
+<li>事件无队列消息性质，多次向同一任务发送事件，若未被读取，则视为一次事件。</li>
+<li>支持事件等待超时机制。</li>
+</ol>
+<h3 id="事件运行机制"><a href="#事件运行机制" class="headerlink" title="事件运行机制"></a>事件运行机制</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中断事件组</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_TIMERS 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INCLUDE_xTimerPendFunctionCall 0</span></span><br><span class="line"><span class="comment">//软件定时器优先级</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configTIMER_TASK_PRIORITY (configMAX_PRIORITIES-1)</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261957203.bmp" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261957203.bmp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="关于"></p>
+<ol>
+<li>事件接收成功后，需要使用<code>xClearOnExit()</code>​来清除事件类型，否则不会清除已接收的事件，需要手动显示清除。</li>
+<li>24位存储事件中，<code>1</code>​表示事件已发生，<code>0</code>​表示事件未发生</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307041712672.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307041712672.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<ol start="3">
+<li>任务唤醒遵循事件的或与逻辑</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307041721868.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg/202307041721868.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="事件常见函数"><a href="#事件常见函数" class="headerlink" title="事件常见函数"></a>事件常见函数</h3><ol>
+<li><code>xEventGroupCreate()</code>​创建事件组，返回一个句柄</li>
+<li><code>xEventGroupDelete()</code>​删除事件</li>
+<li><code>xEventGroupSetBits()</code>​置位事件组中指定的位，置位后，阻塞该位的任务会被解锁。</li>
+<li><code>xEventGroupSetBitsFromISR()</code>​中断置位事件组，需要开启<code>configUSE_TIMERS 1</code>​和<code>INCLUDE_xTimerPendFunctionCall 1</code>​宏定义</li>
+<li><code>xEventGroupWaitBits()</code>​等待事件，获取事件标志位。</li>
+<li><code>xEventGroupClearBits()</code>​清除事件组置位</li>
+<li><code>xEventGroupClearBitsFromISR()</code>​中断清除事件组置位</li>
+</ol>
+<h3 id="创建事件"><a href="#创建事件" class="headerlink" title="创建事件"></a>创建事件</h3><p>创建2个<code>Btn</code>​任务控制<code>LED</code>​任务，当只按下<code>BTN1</code>​时，不亮，接着按下<code>BTN2</code>​后，亮。此时相当于标志位变得和设定相同。</p>
+<blockquote>
+<p>开启宏定义</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中断事件组</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_TIMERS 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INCLUDE_xTimerPendFunctionCall 0</span></span><br><span class="line"><span class="comment">//软件定时器优先级</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configTIMER_TASK_PRIORITY (configMAX_PRIORITIES-1)</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>事件句柄，创建一个引用，并不是创建一个真实的事件</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//事件句柄</span></span><br><span class="line"><span class="type">static</span> EventGroupHandle_t Event_Handle=<span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> KEY1_EVENT (0x01 &lt;&lt; 0)		<span class="comment">//设置掩码的位0</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> KEY2_EVENT (0x01 &lt;&lt; 1)		<span class="comment">//设置掩码的位1</span></span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>创建一个真实的事件</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建事件句柄</span></span><br><span class="line">Event_Handle = xEventGroupCreate();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>LED任务</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">LED0_Event_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	EventBits_t r_event;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		r_event = xEventGroupWaitBits(</span><br><span class="line">			Event_Handle,				<span class="comment">//事件句柄</span></span><br><span class="line">			KEY1_EVENT | KEY2_EVENT,		<span class="comment">//接收感兴趣事件</span></span><br><span class="line">			pdTRUE,					<span class="comment">//退出时清除事件位</span></span><br><span class="line">			pdTRUE,					<span class="comment">//满足感兴趣的所有事件</span></span><br><span class="line">			portMAX_DELAY);				<span class="comment">//超时一直等待</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (r_event &amp; (KEY1_EVENT | KEY2_EVENT) == (KEY1_EVENT | KEY2_EVENT))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;KEY1和KEY2都按下\r\n&quot;</span>);</span><br><span class="line">			LED0_Turn();</span><br><span class="line">		&#125;<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;事件错误\r\n&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Key任务</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">KEY_Event_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(Key_BTN(BTN1)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;KEY1按下\r\n&quot;</span>);</span><br><span class="line">			xEventGroupSetBits(Event_Handle,KEY1_EVENT);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN2)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;KEY2按下\r\n&quot;</span>);</span><br><span class="line">			xEventGroupSetBits(Event_Handle,KEY2_EVENT);</span><br><span class="line">		&#125;</span><br><span class="line">		vTaskDelay(<span class="number">20</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当BTN1和BTN2都按下后，才会翻转信号</p>
+</blockquote>
+<p>‍</p>
 
   </div>
   
@@ -2642,6 +2749,77 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='article-meta' id="bottom">
     <div class='new-meta-box'>
       
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-04T21:53:32+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年7月4日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STM32/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>STM32</p></a></div>
+  <span hidden itemprop="keywords">STM32</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/07/04/FreeRTOS-05-%E4%BA%8B%E4%BB%B6/&title=FreeRTOS-05-事件 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/07/04/FreeRTOS-05-%E4%BA%8B%E4%BB%B6/&title=FreeRTOS-05-事件 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/07/04/FreeRTOS-05-%E4%BA%8B%E4%BB%B6/&title=FreeRTOS-05-事件 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
     </div>
     <!-- Custom Files bottomMeta begin -->
     
@@ -2652,6 +2830,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
 
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/07/02/FreeRTOS-04-%E4%BF%A1%E5%8F%B7%E9%87%8F/'>
+          <p class='title'>FreeRTOS-04-信号量<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>信号量信号量类似于裸机开发中的标志位，用于任务间通信的变量，或者成为标志位。
+临界资源：任何时刻只能被一个任务访问的资源
+递归信号量和互斥量都实现继承优先级机制，降低优先级反转的危害
+二值信号量...</p>
+        </a>
+      
+    </div>
   
   <!-- Custom Files postEnd begin-->
   
@@ -2671,8 +2862,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
 
+  
+    
+    
+      
+    
+  
+
 
 <div class="widget-sticky pjax">
+
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">事件运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0"><span class="toc-text">事件常见函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BA%8B%E4%BB%B6"><span class="toc-text">创建事件</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
 
 </div>
 
@@ -2724,7 +2942,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3317,6 +3535,73 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+        <script>
+  // https://www.micdz.cn/article/katex-on-volantis/
+  if (typeof renderMathInElement == "undefined") {
+    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/katex.min.css")
+    function pjax_katex() {
+      volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/contrib/auto-render.min.js").then(()=>{
+        renderMathInElement(document.body);
+      })
+    }
+    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/katex.min.js").then(pjax_katex)
+    volantis.pjax.push(pjax_katex)
+  }
+</script>
+
+
 </pjax>
 
 <script>
@@ -3448,7 +3733,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"关于","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/about/index.html"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/about/index.html","wordCount":0,"datePublished":"2022-11-26T14:02:29.242Z","dateModified":"2022-11-26T14:02:29.242Z","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/单片机/","name":"单片机"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/07/04/FreeRTOS-05-事件/","name":"FreeRTOS-05-事件"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"FreeRTOS-05-事件","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/07/04/FreeRTOS-05-%E4%BA%8B%E4%BB%B6/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/07/04/FreeRTOS-05-%E4%BA%8B%E4%BB%B6/","wordCount":0,"datePublished":"2023-07-04T13:53:11.000Z","dateModified":"2023-07-04T13:53:32.949Z","articleSection":"单片机","keywords":"STM32","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
