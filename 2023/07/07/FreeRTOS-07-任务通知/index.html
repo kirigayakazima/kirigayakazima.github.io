@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/archives/page/3/"/>
+  
+  <link rel="canonical" href="http://example.com/2023/07/07/freertos-07-任务通知/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,18 +32,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档 - 我的博客</title>
-  <meta name="keywords" content="null">
+  <title>FreeRTOS-07-任务通知 - 我的博客</title>
+  <meta name="keywords" content="STM32,null">
   <meta desc name="description" content="个人博客、kirigayakazima - xuaner - 我的博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://example.com/archives/page/3/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FreeRTOS-07-任务通知">
+<meta property="og:url" content="http://example.com/2023/07/07/FreeRTOS-07-%E4%BB%BB%E5%8A%A1%E9%80%9A%E7%9F%A5/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="个人博客、kirigayakazima">
+<meta property="og:description" content="任务通知任务通知是一种任务间通信的手段，比使用信号量更节省资源，解除阻塞时间更快  无需创建队列 更节省RAM空间 发送通知任务几种模式：通知未读，不覆盖通知值；直接覆盖通知值；设置通知位的一个或多位，当作事件组；递增通知值，当做计数信号量。 由于必须指定接收通知的任务，只能有一个任务接收通知。 只有等待通知的任务可以被阻塞，发送通知的任务不会因为发送失败进入阻塞态。  任务通知运行机制12&#x2F;&#x2F;开">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-07-07T08:17:19.000Z">
+<meta property="article:modified_time" content="2023-07-07T08:17:42.215Z">
 <meta property="article:author" content="xuaner">
+<meta property="article:tag" content="STM32">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2214,7 +2217,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2503,7 +2506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg"></div>
 
@@ -2586,386 +2589,342 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-	  <article id="arc" class="post article white-box reveal shadow floatable blur">
-			
-			
-				
-				
-					
-						
-						<h2>2023</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/07/FreeRTOS-07-%E4%BB%BB%E5%8A%A1%E9%80%9A%E7%9F%A5/">
-									<time>07-07</time>
-									
-										FreeRTOS-07-任务通知
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/05/FreeRTOS-06-%E8%BD%AF%E4%BB%B6%E5%AE%9A%E6%97%B6%E5%99%A8/">
-									<time>07-05</time>
-									
-										FreeRTOS-06-软件定时器
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/04/FreeRTOS-05-%E4%BA%8B%E4%BB%B6/">
-									<time>07-04</time>
-									
-										FreeRTOS-05-事件
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/02/FreeRTOS-04-%E4%BF%A1%E5%8F%B7%E9%87%8F/">
-									<time>07-02</time>
-									
-										FreeRTOS-04-信号量
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/07/01/FreeRTOS-03-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
-									<time>07-01</time>
-									
-										FreeRTOS-03-消息队列
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/">
-									<time>06-30</time>
-									
-										FreeRTOS-02-任务管理
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/06/29/FreeRTOS-01-%E7%A7%BB%E6%A4%8D/">
-									<time>06-29</time>
-									
-										FreeRTOS-01-移植
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/05/23/C52-day05/">
-									<time>05-23</time>
-									
-										C52-day05
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/05/16/C52-day04/">
-									<time>05-16</time>
-									
-										C52-day04
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/05/11/C52-day03/">
-									<time>05-11</time>
-									
-										C52-day03
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/05/10/C52-day02/">
-									<time>05-10</time>
-									
-										C52-day02
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/05/08/C52-day01/">
-									<time>05-08</time>
-									
-										C52-day01
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/01/08/%E5%89%8D%E7%AB%AFIC%E2%80%94%E2%80%94%E6%95%B0%E7%94%B5%E5%9F%BA%E7%A1%80/">
-									<time>01-08</time>
-									
-										前端IC——数电基础
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/">
-									<time>01-03</time>
-									
-										静态时序分析——建立保持时间
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						
-						<h2>2022</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/27/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E9%80%BB%E8%BE%91%E7%BB%BC%E5%90%88/">
-									<time>12-27</time>
-									
-										静态时序分析——逻辑综合
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/22/%E5%B8%B8%E8%A7%81%E7%94%B5%E8%B7%AF/">
-									<time>12-22</time>
-									
-										常见电路
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/14/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF/">
-									<time>12-14</time>
-									
-										芯动力——同步时序电路
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/04/Markdown%E8%AF%AD%E6%B3%95/">
-									<time>12-04</time>
-									
-										Markdown语法
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/">
-									<time>12-03</time>
-									
-										芯动力——高质量Verilog设计
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/12/01/Pandas%E6%8A%80%E5%B7%A7/">
-									<time>12-01</time>
-									
-										Pandas技巧
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/27/TCL%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/">
-									<time>11-27</time>
-									
-										TCL入门
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/27/FIFO/">
-									<time>11-27</time>
-									
-										FIFO
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/11/26/%E6%B5%8B%E8%AF%95/">
-									<time>11-26</time>
-									
-										测试博客
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-	  </article>
-	
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/07/FreeRTOS-07-任务通知/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="我的博客">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="我的博客">
+    <meta itemprop="description" content="个人博客、kirigayakazima">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        FreeRTOS-07-任务通知
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="" rel="nofollow">
+    <img itemprop="image" src="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">玄儿</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url"><span itemprop="name">单片机</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-07-07T16:17:19+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2023年7月7日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="任务通知"><a href="#任务通知" class="headerlink" title="任务通知"></a>任务通知</h2><p>任务通知是一种任务间通信的手段，比使用信号量更节省资源，解除阻塞时间更快</p>
+<ol>
+<li>无需创建队列</li>
+<li>更节省RAM空间</li>
+<li>发送通知任务几种模式：通知未读，不覆盖通知值；直接覆盖通知值；设置通知位的一个或多位，当作事件组；递增通知值，当做计数信号量。</li>
+<li>由于必须指定接收通知的任务，只能有一个任务接收通知。</li>
+<li>只有等待通知的任务可以被阻塞，发送通知的任务不会因为发送失败进入阻塞态。</li>
+</ol>
+<h3 id="任务通知运行机制"><a href="#任务通知运行机制" class="headerlink" title="任务通知运行机制"></a>任务通知运行机制</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//开启任务通知功能，默认开启</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_TASK_NOTIFICATIONS    1   </span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>随任务创建而初始化</li>
+<li>任务通知和队列消息的运行机制一致</li>
+</ol>
+<h3 id="任务通知常见函数"><a href="#任务通知常见函数" class="headerlink" title="任务通知常见函数"></a>任务通知常见函数</h3><ol>
+<li><code>xTaskGenericNotify()</code>​​发送任务通知，是任务通知的原型</li>
+<li><code>xTaskNotifyGive()</code>​​调用任务通知，并将任务通知值加1，可以作为二值信号量和计数信号量的低配版，更加轻量化，原型<code>xTaskNotify()</code>​​</li>
+<li><code>xTaskNotifyGiveFromISR()</code>​​中断调用任务通知</li>
+<li><code>xTaskNotify()</code>​​用于任务直接向另一个任务发送一个事件</li>
+<li><code>xTaskNotifyFromISR()</code>​​ 中断中使用，原型为<code>xTaskGenericNotifyFromISR()</code>​​</li>
+<li><code>xTaskGenericNotifyFromISR()</code>​​通用中断发送任务通知</li>
+<li><code>xTaskNotifyAndQuery()</code>​​和<code>xTaskNotify()</code>​​功能类似，附加了回传接收任务的通知值，若不需要回传则等同于<code>xTaskNotify()</code>​​</li>
+<li><code>xTaskNotifyAndQueryFromISR()</code>​​中断用</li>
+<li><code>ulTaskNotifyTake()</code>​可作为轻量级获取二值信号量和计数信号量的实现，用于自身句柄的调用</li>
+<li><code>xTaskNotifyWait()</code>​可以用于实现全功能的等待任务通知，更轻量化</li>
+</ol>
+<h3 id="代替消息队列"><a href="#代替消息队列" class="headerlink" title="代替消息队列"></a>代替消息队列</h3><p>设计3个任务，2个任务接收消息通知来控制<code>LED</code>​，1个任务通过2个按钮来发送消息通知</p>
+<blockquote>
+<p>接收、发送通知句柄，创建一个引用，并不是创建一个真实的消息通知</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//任务通知句柄</span></span><br><span class="line"><span class="type">static</span> TaskHandle_t Receive1_Task_Handle = <span class="literal">NULL</span>;</span><br><span class="line"><span class="type">static</span> TaskHandle_t Receive2_Task_Handle = <span class="literal">NULL</span>;</span><br><span class="line"><span class="type">static</span> TaskHandle_t Send_Task_Handle = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> USE_CHAR 0 					<span class="comment">//测试字符串配置1，测试变量配置0</span></span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>创建一个真实的句柄</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Receive1_Task任务</span></span><br><span class="line">xReturn =xTaskCreate(Receive1_Task,<span class="string">&quot;Receive1_Task&quot;</span>,<span class="number">512</span>,<span class="literal">NULL</span>,<span class="number">2</span>,(TaskHandle_t *)&amp;Receive1_Task_Handle);</span><br><span class="line"><span class="keyword">if</span> (xReturn==pdPASS)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;创建Receive1_Task任务成功\r\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Receive2_Task任务</span></span><br><span class="line">xReturn = xTaskCreate(Receive2_Task,<span class="string">&quot;Receive2_Task&quot;</span>,<span class="number">512</span>,<span class="literal">NULL</span>,<span class="number">3</span>,(TaskHandle_t *)&amp;Receive2_Task_Handle);</span><br><span class="line"><span class="keyword">if</span> (xReturn==pdPASS)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;创建Receive2_Task任务成功\r\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Receive2_Task任务</span></span><br><span class="line">xReturn = xTaskCreate(Send_Task,<span class="string">&quot;Send_Task&quot;</span>,<span class="number">512</span>,<span class="literal">NULL</span>,<span class="number">4</span>,(TaskHandle_t *)&amp;Send_Task_Handle);</span><br><span class="line"><span class="keyword">if</span> (xReturn==pdPASS)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;创建Send_Task任务成功\r\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>接收通知任务1</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Receive1_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn = pdTRUE;</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> USE_CHAR</span></span><br><span class="line">	<span class="type">char</span> *r_char;</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">	<span class="type">uint32_t</span> r_num;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//获取任务通知，没获取到则等待</span></span><br><span class="line">		xReturn = xTaskNotifyWait(<span class="number">0x0</span>,			<span class="comment">//进入函数的时候不清除任务Bit</span></span><br><span class="line">					ULONG_MAX,		<span class="comment">//退出函数的时候清除所以的Bit</span></span><br><span class="line"><span class="meta">#<span class="keyword">if</span> USE_CHAR</span></span><br><span class="line">					(<span class="type">uint32_t</span> *)&amp;r_char,	<span class="comment">//保存任务通知值</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">					&amp;r_num,			<span class="comment">//保存任务通知值</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">					portMAX_DELAY);		<span class="comment">//阻塞时间</span></span><br><span class="line">		<span class="keyword">if</span>(xReturn==pdTRUE)</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> USE_CHAR</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;Receive1_Task 任务通知%s \r\n&quot;</span>,r_char);</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;Receive1_Task 任务通知%d \r\n&quot;</span>,r_num);</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">		LED0_Turn();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>接收通知任务2</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Receive2_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn = pdTRUE;</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> USE_CHAR</span></span><br><span class="line">	<span class="type">char</span> *r_char;</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">	<span class="type">uint32_t</span> r_num;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//获取任务通知，没获取到则一直等待</span></span><br><span class="line">		xReturn = xTaskNotifyWait(<span class="number">0x0</span>,</span><br><span class="line">					ULONG_MAX,</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> USE_CHAR</span></span><br><span class="line">					(<span class="type">uint32_t</span> *)&amp;r_char,</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">					&amp;r_num,</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">					portMAX_DELAY);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(xReturn == pdTRUE)</span><br><span class="line">		&#123;</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> USE_CHAR</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;Receive2_Task 任务通知%s \r\n&quot;</span>,r_char);</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;Receive2_Task 任务通知%d \r\n&quot;</span>,r_num);</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">		LED7_Turn();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>发送通知任务</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Send_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn=pdTRUE;</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> USE_CHAR</span></span><br><span class="line">	<span class="type">char</span> test_str1[]=<span class="string">&quot;this is mail test 1&quot;</span>;			<span class="comment">//消息1</span></span><br><span class="line">	<span class="type">char</span> test_str1[]=<span class="string">&quot;this is mail test 2&quot;</span>;			<span class="comment">//消息2</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">	<span class="type">uint32_t</span> send1=<span class="number">1</span>;</span><br><span class="line">	<span class="type">uint32_t</span> send2=<span class="number">2</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//KEY1按下</span></span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN1)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			xReturn = xTaskNotify(Receive1_Task_Handle,	<span class="comment">//任务句柄</span></span><br><span class="line"><span class="meta">#<span class="keyword">if</span> USE_CHAR</span></span><br><span class="line">					(<span class="type">uint32_t</span>)&amp;test_str1,		<span class="comment">//发送数据，最大4字节</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">					send1,				<span class="comment">//发送数据，最大4字节</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">					eSetValueWithOverwrite);	<span class="comment">//覆盖当前通知</span></span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>(xReturn==pdTRUE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;Receive1_Task_Handle 任务通知释放成功\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//KEY2按下</span></span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN2)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			xReturn = xTaskNotify(Receive2_Task_Handle,</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> USE_CHAR</span></span><br><span class="line">					(<span class="type">uint32_t</span>)&amp;test_str2,</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">					send2,</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">					eSetValueWithOverwrite);</span><br><span class="line">			<span class="keyword">if</span> (xReturn==pdTRUE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;Receive2_Task_Handle 任务通知释放成功\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		vTaskDelay(<span class="number">20</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>按下<code>BTN1</code>​后，通信接收任务1，<code>LED0</code>​亮，按下<code>BTN2</code>​后，通信接收任务2，<code>LED7</code>​亮</p>
+</blockquote>
+<h3 id="代替二值信号量"><a href="#代替二值信号量" class="headerlink" title="代替二值信号量"></a>代替二值信号量</h3><p>设计3个任务，2个任务接收消息通知来控制<code>LED</code>​，1个任务通过2个按钮来发送消息通知，按钮控制释放信号量句柄，注意<code>ulTaskNotifyTake</code>​的使用，在自身句柄对应的<code>Task</code>​中调用</p>
+<p><strong>前置和代替消息队列相同</strong>​</p>
+<blockquote>
+<p>接收通知任务1</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Receive1_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//获取任务通知，没有则一直等待</span></span><br><span class="line">		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Receive1_Task 任务通知获取成功\r\n&quot;</span>);</span><br><span class="line">		LED0_Turn();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>接收通知任务2</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Receive2_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Receive2_Task 任务通知获取成功\r\n&quot;</span>);</span><br><span class="line">		LED7_Turn();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>发送通知任务</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Send_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn=pdPASS;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN1)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			xReturn = xTaskNotifyGive(Receive1_Task_Handle);</span><br><span class="line">			<span class="keyword">if</span> (xReturn==pdTRUE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;Receive1_Task 任务释放成功\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN2)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			xReturn = xTaskNotifyGive(Receive2_Task_Handle);</span><br><span class="line">			<span class="keyword">if</span> (xReturn == pdTRUE)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;Receive2_Task 任务释放成功\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">		vTaskDelay(<span class="number">20</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>按下<code>BTN1</code>​后，通信接收任务1，<code>LED0</code>​亮，按下<code>BTN2</code>​后，通信接收任务2，<code>LED7</code>​亮</p>
+</blockquote>
+<h3 id="代替计数信号量"><a href="#代替计数信号量" class="headerlink" title="代替计数信号量"></a>代替计数信号量</h3><p>创建2个任务，1个用于等待通知，申请车位。另一个用于释放信号量，释放车位。</p>
+<blockquote>
+<p>接收、发送通知句柄，创建一个引用，并不是创建一个真实的消息通知</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//任务通知-计数信号量替代</span></span><br><span class="line"><span class="type">static</span> TaskHandle_t Take_Task_Handle=<span class="literal">NULL</span>;</span><br><span class="line"><span class="type">static</span> TaskHandle_t Give_Task_Handle=<span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>申请车位</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Take_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">uint32_t</span> take_num=pdPASS;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(Key_BTN(BTN1)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//没获取到，就一直等待</span></span><br><span class="line">			take_num=ulTaskNotifyTake(pdFALSE,<span class="number">0</span>);</span><br><span class="line">			<span class="keyword">if</span> (take_num&gt;<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;成功申请到车位，当前车位%d\r\n&quot;</span>,take_num<span class="number">-1</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;KEY1按下，无多余车位。请按下KEY2释放车位\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>释放车位</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">Give_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	BaseType_t xReturn = pdPASS;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (Key_BTN(BTN2)==KEY_ON)</span><br><span class="line">		&#123;</span><br><span class="line">			xReturn = xTaskNotifyGive(Take_Task_Handle);</span><br><span class="line">			<span class="keyword">if</span> (xReturn==pdPASS)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;KEY2按下，释放一个车位\r\n&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">	</span><br><span class="line">		&#125;</span><br><span class="line">		vTaskDelay(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>按下<code>KEY1</code>​，无车位；按下<code>KEY2</code>​2次释放2个车位，再按下<code>KEY1</code>​申请2个车位</p>
+</blockquote>
+<h3 id="代替事件组"><a href="#代替事件组" class="headerlink" title="代替事件组"></a>代替事件组</h3><p>创建2个任务，一个任务用于监听事件，一个任务用于控制<code>BTN1</code>​和<code>BTN2</code>​来触发事件</p>
+<blockquote>
+<p>事件组句柄，创建一个引用，并不是创建一个真实的事件组</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//事件组代替</span></span><br><span class="line"><span class="type">static</span> TaskHandle_t LED7_Task_Handle=<span class="literal">NULL</span>;</span><br><span class="line"><span class="type">static</span> TaskHandle_t KEY_Task_Handle=<span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//事件句柄</span></span><br><span class="line"><span class="type">static</span> EventGroupHandle_t Event_Handle=<span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> KEY1_EVENT (0x01 &lt;&lt; 0)		<span class="comment">//设置掩码的位0</span></span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>创建一个真实的事件组</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Event_Handle = xEventGroupCreate();</span><br><span class="line"><span class="keyword">if</span> (Event_Handle!=<span class="literal">NULL</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;事件组句柄创建成功\r\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>LED灯任务</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">LED7_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">uint32_t</span> r_event=<span class="number">0</span>;</span><br><span class="line">	<span class="type">uint32_t</span> last_event=<span class="number">0</span>;</span><br><span class="line">	BaseType_t xReturn=pdPASS;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		xReturn = xTaskNotifyWait(<span class="number">0x0</span>,				<span class="comment">//进去函数不清除任务Bit</span></span><br><span class="line">					ULONG_MAX,			<span class="comment">//退出函数清除所有bit</span></span><br><span class="line">					&amp;r_event,			<span class="comment">//保存任务通知值</span></span><br><span class="line">					portMAX_DELAY);			<span class="comment">//阻塞时间</span></span><br><span class="line">		<span class="keyword">if</span> (xReturn == pdPASS)</span><br><span class="line">		&#123;</span><br><span class="line">			last_event |= r_event;</span><br><span class="line">			<span class="keyword">if</span> (last_event == (KEY1_EVENT|KEY2_EVENT))</span><br><span class="line">			&#123;</span><br><span class="line">				last_event=<span class="number">0</span>;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;KEY1和KEY2都按下\r\n&quot;</span>);</span><br><span class="line">				LED7_Turn();</span><br><span class="line">			&#125;<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				last_event=r_event;</span><br><span class="line">			&#125;</span><br><span class="line">	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>KEY任务</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">KEY_Task</span><span class="params">(<span class="type">void</span> *paramter)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;	</span><br><span class="line">		<span class="keyword">if</span>( Key_BTN(BTN1) == <span class="number">0</span> )</span><br><span class="line">		&#123;<span class="comment">/* K1 被按下 */</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;K1 被按下\r\n&quot;</span>);</span><br><span class="line">			xTaskNotify(LED7_Task_Handle,	<span class="comment">//任务句柄</span></span><br><span class="line">				KEY1_EVENT,		<span class="comment">//需要触发的事件</span></span><br><span class="line">				eSetBits);		<span class="comment">//设置通知的值</span></span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">if</span>( Key_BTN(BTN2) == <span class="number">0</span>  )</span><br><span class="line">		&#123;<span class="comment">/* K2 被按下 */</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;K2 被按下\r\n&quot;</span>);</span><br><span class="line">			xTaskNotify(LED7_Task_Handle,</span><br><span class="line">				KEY2_EVENT,</span><br><span class="line">				eSetBits);</span><br><span class="line">		&#125;</span><br><span class="line">		vTaskDelay(<span class="number">20</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>按下<code>BTN1</code>​，设置事件1，按下<code>BTN2</code>​，设置事件2，触发<code>LED</code>​事件</p>
+</blockquote>
+<p>‍</p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-07T16:17:42+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年7月7日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STM32/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>STM32</p></a></div>
+  <span hidden itemprop="keywords">STM32</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/07/07/FreeRTOS-07-%E4%BB%BB%E5%8A%A1%E9%80%9A%E7%9F%A5/&title=FreeRTOS-07-任务通知 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/07/07/FreeRTOS-07-%E4%BB%BB%E5%8A%A1%E9%80%9A%E7%9F%A5/&title=FreeRTOS-07-任务通知 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/07/07/FreeRTOS-07-%E4%BB%BB%E5%8A%A1%E9%80%9A%E7%9F%A5/&title=FreeRTOS-07-任务通知 - 我的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/07/05/FreeRTOS-06-%E8%BD%AF%E4%BB%B6%E5%AE%9A%E6%97%B6%E5%99%A8/'>
+          <p class='title'>FreeRTOS-06-软件定时器<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>软件定时器软件定时器是一种基于硬件定时器的资源利用手段，相当于扩展了定时器数量。
+
+允许开启关闭软件定时
+创建软件定时
+启动软件定时
+停止软件定时
+复位软件定时
+删除软件定时
+
+软件定时运行机制...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2974,158 +2933,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">我的博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:519033432@qq.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/kirigayakazima"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=551934240"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"
-            active-action="action-categoriesE58D95E78987E69CBA"
-            ><div class='name'>单片机</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" href="/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"
-            active-action="action-categoriesE5AE9EE794A8E5B7A5E585B7"
-            ><div class='name'>实用工具</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E5%AD%97IC/" href="/categories/%E6%95%B0%E5%AD%97IC/"
-            active-action="action-categoriesE695B0E5AD97IC"
-            ><div class='name'>数字IC</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%97IC/%E5%B8%B8%E8%A7%81%E5%99%A8%E4%BB%B6/" href="/categories/%E6%95%B0%E5%AD%97IC/%E5%B8%B8%E8%A7%81%E5%99%A8%E4%BB%B6/"
-            active-action="action-categoriesE695B0E5AD97ICE5B8B8E8A781E599A8E4BBB6"
-            ><div class='name'>常见器件</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%97IC/%E6%95%B0%E7%94%B5/" href="/categories/%E6%95%B0%E5%AD%97IC/%E6%95%B0%E7%94%B5/"
-            active-action="action-categoriesE695B0E5AD97ICE695B0E794B5"
-            ><div class='name'>数电</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" href="/categories/%E6%95%B0%E5%AD%97IC/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/"
-            active-action="action-categoriesE695B0E5AD97ICE99D99E68081E697B6E5BA8FE58886E69E90"
-            ><div class='name'>静态时序分析</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B5%8B%E8%AF%95/" href="/categories/%E6%B5%8B%E8%AF%95/"
-            active-action="action-categoriesE6B58BE8AF95"
-            ><div class='name'>测试</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
-            active-action="action-categoriesE6B7B1E5BAA6E5ADA6E4B9A0"
-            ><div class='name'>深度学习</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/51%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 20px; color: #707070">51单片机</a> <a href="/tags/FIFO/" style="font-size: 14px; color: #999">FIFO</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/STM32/" style="font-size: 22px; color: #636363">STM32</a> <a href="/tags/TCL/" style="font-size: 14px; color: #999">TCL</a> <a href="/tags/Verilog/" style="font-size: 16px; color: #8b8b8b">Verilog</a> <a href="/tags/pandas/" style="font-size: 14px; color: #999">pandas</a> <a href="/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" style="font-size: 14px; color: #999">实用工具</a> <a href="/tags/%E5%B8%B8%E8%A7%81%E5%99%A8%E4%BB%B6/" style="font-size: 14px; color: #999">常见器件</a> <a href="/tags/%E6%95%B0%E5%AD%97IC/" style="font-size: 24px; color: #555">数字IC</a> <a href="/tags/%E6%95%B0%E7%94%B5/" style="font-size: 14px; color: #999">数电</a> <a href="/tags/%E6%97%B6%E5%BA%8F/" style="font-size: 14px; color: #999">时序</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E5%8C%BA/" style="font-size: 14px; color: #999">测试区</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90/" style="font-size: 18px; color: #7e7e7e">静态时序分析</a>
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E9%80%9A%E7%9F%A5"><span class="toc-text">任务通知</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E9%80%9A%E7%9F%A5%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-text">任务通知运行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E9%80%9A%E7%9F%A5%E5%B8%B8%E8%A7%81%E5%87%BD%E6%95%B0"><span class="toc-text">任务通知常见函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E6%9B%BF%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="toc-text">代替消息队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E6%9B%BF%E4%BA%8C%E5%80%BC%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="toc-text">代替二值信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E6%9B%BF%E8%AE%A1%E6%95%B0%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="toc-text">代替计数信号量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E6%9B%BF%E4%BA%8B%E4%BB%B6%E7%BB%84"><span class="toc-text">代替事件组</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3153,13 +3002,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3168,14 +3018,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -3752,6 +3602,73 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
+        <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = "https://unpkg.com/volantis-static@0.0.1654736714924/libs/mathjax/es5/tex-mml-chtml.js";
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typesetPromise();
+  }
+</script>
+
+        <script>
+  // https://www.micdz.cn/article/katex-on-volantis/
+  if (typeof renderMathInElement == "undefined") {
+    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/katex.min.css")
+    function pjax_katex() {
+      volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/contrib/auto-render.min.js").then(()=>{
+        renderMathInElement(document.body);
+      })
+    }
+    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/katex/katex.min.js").then(pjax_katex)
+    volantis.pjax.push(pjax_katex)
+  }
+</script>
+
+
 </pjax>
 
 <script>
@@ -3883,7 +3800,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"个人博客、kirigayakazima"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"我的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/单片机/","name":"单片机"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/07/07/FreeRTOS-07-任务通知/","name":"FreeRTOS-07-任务通知"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"我的博客","url":"http://example.com/","keywords":null,"description":"个人博客、kirigayakazima","author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"个人博客、kirigayakazima"},"publisher":{"@type":"Organization","name":"我的博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"FreeRTOS-07-任务通知","description":"个人博客、kirigayakazima","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/07/07/FreeRTOS-07-%E4%BB%BB%E5%8A%A1%E9%80%9A%E7%9F%A5/"},"author":{"@type":"Person","name":"xuaner","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"我的博客","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/07/07/FreeRTOS-07-%E4%BB%BB%E5%8A%A1%E9%80%9A%E7%9F%A5/","wordCount":0,"datePublished":"2023-07-07T08:17:19.000Z","dateModified":"2023-07-07T08:17:42.215Z","articleSection":"单片机","keywords":"STM32","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
