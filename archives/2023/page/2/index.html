@@ -1788,7 +1788,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1689581118498),
+    lastupdate: new Date(1689581154441),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2591,83 +2591,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <section class="post-list">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/30/FreeRTOS-02-任务管理/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="我的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="我的博客">
-    <meta itemprop="description" content="个人博客、kirigayakazima">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/"  itemprop="url">
-        FreeRTOS-02-任务管理
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        任务管理系统中任务运行调度方式
-每个任务都是在独立的堆栈环境运行，运行的任务越多需要的堆栈空间越多。
-
-任务之间的切换是基于抢占优先级的，高优先级抢占低优先级
-
-任务切换的寻找方式
-
-基于链表，从高往低查，任务创建时已经完成排序
-计算前导零指令CLZ​，直接读出优先级任务(stm32​使用这种方式)
-
-
-相同优先级任务则采用时间片轮转，无更高优先级任务情况下。
-
-
-任务状态创建的任务一般有四...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-06-30T10:23:38+08:00">2023-06-30</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url"><span itemprop="name">单片机</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/06/30/FreeRTOS-02-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
       
         
           <div class='post-wrapper'>
