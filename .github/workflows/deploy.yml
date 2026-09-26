@@ -43,6 +43,9 @@ jobs:
                   # Hexo 会忽略 source 下的点文件，所以 .nojekyll 只能在构建后补。
                   # 有了它 GitHub Pages 才会跳过 Jekyll 二次处理。
                   touch public/.nojekyll
+                  # main 分支是构建产物，README 必须随产物一起发布，
+                  # 否则下次 force push 会把它覆盖掉，仓库首页就看不到说明了。
+                  cp README.md public/README.md
 
             - name: Sanity check
               # 产物必须存在且日期路径正确，否则不发布（避免把线上推成空站或错日期）
@@ -51,6 +54,7 @@ jobs:
                   test -s public/index.html
                   test -s public/404.html
                   test -f public/.nojekyll
+                  test -s public/README.md
                   echo "HTML pages: $(find public -name '*.html' | wc -l)"
                   echo "Images:     $(find public/images -type f | wc -l)"
 
