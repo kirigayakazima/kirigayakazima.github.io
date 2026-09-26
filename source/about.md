@@ -7,6 +7,11 @@ date: 2026-09-25
 
 <div class="note quote"><p>欢迎你</p></div>
 
+## 博客地址
+
+- 主页：[https://kirigayakazima.github.io/](https://kirigayakazima.github.io/)
+- 归档：[https://kirigayakazima.github.io/archives/](https://kirigayakazima.github.io/archives/)
+
 ## 关于我
 
 我是 **玄儿 (xuaner)**，热爱技术的开发者。
@@ -17,8 +22,9 @@ date: 2026-09-25
 
 ## 联系方式
 
-- GitHub: [kirigayakazima](https://github.com/kirigayakazima)
+- 博客主页：[kirigayakazima.github.io](https://kirigayakazima.github.io/)
+- GitHub：[kirigayakazima](https://github.com/kirigayakazima)
 
 ## 关于博客
 
-记录学习笔记与实践踩坑，使用 Hexo + Butterfly 构建，部署在 GitHub Pages。
+记录学习笔记与实践踩坑，使用 Hexo + Volantis 构建，部署在 GitHub Pages。

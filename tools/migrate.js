@@ -55,10 +55,10 @@ function extractBody(html) {
   return null;
 }
 
-/** 清理 Volantis 特有、会与 Butterfly 冲突的标记 */
+/** 清理旧站 HTML 里多余、会影响新站渲染的标记 */
 function cleanBody(html) {
   return html
-    // Volantis 的空标题锚点，Butterfly 会自己生成
+    // 原站残留的空标题锚点（<a class="headerlink"></a>），无内容且无意义
     .replace(/<a\s+[^>]*class=["']headerlink["'][^>]*>\s*?<\/a>/g, '')
     // lazyload 占位 srcset 会让浏览器选中 1x1 透明图，必须去掉
     .replace(/\s+(?:data-srcset|srcset|data-src)=["'][^"']*["']/g, '')
@@ -137,6 +137,11 @@ const pages = [
   ['about', '关于', `
 <div class="note quote"><p>欢迎你</p></div>
 
+## 博客地址
+
+- 主页：[https://kirigayakazima.github.io/](https://kirigayakazima.github.io/)
+- 归档：[https://kirigayakazima.github.io/archives/](https://kirigayakazima.github.io/archives/)
+
 ## 关于我
 
 我是 **玄儿 (xuaner)**，热爱技术的开发者。
@@ -147,11 +152,12 @@ const pages = [
 
 ## 联系方式
 
-- GitHub: [kirigayakazima](https://github.com/kirigayakazima)
+- 博客主页：[kirigayakazima.github.io](https://kirigayakazima.github.io/)
+- GitHub：[kirigayakazima](https://github.com/kirigayakazima)
 
 ## 关于博客
 
-记录学习笔记与实践踩坑，使用 Hexo + Butterfly 构建，部署在 GitHub Pages。
+记录学习笔记与实践踩坑，使用 Hexo + Volantis 构建，部署在 GitHub Pages。
 `],
   ['categories', '分类', ''],
   ['tags', '标签', ''],
