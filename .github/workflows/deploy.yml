@@ -37,7 +37,12 @@ jobs:
               run: npm ci
 
             - name: Build
-              run: npx hexo clean && npx hexo generate
+              run: |
+                  npx hexo clean
+                  npx hexo generate
+                  # Hexo 会忽略 source 下的点文件，所以 .nojekyll 只能在构建后补。
+                  # 有了它 GitHub Pages 才会跳过 Jekyll 二次处理。
+                  touch public/.nojekyll
 
             - name: Sanity check
               # 产物必须存在且日期路径正确，否则不发布（避免把线上推成空站或错日期）
@@ -45,6 +50,7 @@ jobs:
                   set -e
                   test -s public/index.html
                   test -s public/404.html
+                  test -f public/.nojekyll
                   echo "HTML pages: $(find public -name '*.html' | wc -l)"
                   echo "Images:     $(find public/images -type f | wc -l)"
 
