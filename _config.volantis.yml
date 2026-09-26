@@ -1,0 +1,868 @@
+# Volantis 主题配置 —— 由 tools/gen-config.js 从旧站反推生成
+# 默认值见 node_modules/hexo-theme-volantis/_config.yml
+# 重新生成: npm run config
+info:
+  theme_name: Volantis
+  theme_docs: https://volantis.js.org/
+  theme_repo: https://github.com/volantis-x/hexo-theme-volantis
+debug: false
+default:
+  avatar: volantis-static/media/placeholder/avatar/round/3442075.svg
+  link: volantis-static/media/placeholder/link/8f277b4ee0ecd.svg
+  cover: volantis-static/media/placeholder/cover/76b86c0226ffd.svg
+  image: volantis-static/media/placeholder/image/2659360.svg
+csp:
+  enable: true
+  content: " default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; "
+cdn:
+  enable: false
+  set:
+    js:
+      app: /js/app.js
+    css:
+      style: /css/style.css
+cdn_version: true
+volantis_static_cdn: https://unpkg.com/volantis-static@0.0.1654736714924/
+replace:
+  - https://cdn.jsdelivr.net/npm/ => https://unpkg.com/
+  - https://cdn.jsdelivr.net/gh/ => https://fastly.jsdelivr.net/gh/
+dns_prefetch:
+  - https://unpkg.com
+scroll_smooth: true
+navbar:
+  visiable: auto
+  logo:
+    img: https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+  menu:
+    - name: 博客
+      icon: fa-solid fa-rss
+      url: /
+    - name: 分类
+      icon: fa-solid fa-folder-open
+      url: categories/
+    - name: 标签
+      icon: fa-solid fa-tags
+      url: tags/
+    - name: 归档
+      icon: fa-solid fa-archive
+      url: archives/
+    - name: 友链
+      icon: fa-solid fa-link
+      url: friends/
+    - name: 关于
+      icon: fa-solid fa-info-circle
+      url: about/
+  search: 搜内容
+cover:
+  height_scheme: full
+  layout_scheme: search
+  display:
+    home: true
+    archive: true
+    others: false
+  background: https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg
+  title: 玄儿的小世界
+  subtitle: ""
+  search: 搜内容
+  features:
+    - name: 文档
+      url: /
+    - name: 分类
+      url: categories/
+    - name: 标签
+      url: tags/
+    - name: 归档
+      url: archives/
+    - name: 友链
+      url: friends/
+    - name: 关于
+      url: about/
+pages:
+  friends:
+    layout_scheme: traditional
+article:
+  preview:
+    scheme: landscape
+    pin_icon: volantis-static/media/twemoji/assets/svg/1f4cc.svg
+    auto_title: true
+    auto_excerpt: true
+    hide_excerpt: false
+    line_style: solid
+    author: false
+    readmore: auto
+  body:
+    top_meta:
+      - author
+      - category
+      - date
+      - counter
+    bottom_meta:
+      - updated
+      - tags
+      - share
+    footer_widget:
+      references:
+        title: 参考资料
+        icon: fa-solid fa-quote-left
+      related_posts:
+        enable: false
+        title: 相关文章
+        icon: fa-solid fa-bookmark
+        max_count: 5
+        placeholder_img: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
+      copyright:
+        enable: true
+        permalink: 本文永久链接是：
+        content:
+          - 博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议
+          - permalink
+      donate:
+        enable: false
+        images:
+          - volantis-static/media/org.volantis/blog/qrcode/github@volantis.png
+          - volantis-static/media/org.volantis/blog/qrcode/github@volantis.png
+    meta_library:
+      author:
+        avatar: volantis-static/media/org.volantis/blog/favicon/apple-touch-icon.png
+        name: 请设置文章作者
+        url: /
+      date:
+        icon: fa-solid fa-calendar-alt
+        title: 发布于：
+        format: ll
+      updated:
+        icon: fa-solid fa-edit
+        title: 更新于：
+        format: ll
+      category:
+        icon: fa-solid fa-folder-open
+      counter:
+        icon: fa-solid fa-eye
+        unit: 次浏览
+      walinecount:
+        icon: fa-solid fa-comment-dots
+        desc: 条评论
+      artalkcount:
+        icon: fa-solid fa-comment-dots
+        desc: 条评论
+      wordcount:
+        icon_wordcount: fa-solid fa-keyboard
+        icon_duration: fa-solid fa-hourglass-half
+      tags:
+        icon: fa-solid fa-hashtag
+      share:
+        - id: qq
+          img: volantis-static/media/org.volantis/logo/128/qq.png
+        - id: qzone
+          img: volantis-static/media/org.volantis/logo/128/qzone.png
+        - id: weibo
+          img: volantis-static/media/org.volantis/logo/128/weibo.png
+        - {}
+        - {}
+comments:
+  title: <i class='fa-solid fa-comments'></i> 评论
+  service: giscus
+  artalk:
+    js: https://yours-artalk-domain/dist/Artalk.js
+    css: https://yours-artalk-domain/dist/Artalk.css
+    server: https://yours-artalk-domain
+    imgUploader: {}
+  giscus:
+    theme:
+      light: light
+      dark: dark
+  beaudar:
+    repo: xxx/xxx
+    issue-term: pathname
+    branch: main
+    position: top
+    order: desc
+    theme:
+      light: github-light
+      dark: github-dark
+    label: ✨💬✨
+  utterances:
+    repo: xxx/xxx
+    issue-term: pathname
+    theme:
+      light: github-light
+      dark: github-dark
+    label: ✨💬✨
+  disqus:
+    autoload: false
+  disqusjs:
+    js: https://unpkg.com/disqusjs@1.3/dist/disqus.js
+    css: https://unpkg.com/disqusjs@1.3/dist/disqusjs.css
+  gitalk:
+    js: https://unpkg.com/gitalk@1/dist/gitalk.min.js
+  vssue:
+    js: https://cdn.jsdelivr.net/gh/meteorlxy/vssue@1.4.4/packages/vssue/dist/vssue.github.min.js
+    css: https://cdn.jsdelivr.net/gh/meteorlxy/vssue@1.4.4/packages/vssue/dist/vssue.min.css
+    vue: https://cdn.jsdelivr.net/gh/vuejs/vue@2.6.11/dist/vue.runtime.min.js
+  livere: {}
+  isso:
+    url: https://example.com/(path/)
+    src: https://example.com/(path/)js/embed.min.js
+  hashover:
+    src: https://example.com/(path/)comments.php
+  twikoo:
+    js: https://unpkg.com/twikoo@latest
+    envId: xxxxxxxxxxxxxxx
+  waline:
+    js: https://unpkg.com/@waline/client@v2/dist/waline.js
+    css: https://unpkg.com/@waline/client@v2/dist/waline.css
+    imageUploader: {}
+    pageview: true
+    comment: true
+  discuss:
+    js: https://cdn.jsdelivr.net/npm/discuss/dist/Discuss.js
+sidebar:
+  position: right
+  for_page:
+    - blogger
+    - category
+    - tagcloud
+  for_post:
+    - toc
+  widget_library:
+    blogger:
+      class: blogger
+      display:
+        - desktop
+        - mobile
+      avatar: https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg
+      shape: rectangle
+      url: /about/
+      jinrishici: true
+      social:
+        - icon: fa-solid fa-envelope
+          url: mailto:519033432@qq.com
+        - icon: fab fa-github
+          url: https://github.com/kirigayakazima
+        - icon: fa-solid fa-headphones-alt
+          url: https://music.163.com/#/user/home?id=551934240
+    toc:
+      class: toc
+      display:
+        - desktop
+        - mobile
+      header:
+        icon: fa-solid fa-list
+        title: 本文目录
+      list_number: false
+      min_depth: 2
+      max_depth: 5
+    music:
+      class: music
+      display:
+        - desktop
+        - mobile
+      pjaxReload: false
+    category:
+      class: category
+      display:
+        - desktop
+      header:
+        icon: fa-solid fa-folder-open
+        title: 文章分类
+        url: /blog/categories/
+    tagcloud:
+      class: tagcloud
+      display:
+        - desktop
+        - mobile
+      header:
+        icon: fa-solid fa-tags
+        title: 热门标签
+        url: /blog/tags/
+      min_font: 14
+      max_font: 24
+      color: true
+      start_color: "#999"
+      end_color: "#555"
+    qrcode:
+      class: qrcode
+      display:
+        - desktop
+        - mobile
+      height: 64px
+      images:
+        - volantis-static/media/org.volantis/blog/qrcode/github@volantis.png
+        - volantis-static/media/org.volantis/blog/qrcode/github@volantis.png
+    webinfo:
+      class: webinfo
+      display:
+        - desktop
+      header:
+        icon: fa-solid fa-award
+        title: 站点信息
+      type:
+        article:
+          enable: true
+          text: 文章数目：
+          unit: 篇
+        runtime:
+          enable: true
+          data: 2022/11/26
+          text: 已运行时间：
+          unit: 天
+        wordcount:
+          enable: true
+          text: 本站总字数：
+          unit: 字
+        visitcounter:
+          siteuv:
+            enable: true
+            text: 本站访客数：
+            unit: 人
+          sitepv:
+            enable: true
+            text: 本站总访问量：
+            unit: 次
+        lastupd:
+          enable: true
+          friendlyShow: true
+          text: 最后活动时间：
+          unit: 日
+    lastupdate:
+      class: lastupdate
+      display:
+        - desktop
+        - mobile
+      header:
+        icon: fa-solid fa-clock WISTERIA
+        title: 最近更新
+tag_plugins:
+  note:
+    icon: \f054
+    color: ""
+    iconfont: Font Awesome 6 Free
+  checkbox:
+    interactive: false
+    color: ""
+  link:
+    placeholder: volantis-static/media/org.volantis/logo/256/safari.png
+site_footer:
+  layout:
+    - aplayer
+    - social
+    - license
+    - copyright
+  social:
+    - icon: fa-solid fa-envelope
+      url: mailto:519033432@qq.com
+    - icon: fab fa-github
+      url: https://github.com/kirigayakazima
+    - icon: fa-solid fa-headphones-alt
+      url: https://music.163.com/#/user/home?id=551934240
+  source: https://github.com/kirigayakazima/kirigayakazima.github.io/
+  analytics: >
+    <span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw"
+    aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin
+    fa-fw" aria-hidden="true"></i></span> 人</span>
+  copyright: "[Copyright © 2023-2026 by清羽玄儿](/)"
+  br: <br>
+plugins:
+  globalJquery: false
+  jquery: volantis-static/libs/jquery/dist/jquery.min.js
+  fontawesome: volantis-static/libs/@fortawesome/fontawesome-free/css/all.min.css
+  katex:
+    js: volantis-static/libs/katex/katex.min.js
+    css: volantis-static/libs/katex/katex.min.css
+    render: volantis-static/libs/katex/contrib/auto-render.min.js
+  mathjax: volantis-static/libs/mathjax/es5/tex-mml-chtml.js
+  markdown: volantis-static/libs/github-markdown-css/github-markdown.css
+  marked: volantis-static/libs/marked/marked.min.js
+  hlsjs: volantis-static/libs/hls.js/dist/hls.min.js
+  fancybox:
+    css: volantis-static/libs/@fancyapps/ui/dist/fancybox.css
+    js: volantis-static/libs/@fancyapps/ui/dist/fancybox.umd.js
+  sitesjs:
+    enable: true
+  friendsjs:
+    enable: true
+  contributorsjs:
+    enable: true
+  preload:
+    enable: true
+    service: flying_pages
+    instant_page: volantis-static/libs/instant_page/instant_page.js
+    flying_pages: volantis-static/libs/flying-pages/flying-pages.min.js
+  lazyload:
+    enable: true
+    js: volantis-static/libs/vanilla-lazyload/dist/lazyload.min.js
+    onlypost: false
+    blurIn: true
+  code_highlight: highlightjs
+  highlightjs:
+    copy_code: true
+  prismjs:
+    copy_code: true
+    js:
+      - https://unpkg.com/prismjs/components/prism-core.min.js
+      - https://unpkg.com/prismjs/plugins/autoloader/prism-autoloader.min.js
+      - https://unpkg.com/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+    css:
+      - https://unpkg.com/prismjs/themes/prism-dark.css
+      - https://unpkg.com/prismjs/plugins/line-numbers/prism-line-numbers.css
+  scrollreveal:
+    enable: true
+    js: volantis-static/libs/scrollreveal/dist/scrollreveal.min.js
+    distance: 32px
+    duration: 800
+    interval: 20
+    scale: 1
+  wordcount: {}
+  nodewaves:
+    css: volantis-static/libs/node-waves/dist/waves.min.css
+    js: volantis-static/libs/node-waves/dist/waves.min.js
+  fontawesome_animation:
+    css: volantis-static/libs/font-awesome-animation/font-awesome-animation.min.css
+  comment_typing:
+    js: volantis-static/libs/comment_typing/comment_typing.js
+  parallax:
+    position: cover
+    shuffle: true
+    duration: 10000
+    fade: 1500
+    images:
+      - volantis-static/media/wallpaper/minimalist/2020/001.webp
+      - volantis-static/media/wallpaper/minimalist/2020/002.webp
+      - volantis-static/media/wallpaper/minimalist/2020/003.webp
+      - volantis-static/media/wallpaper/minimalist/2020/004.webp
+      - volantis-static/media/wallpaper/minimalist/2020/005.webp
+      - volantis-static/media/wallpaper/minimalist/2020/006.webp
+      - volantis-static/media/wallpaper/minimalist/2020/012.webp
+      - volantis-static/media/wallpaper/minimalist/2020/016.webp
+      - volantis-static/media/wallpaper/minimalist/2020/019.webp
+      - volantis-static/media/wallpaper/minimalist/2020/025.webp
+      - volantis-static/media/wallpaper/minimalist/2020/033.webp
+      - volantis-static/media/wallpaper/minimalist/2020/034.webp
+      - volantis-static/media/wallpaper/minimalist/2020/035.webp
+      - volantis-static/media/wallpaper/minimalist/2020/038.webp
+      - volantis-static/media/wallpaper/minimalist/2020/039.webp
+      - volantis-static/media/wallpaper/minimalist/2020/042.webp
+      - volantis-static/media/wallpaper/minimalist/2020/046.webp
+      - volantis-static/media/wallpaper/minimalist/2020/051.webp
+      - volantis-static/media/wallpaper/minimalist/2020/052.webp
+      - volantis-static/media/wallpaper/minimalist/2020/054.webp
+      - volantis-static/media/wallpaper/minimalist/2020/056.webp
+  aplayer:
+    js:
+      aplayer: volantis-static/libs/aplayer/dist/APlayer.min.js
+      meting: volantis-static/libs/meting/dist/Meting.min.js
+    css: volantis-static/libs/aplayer/dist/APlayer.min.css
+    server: netease
+    type: playlist
+    id: 3175833810
+    fixed: false
+    theme: "#1BCDFC"
+    autoplay: false
+    order: list
+    loop: all
+    volume: 0.7
+    list_max_height: 320px
+    list_folded: true
+    autoHide: true
+  pjax:
+    js: volantis-static/libs/pjax/pjax.min.js
+    enable: true
+    cover: true
+    timeout: 5000
+    cacheBust: false
+    animation: false
+    nprogress: volantis-static/libs/nprogress/nprogress.js
+  darkmode:
+    enable: true
+  killOldVersionsOfIE:
+    enable: true
+  killNoScript:
+    enable: true
+  artitalk:
+    js: https://unpkg.com/artitalk
+    appId: ogP8qj3veMh0LFpFWMPOyF0X-MdYXbMMI
+    appKey: nHXLd3N3Jgh460t2iRQKWAtr
+  bbtalk:
+    js: https://unpkg.com/bbtalk@0.1.5/dist/bbtalk.js
+    appId: 0KzOX4vC7Jsk6vzUGNeEiUaI-gzGzoHsz
+    appKey: HwCiWuxfpvKiLm4teCUgTIba
+    serverURLs: https://bbapi.heson10.com
+  fcircle:
+    api: https://fcircle-api.example.com/
+    message: 与主机通讯中……
+    css: volantis-static/libs/fcircle/fcircle.css
+    js: volantis-static/libs/fcircle/fcircle.js
+  message:
+    enable: true
+    css: volantis-static/libs/izitoast/dist/css/iziToast.min.css
+    js: volantis-static/libs/izitoast/dist/js/iziToast.min.js
+    icon:
+      default: fa-solid fa-info-circle light-blue
+      quection: fa-solid fa-question-circle light-blue
+    time:
+      default: 5000
+      quection: 20000
+    position: topRight
+    transitionIn: bounceInLeft
+    transitionOut: fadeOutRight
+    titleColor: var(--color-text)
+    messageColor: var(--color-text)
+    backgroundColor: var(--color-card)
+    zindex: 2147483647
+    copyright:
+      enable: true
+      title: 知识共享许可协议
+      message: 请遵守 CC BY-NC-SA 4.0 协议。
+      icon: far fa-copyright light-blue
+    aplayer:
+      enable: true
+      play: fa-solid fa-play
+      pause: fa-solid fa-pause
+    rightmenu:
+      enable: true
+      notice: true
+  tidio:
+    id: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  gitter:
+    room: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  swiper:
+    enable: true
+    css: volantis-static/libs/swiper/swiper-bundle.min.css
+    js: volantis-static/libs/swiper/swiper-bundle.min.js
+rightmenus:
+  enable: true
+  order:
+    - plugins.navigation
+    - hr
+    - menus.darkMode
+    - plugins.articlePage
+    - music
+  options:
+    iconPrefix: fa-solid
+    articleShowLink: true
+    musicAlwaysShow: true
+  plugins:
+    navigation:
+      - id: left
+        name: 转到上一页
+        icon: fa-solid fa-arrow-left
+        event: history.back()
+        group: navigation
+      - id: right
+        name: 转到下一页
+        icon: fa-solid fa-arrow-right
+        event: history.forward()
+        group: navigation
+      - id: redo
+        name: 刷新当前页面
+        icon: fa-solid fa-redo
+        event: window.location.reload()
+        group: navigation
+      - id: up
+        name: 回到顶部
+        icon: fa-solid fa-arrow-up
+        event: VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)
+        group: navigation
+    inputBox:
+      - id: copyPaste
+        name: 粘贴文本
+        icon: fa-solid fa-paste
+        event: copyPaste
+        group: inputBox
+      - id: copyAll
+        name: 全选文本
+        icon: fa-solid fa-object-ungroup
+        event: copyAll
+        group: inputBox
+      - id: copyCut
+        name: 剪切文本
+        icon: fa-solid fa-cut
+        event: copyCut
+        group: inputBox
+    seletctText:
+      - id: copyText
+        name: 复制文本
+        icon: fa-solid fa-copy
+        event: copyText
+        group: seletctText
+      - id: searchWord
+        name: 站内搜索
+        icon: fa-solid fa-search
+        event: OpenSearch(__text__)
+        group: seletctText
+      - id: bingSearch
+        name: 必应搜索
+        icon: fa-solid fa-search
+        event: window.open(`https://cn.bing.com/search?q=${__text__}`)
+        group: seletctText
+    elementCheck:
+      - id: openTab
+        name: 新标签页打开
+        icon: fa-solid fa-external-link-square-alt
+        event: window.open(__link__)
+        group: elementCheck
+      - id: copyLink
+        name: 复制链接地址
+        icon: fa-solid fa-link
+        event: copyLink
+        group: elementCheck
+    elementImage:
+      - id: copyImg
+        name: 复制图片
+        icon: fa-solid fa-image
+        event: copyImg
+        group: elementImage
+      - id: googleImg
+        name: 谷歌识图
+        icon: fa-solid fa-images
+        event: window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)
+        group: elementImage
+    articlePage:
+      - id: printMode
+        name: 打印页面
+        icon: fa-solid fa-print
+        event: printMode
+        group: articlePage
+      - id: readMode
+        name: 阅读模式
+        icon: fa-solid fa-book-open
+        event: readMode
+        group: articlePage
+  menus:
+    link:
+      - id: help
+        name: 常见问题
+        icon: fa-solid fa-question
+        link: https://volantis.js.org/faqs/
+        group: link
+      - id: examples
+        name: 示例博客
+        icon: fa-solid fa-rss
+        link: https://volantis.js.org/examples/
+        group: link
+      - id: contributors
+        name: 加入社区
+        icon: fa-solid fa-fan
+        link: https://volantis.js.org/contributors/
+        group: link
+      - hr
+      - id: source_docs
+        name: 本站源码
+        icon: fa-solid fa-code-branch
+        link: https://github.com/volantis-x/volantis-docs/
+        group: link
+      - id: source_theme
+        name: 主题源码
+        icon: fa-solid fa-code-branch
+        link: https://github.com/volantis-x/hexo-theme-volantis/
+        group: link
+    darkMode:
+      - id: darkMode
+        name: 暗黑模式
+        icon: fa-solid fa-moon
+        event: volantis.dark.toggle()
+        group: darkMode
+rightmenu:
+  enable: false
+  faicon: fa
+  layout:
+    - home
+    - hr
+    - help
+    - examples
+    - contributors
+    - hr
+    - source_docs
+    - source_theme
+    - hr
+    - print
+    - darkmode
+    - reading
+    - music
+  print:
+    name: 打印页面
+    icon: fa fa-print
+  darkmode:
+    name: 暗黑模式
+    icon: fa fa-moon
+  reading:
+    name: 阅读模式
+    icon: fa fa-book-open
+  customPicUrl:
+    enable: false
+  music:
+    alwaysShow: true
+  help:
+    name: 常见问题
+    icon: fa fa-question
+    url: https://volantis.js.org/faqs/
+  examples:
+    name: 示例博客
+    icon: fa fa-rss
+    url: https://volantis.js.org/examples/
+  contributors:
+    name: 加入社区
+    icon: fa fa-fan fa-spin
+    url: https://volantis.js.org/contributors/
+  source_docs:
+    name: 本站源码
+    icon: fa fa-code-branch
+    url: https://github.com/volantis-x/volantis-docs/
+  source_theme:
+    name: 主题源码
+    icon: fa fa-code-branch
+    url: https://github.com/volantis-x/hexo-theme-volantis/
+search:
+  enable: true
+  service: hexo
+color_scheme:
+  common:
+    theme: "#3dd9b6"
+    link: "#2092ec"
+    button: "#44D7B6"
+    hover: "#ff5722"
+    inner: "#fff"
+    selection: alpha(#2196f3, 0.2)
+  light:
+    site_bg: "#f4f4f4"
+    site_inner: "#fff"
+    site_footer: "#666"
+    card: "#fff"
+    text: "#444"
+    block: "#f6f6f6"
+    codeblock: "#FFF7EA"
+    inlinecode: "#c74f00"
+    h1: "#3a3a3a"
+    h2: "#3a3a3a"
+    h3: "#333"
+    h4: "#444"
+    h5: "#555"
+    h6: "#666"
+    p: "#444"
+    list: "#666"
+    list_hl: "mix($color-theme, #000, 80)"
+    meta: "#888"
+  dark:
+    site_bd: "#121212"
+    site_bg: "#1f1f1f"
+    card: "#262626"
+    site_inner: "#eeeeeede"
+    site_footer: "#aaaaaade"
+    text: "#eeeeeede"
+    block: "#434343"
+    codeblock: "#1f1f1f"
+    inlinecode: "#D56D28"
+    h1: "#FFFFFFde"
+    h2: "#FFFFFFde"
+    h3: "#FFFFFF99"
+    h4: "#FFFFFF99"
+    h5: "#FFFFFF99"
+    h6: "#FFFFFF99"
+    p: "#d9d9d9de"
+    list: "#d9d9d9de"
+    list_hl: "mix($color-theme, #fff, 80)"
+    meta: "#bfbfbfde"
+    brightness: 70%
+custom_css:
+  cursor:
+    enable: true
+    text: volantis-static/media/cursor/text.png
+    pointer: volantis-static/media/cursor/pointer.png
+    default: volantis-static/media/cursor/left_ptr.png
+    not-allowed: volantis-static/media/cursor/circle.png
+    zoom-out: volantis-static/media/cursor/zoom-out.png
+    zoom-in: volantis-static/media/cursor/zoom-in.png
+    grab: volantis-static/media/cursor/openhand.png
+  font_smoothing: true
+  max_width: 1080px
+  scrollbar:
+    size: 4px
+    border: 2px
+  navbar:
+    height: 64px
+    width: auto
+    effect:
+      - shadow
+      - floatable
+      - blur
+  sidebar:
+    effect:
+      - shadow
+      - floatable
+      - blur
+  body:
+    effect:
+      - shadow
+      - floatable
+      - blur
+    highlight:
+      language: true
+      grayscale: false
+    text_align:
+      h1: left
+      h2: left
+      h3: left
+      h4: left
+      p: justify
+  gap:
+    h2: 48px
+    h3: 24px
+    h4: 16px
+    p: 1em
+    line_height: 1.6
+  border_radius:
+    card: 8px
+    codeblock: 4px
+    searchbar: 8px
+    button: 4px
+  fontsize:
+    root: 16px
+    h1: 1.5rem
+    h2: 1.5rem
+    h3: 1.25rem
+    h4: 1.125rem
+    h5: 1rem
+    h6: 1rem
+    list: .9375rem
+    meta: .875rem
+    code: .8125rem
+    footnote: .78125rem
+  fontfamily:
+    logofont:
+      fontfamily: "\"Varela Round\", \"PingFang SC\", \"Microsoft YaHei\", Helvetica, Arial"
+      name: Varela Round
+      url: volantis-static/media/fonts/VarelaRound/VarelaRound-Regular.ttf
+      weight: normal
+      style: normal
+    bodyfont:
+      fontfamily: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial
+      name: UbuntuMono
+      url: volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf
+      weight: normal
+      style: normal
+    codefont:
+      fontfamily: Menlo, UbuntuMono, Monaco
+analytics:
+  leancloud: {}
+seo:
+  use_tags_as_keywords: true
+  use_excerpt_as_description: true
+  robots:
+    home_first_page: index,follow
+    home_other_pages: noindex,follow
+    archive: noindex,follow
+    category: noindex,follow
+    tag: noindex,follow
+open_graph:
+  image: volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png
+  twitter_card: summary
+structured_data:
+  enable: true
+  data:
+    person:
+      sns:
+        - https://github.com/volantis-x
+    logo:
+      path: volantis-static/media/org.volantis/blog/favicon/android-chrome-192x192.png
+      width: 192
+      height: 192

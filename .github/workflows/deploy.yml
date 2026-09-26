@@ -1,0 +1,56 @@
+# 源码在 source 分支，push 后自动构建并发布到 main 分支（GitHub Pages 的发布源）
+name: Build & Deploy
+
+on:
+  push:
+    branches: [source]
+  workflow_dispatch: # 支持手动触发
+
+# 同一时间只允许一个部署，新的会取消旧的
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+permissions:
+  contents: write # 需要向 main 分支推送构建产物
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npx hexo clean && npx hexo generate
+
+      - name: Sanity check
+        # 构建产物必须包含首页和 404，否则不发布（避免把线上推成空站）
+        run: |
+          test -s public/index.html
+          test -s public/404.html
+          echo "HTML pages: $(find public -name '*.html' | wc -l)"
+          echo "Images:     $(find public/images -type f | wc -l)"
+
+      - name: Publish to main
+        run: |
+          cd public
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B main
+          git add -A
+          git commit -m "Deploy ${GITHUB_SHA}" --quiet
+          git push --force \
+            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
