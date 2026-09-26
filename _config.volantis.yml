@@ -32,7 +32,7 @@ scroll_smooth: true
 navbar:
   visiable: auto
   logo:
-    img: https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    img: /images/blog/Logo-NavBar@3x.png
   menu:
     - name: 博客
       icon: fa-solid fa-rss
@@ -60,7 +60,7 @@ cover:
     home: true
     archive: true
     others: false
-  background: https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg
+  background: /images/BlogImg202211261959533.jpg
   title: 玄儿的小世界
   subtitle: ""
   search: 搜内容
@@ -230,7 +230,7 @@ sidebar:
       display:
         - desktop
         - mobile
-      avatar: https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg
+      avatar: /images/BlogImg202211262024354.jpg
       shape: rectangle
       url: /about/
       jinrishici: true

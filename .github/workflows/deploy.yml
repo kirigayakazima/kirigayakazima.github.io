@@ -39,13 +39,9 @@ jobs:
             - name: Build
               run: |
                   npx hexo clean
-                  npx hexo generate
-                  # Hexo 会忽略 source 下的点文件，所以 .nojekyll 只能在构建后补。
-                  # 有了它 GitHub Pages 才会跳过 Jekyll 二次处理。
-                  touch public/.nojekyll
-                  # main 分支是构建产物，README 必须随产物一起发布，
-                  # 否则下次 force push 会把它覆盖掉，仓库首页就看不到说明了。
-                  cp README.md public/README.md
+                  # postbuild 补齐 .nojekyll 与 README.md（Hexo 忽略点文件、
+                  # 且 main 分支会被 force push 全量覆盖，README 必须随产物发布）
+                  npx hexo generate && node tools/postbuild.js
 
             - name: Sanity check
               # 产物必须存在且日期路径正确，否则不发布（避免把线上推成空站或错日期）

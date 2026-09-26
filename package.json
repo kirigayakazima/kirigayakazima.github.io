@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "hexo clean && hexo server",
-    "build": "hexo generate",
+    "build": "hexo generate && node tools/postbuild.js",
     "clean": "hexo clean",
     "server": "hexo server",
     "new": "hexo new",
     "deploy": "hexo deploy",
     "migrate": "node tools/migrate.js",
     "config": "node tools/gen-config.js",
-    "images": "node tools/download-images.js"
+    "images": "node tools/download-images.js",
+    "postbuild": "node tools/postbuild.js"
   },
   "hexo": {
     "version": "8.1.2"

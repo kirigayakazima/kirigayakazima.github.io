@@ -104,6 +104,9 @@ async function retry(url, times = 3) {
 // ── 收集所有外链 ────────────────────────────────────────
 /** 由本地路径反推原始外链（用于已改写过的引用） */
 function fromLocal(local) {
+  // about 页那张图：远端扩展名是 .bmp（内容实为 JPEG），本地按真实格式存成 .jpg
+  if (local === '/images/BlogImg202211261957203.jpg')
+    return 'https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261957203.bmp';
   if (/^\/images\/BlogImg\//.test(local))
     return 'https://raw.githubusercontent.com/kiyoriyuna/Image/main/' + local.slice('/images/'.length);
   if (/^\/images\/BlogImg\d+\./.test(local))
@@ -115,24 +118,32 @@ function fromLocal(local) {
   return null;
 }
 
-function collect() {
-  const targets = new Map(); // 当前文件里的字符串 -> [文件]
-  const files = [
-    ...fs.readdirSync(POSTS).filter(f => f.endsWith('.md')).map(f => path.join(POSTS, f)),
+/** 所有含图片引用的文件：文章 + 独立页面 + 站点/主题配置 */
+function imageBearingFiles() {
+  const md = (dir) =>
+    fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => path.join(dir, f)) : [];
+  return [
+    ...md(POSTS),          // source/_posts/*.md
+    ...md(path.resolve(POSTS, '..')), // source/*.md（about/friends 等页面）
     path.join(ROOT, '_config.yml'),
     path.join(ROOT, '_config.volantis.yml'),
   ];
+}
+
+function collect() {
+  const targets = new Map(); // 当前文件里的字符串 -> [文件]
+  const files = imageBearingFiles();
   for (const f of files) {
     if (!fs.existsSync(f)) continue;
     const txt = fs.readFileSync(f, 'utf8');
     // 1) 仍是外链的
-    for (const m of txt.matchAll(/https?:\/\/[^\s)"'<>\]]+\.(?:jpg|jpeg|png|gif|webp|svg|ico)/gi)) {
+    for (const m of txt.matchAll(/https?:\/\/[^\s)"'<>\]]+\.(?:jpg|jpeg|png|gif|webp|svg|ico|bmp)/gi)) {
       const url = m[0].replace(/[.,;]+$/, '');
       if (!targets.has(url)) targets.set(url, []);
       if (!targets.get(url).includes(f)) targets.get(url).push(f);
     }
     // 2) 已改写成本地路径的
-    for (const m of txt.matchAll(/\/images\/[^\s)"'<>\]]+\.(?:jpg|jpeg|png|gif|webp|svg|ico)/gi)) {
+    for (const m of txt.matchAll(/\/images\/[^\s)"'<>\]]+\.(?:jpg|jpeg|png|gif|webp|svg|ico|bmp)/gi)) {
       const local = m[0].replace(/[.,;]+$/, '');
       if (!fromLocal(local)) continue;
       if (!targets.has(local)) targets.set(local, []);
@@ -144,16 +155,14 @@ function collect() {
 
 // ── 撤销改写：把本地路径还原成原始外链 ──────────────────
 function revert() {
-  const map = new Map();
-  const files = [
-    ...fs.readdirSync(POSTS).filter(f => f.endsWith('.md')).map(f => path.join(POSTS, f)),
-    path.join(ROOT, '_config.yml'),
-    path.join(ROOT, '_config.volantis.yml'),
-  ];
+  const files = imageBearingFiles();
   for (const f of files) {
     if (!fs.existsSync(f)) continue;
     let txt = fs.readFileSync(f, 'utf8');
     const before = txt;
+    // 特例：about 页那张图本地是 .jpg，远端是 .bmp，必须先于通用规则匹配
+    txt = txt.replace(/\/images\/BlogImg202211261957203\.jpg/g,
+      'https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261957203.bmp');
     txt = txt.replace(/\/images\/(BlogImg\/[^"' )<]+)/g,
       'https://raw.githubusercontent.com/kiyoriyuna/Image/main/$1');
     txt = txt.replace(/\/images\/(BlogImg\d+\.[a-z]+)/gi,

@@ -26,7 +26,10 @@ const MENU = [
 ];
 
 // ── 首屏 cover（搜索版式：标题 + 搜索框 + 文本菜单） ──────
-const COVER_BG = 'https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211261959533.jpg';
+// 注意：图片一律用**本地路径**（已由 tools/download-images.js 下载到 source/images/）。
+// 这里若写外链，跑完 npm run config 后站内图片会重新依赖 raw.githubusercontent.com，
+// 国内网络下封面和头像会开天窗，还得再跑一次 npm run images 才能补救。
+const COVER_BG = '/images/BlogImg202211261959533.jpg';
 const FEATURES = [
   { name: '文档', url: '/' },
   { name: '分类', url: 'categories/' },
@@ -37,7 +40,7 @@ const FEATURES = [
 ];
 
 // ── 侧边栏 blogger 组件 ─────────────────────────────────
-const AVATAR = 'https://raw.githubusercontent.com/kiyoriyuna/Image/main/BlogImg202211262024354.jpg';
+const AVATAR = '/images/BlogImg202211262024354.jpg';
 const SOCIAL = [
   { icon: 'fa-solid fa-envelope', url: 'mailto:519033432@qq.com' },
   { icon: 'fab fa-github', url: 'https://github.com/kirigayakazima' },
@@ -49,7 +52,7 @@ const cfg = def;
 cfg.navbar = {
   visiable: 'auto',
   logo: {
-    img: 'https://gcore.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png',
+    img: '/images/blog/Logo-NavBar@3x.png',
     icon: null,
     title: null,
   },
