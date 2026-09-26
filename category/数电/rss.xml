@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>我的博客 • Posts by &#34;数电&#34; category</title>
+        <link>https://kirigayakazima.github.io</link>
+        <description>技术博客，分享嵌入式开发、数据结构、数字IC设计等技术内容</description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 08 Jan 2023 10:58:54 +0800</pubDate>
+        <lastBuildDate>Sun, 08 Jan 2023 10:58:54 +0800</lastBuildDate>
+        <category>51单片机</category>
+        <category>C语言基础</category>
+        <category>STM32</category>
+        <category>数字IC</category>
+        <category>FIFO</category>
+        <category>OLED</category>
+        <category>实用工具</category>
+        <category>Markdown</category>
+        <category>pandas</category>
+        <category>深度学习</category>
+        <category>数电</category>
+        <category>Verilog</category>
+        <category>常见器件</category>
+        <category>数据结构</category>
+        <category>TCL</category>
+        <category>静态时序分析</category>
+        <category>Linux</category>
+        <category>线性表</category>
+        <category>链表</category>
+        <category>测试区</category>
+        <category>时序</category>
+        <item>
+            <guid isPermalink="true">https://kirigayakazima.github.io/2023/01/08/%E5%89%8D%E7%AB%AFIC%E2%80%94%E2%80%94%E6%95%B0%E7%94%B5%E5%9F%BA%E7%A1%80/</guid>
+            <title>前端IC——数电基础</title>
+            <link>https://kirigayakazima.github.io/2023/01/08/%E5%89%8D%E7%AB%AFIC%E2%80%94%E2%80%94%E6%95%B0%E7%94%B5%E5%9F%BA%E7%A1%80/</link>
+            <category>数字IC</category>
+            <category>数电</category>
+            <pubDate>Sun, 08 Jan 2023 10:58:54 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;信息、编码和逻辑代数&#34;&gt;信息、编码和逻辑代数&lt;/h3&gt;&lt;p&gt;信息是用来消除不确定的东西✨&lt;/p&gt;
+&lt;p&gt;编码是一种映射或者描述关系。&lt;/p&gt;
+&lt;p&gt;常见编码：余三码、补码、反码、8421码、格雷码&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;反码：&lt;/strong&gt;除符号位外，按位取反&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;补码：&lt;/strong&gt;除符号位外，按位取反然后加1&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;正数的反码和补码都是其本身&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;逻辑代数计算：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(AB)’ = A’ + B’ &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(A + B)’ = A’B’&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;组合逻辑、时序逻辑电路&#34;&gt;组合逻辑、时序逻辑电路&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;组合逻辑电路&lt;/strong&gt;：是任意时刻的输出仅仅取决于当前时刻的输入，与电路之前的历史状态无关（即无记忆能力）&lt;/p&gt;
+&lt;p&gt;组合逻辑电路的设计通常包含以下几个步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进行逻辑抽象。分析事件的因果关系，确定输入变量和输出变量，列出输入变量和输出变量的逻辑真值表。&lt;/li&gt;
+&lt;li&gt;写出逻辑函数。将真值表转换为对应的逻辑函数式，或者直接画出卡诺图，然后使用第三章中介绍的卡诺图将逻辑函数进行化简。&lt;/li&gt;
+&lt;li&gt;根据化简后的逻辑函数，画出逻辑电路图。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;时序逻辑电路&lt;/strong&gt;：输出不仅取决于当前的输入，还取决于电路的历史状态。 因此我们需要一种元件能保存电路的状态信息。如果一个元件带有内部存储功能，它就包含状态，也称之为状态单元（State Element）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;锁存器&lt;/strong&gt;：锁存器在E的高(低)电平期间对信号敏感&lt;br&gt;&lt;strong&gt;触发器&lt;/strong&gt;：触发器在CP的上升沿(下降沿)对信号敏感&lt;br&gt;二者区别：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;具有0 和1两个稳定状态，一旦状态被确定，就能自行保持。一个锁存器或触发器能存储一位二进制码。&lt;/li&gt;
+&lt;li&gt;锁存器—对脉冲电平敏感的存储电路，在特定输入脉冲电平作用下改变状态。&lt;/li&gt;
+&lt;li&gt;触发器—对脉冲边沿敏感的存储电路，在时钟脉冲的上升沿或下降沿的变化瞬间改变状态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h3 id=&#34;亚稳态、稳定时间、保持时间&#34;&gt;亚稳态、稳定时间、保持时间&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;建立时间&lt;/strong&gt;：触发器在时钟上升沿到来之前，其数据输入端的数据必须保持不变的最小时间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;保持时间&lt;/strong&gt;：触发器在时钟上升沿到来之后，其数据输入端的数据必须保持不变的最小时间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建立时间裕量&lt;/strong&gt;：如果数据信号在时钟边沿触发之前的持续时间要大于建立时间Tsu，那么超出的部分时间即为建立时间裕量。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;保持时间裕量&lt;/strong&gt;：如果数据信号在时钟边沿触发之后的保持时间要大于保持时间Thd，那么超出的部分时间即为保持时间裕量。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+ ]]></description>
+        </item>
+    </channel>
+</rss>

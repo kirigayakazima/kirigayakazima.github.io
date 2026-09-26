@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kirigayakazima.github.io</id>
+    <title>我的博客 • Posts by &#34;测试&#34; category</title>
+    <link href="https://kirigayakazima.github.io" />
+    <updated>2022-11-26T04:41:21.000Z</updated>
+    <category term="51单片机" />
+    <category term="C语言基础" />
+    <category term="STM32" />
+    <category term="数字IC" />
+    <category term="FIFO" />
+    <category term="OLED" />
+    <category term="实用工具" />
+    <category term="Markdown" />
+    <category term="pandas" />
+    <category term="深度学习" />
+    <category term="数电" />
+    <category term="Verilog" />
+    <category term="常见器件" />
+    <category term="数据结构" />
+    <category term="TCL" />
+    <category term="静态时序分析" />
+    <category term="Linux" />
+    <category term="线性表" />
+    <category term="链表" />
+    <category term="测试区" />
+    <category term="时序" />
+    <entry>
+        <id>https://kirigayakazima.github.io/2022/11/26/%E6%B5%8B%E8%AF%95/</id>
+        <title>测试博客</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2022/11/26/%E6%B5%8B%E8%AF%95/"/>
+        <content type="html">&lt;p&gt;测试volantis主题博客运行状态&lt;/p&gt;
+
+</content>
+        <category term="测试区" />
+        <updated>2022-11-26T04:41:21.000Z</updated>
+    </entry>
+</feed>

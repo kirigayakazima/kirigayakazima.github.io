@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>我的博客 • Posts by &#34;实用工具&#34; tag</title>
+        <link>https://kirigayakazima.github.io</link>
+        <description>技术博客，分享嵌入式开发、数据结构、数字IC设计等技术内容</description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 04 Dec 2022 12:20:02 +0800</pubDate>
+        <lastBuildDate>Sun, 04 Dec 2022 12:20:02 +0800</lastBuildDate>
+        <category>51单片机</category>
+        <category>C语言基础</category>
+        <category>STM32</category>
+        <category>数字IC</category>
+        <category>FIFO</category>
+        <category>OLED</category>
+        <category>实用工具</category>
+        <category>Markdown</category>
+        <category>pandas</category>
+        <category>深度学习</category>
+        <category>数电</category>
+        <category>Verilog</category>
+        <category>常见器件</category>
+        <category>数据结构</category>
+        <category>TCL</category>
+        <category>静态时序分析</category>
+        <category>Linux</category>
+        <category>线性表</category>
+        <category>链表</category>
+        <category>测试区</category>
+        <category>时序</category>
+        <item>
+            <guid isPermalink="true">https://kirigayakazima.github.io/2022/12/04/Markdown%E8%AF%AD%E6%B3%95/</guid>
+            <title>Markdown语法</title>
+            <link>https://kirigayakazima.github.io/2022/12/04/Markdown%E8%AF%AD%E6%B3%95/</link>
+            <category>实用工具</category>
+            <category>Markdown</category>
+            <pubDate>Sun, 04 Dec 2022 12:20:02 +0800</pubDate>
+            <description><![CDATA[ &lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;标题&#34;&gt;标题&lt;/h2&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;section&#34;&gt;# 一级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;section&#34;&gt;## 二级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;section&#34;&gt;### 三级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;列表&#34;&gt;列表&lt;/h2&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;+&lt;/span&gt; 无序列表1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;+&lt;/span&gt; 无序列表2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; 无序列表3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; 无序列表4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;*&lt;/span&gt; 无序列表5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;*&lt;/span&gt; 无序列表6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;1.&lt;/span&gt; 有序列表1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;2.&lt;/span&gt; 有序列表2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;*&lt;/span&gt; [ ] 任务列表1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;*&lt;/span&gt; [ ] 任务列表2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;bullet&#34;&gt;*&lt;/span&gt; [ ] 任务列表3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;块&#34;&gt;块&lt;/h2&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;code&#34;&gt;``` 代码块```&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;code&#34;&gt;`标记块`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;quote&#34;&gt;&amp;gt; 引述&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;超链接&#34;&gt;超链接&lt;/h2&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;![&lt;span class=&#34;string&#34;&gt;可选&lt;/span&gt;](&lt;span class=&#34;link&#34;&gt;url&lt;/span&gt;) 图片超链接&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;上下标&#34;&gt;上下标&lt;/h2&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;直接写在内容中,只取``中间内容&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo中建议使用这种&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;下标:&lt;span class=&#34;code&#34;&gt;`$a_2$`&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;上标:&lt;span class=&#34;code&#34;&gt;`$a^2$`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;html格式,需要转义&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;下标：a&lt;span class=&#34;language-xml&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;sub&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;2&lt;span class=&#34;language-xml&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;sub&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;上标：a&lt;span class=&#34;language-xml&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;sup&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;2&lt;span class=&#34;language-xml&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;sup&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Markdown自带,推荐&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;下标 ：θ~1~ &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;上标 ：θ^2^&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;表格&#34;&gt;表格&lt;/h2&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;| 符号 |       功能       |&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;| :----: | :----------------: |&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;|  *  |    零次或多次    |&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;|  +  |    一次或多次    |&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;|  ？  |    零次或一次    |&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;|  ^  |  匹配字符串开头  |&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;|  $  |  匹配字符串结尾  |&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;|  \s  |     表示空格     |&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;|  .  | 匹配任意一个字符 |&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;|  \w  |   匹配一个字符   |&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;|  \d  |   匹配一个数字   |&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;数学公式&#34;&gt;数学公式&lt;/h2&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;中间写公式&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;四则运算&#34;&gt;四则运算&lt;/h2&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&amp;#125; 复合标&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;t_ &amp;#123;a0&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\frac&amp;#123;分子&amp;#125;&amp;#123;分母&amp;#125; 分式表达&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h1 id=&#34;Emoji表情&#34;&gt;Emoji表情&lt;/h1&gt;&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;code&#34;&gt;`:中间填入对应的字符:`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;code&#34;&gt;`:sneezing_face:`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;:sneezing&lt;span class=&#34;emphasis&#34;&gt;_face:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;🤧&lt;/p&gt;
+&lt;p&gt;或者使用&lt;code&gt;win + .&lt;/code&gt;调出&lt;code&gt;emoji&lt;/code&gt;表情&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;表情&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;代码&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;表情&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;代码&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;表情&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;代码&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;🤧&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:sneezing_face:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🤶&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:mrs_claus:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🍈&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:melon:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;😠&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:angry:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🤓&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:nerd_face:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🥝&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:kiwi_fruit:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;👼&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:angle:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;😣&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:persevere:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🌶&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:hot_pepper:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;😧&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:anguished:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;👿&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:imp:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🌭&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:sneezing_face:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;😲&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:astonished:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🎃&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:ack_o_lantern:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🍔&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:hamburger:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;🤢&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:nauseated_face:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🍅&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:tomato:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🍩&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:doughnut:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;🤠&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:cowboy_hat_face:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🍊&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:tangerin:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🥕&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:carrot:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;😵&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:dizzy_face:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🍍&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:pineapple:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🍌&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:banana:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;😁&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:grin:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🍑&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:peach:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🥑&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:avocado:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;😷&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:mask:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🍋&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:lemon:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;💩&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:poop:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;🐴&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:horse:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🎠&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:carousel_horse:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🐼&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:panda_face:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;🐎&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:racehorse:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🦄&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:unicorn:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🐵&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:sneezing_face:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;🏇&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:horse_racing:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🐷&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:pig:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🐸&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:frog:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;🦊&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:fox_face:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🐉&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:dragon:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🤡&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:clown_face:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;🐶&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:dog:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🐮&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:COW:&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;🐔&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;code&gt;:chicken:&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;/div&gt; ]]></description>
+        </item>
+    </channel>
+</rss>

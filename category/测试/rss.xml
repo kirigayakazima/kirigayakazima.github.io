@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>我的博客 • Posts by &#34;测试&#34; category</title>
+        <link>https://kirigayakazima.github.io</link>
+        <description>技术博客，分享嵌入式开发、数据结构、数字IC设计等技术内容</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 26 Nov 2022 12:41:21 +0800</pubDate>
+        <lastBuildDate>Sat, 26 Nov 2022 12:41:21 +0800</lastBuildDate>
+        <category>51单片机</category>
+        <category>C语言基础</category>
+        <category>STM32</category>
+        <category>数字IC</category>
+        <category>FIFO</category>
+        <category>OLED</category>
+        <category>实用工具</category>
+        <category>Markdown</category>
+        <category>pandas</category>
+        <category>深度学习</category>
+        <category>数电</category>
+        <category>Verilog</category>
+        <category>常见器件</category>
+        <category>数据结构</category>
+        <category>TCL</category>
+        <category>静态时序分析</category>
+        <category>Linux</category>
+        <category>线性表</category>
+        <category>链表</category>
+        <category>测试区</category>
+        <category>时序</category>
+        <item>
+            <guid isPermalink="true">https://kirigayakazima.github.io/2022/11/26/%E6%B5%8B%E8%AF%95/</guid>
+            <title>测试博客</title>
+            <link>https://kirigayakazima.github.io/2022/11/26/%E6%B5%8B%E8%AF%95/</link>
+            <category>测试区</category>
+            <pubDate>Sat, 26 Nov 2022 12:41:21 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;测试volantis主题博客运行状态&lt;/p&gt;
+
+ ]]></description>
+        </item>
+    </channel>
+</rss>

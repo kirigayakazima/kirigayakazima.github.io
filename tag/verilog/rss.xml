@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>我的博客 • Posts by &#34;verilog&#34; tag</title>
+        <link>https://kirigayakazima.github.io</link>
+        <description>技术博客，分享嵌入式开发、数据结构、数字IC设计等技术内容</description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 22 Dec 2022 07:36:15 +0800</pubDate>
+        <lastBuildDate>Thu, 22 Dec 2022 07:36:15 +0800</lastBuildDate>
+        <category>51单片机</category>
+        <category>C语言基础</category>
+        <category>STM32</category>
+        <category>数字IC</category>
+        <category>FIFO</category>
+        <category>OLED</category>
+        <category>实用工具</category>
+        <category>Markdown</category>
+        <category>pandas</category>
+        <category>深度学习</category>
+        <category>数电</category>
+        <category>Verilog</category>
+        <category>常见器件</category>
+        <category>数据结构</category>
+        <category>TCL</category>
+        <category>静态时序分析</category>
+        <category>Linux</category>
+        <category>线性表</category>
+        <category>链表</category>
+        <category>测试区</category>
+        <category>时序</category>
+        <item>
+            <guid isPermalink="true">https://kirigayakazima.github.io/2022/12/22/%E5%B8%B8%E8%A7%81%E7%94%B5%E8%B7%AF/</guid>
+            <title>常见电路</title>
+            <link>https://kirigayakazima.github.io/2022/12/22/%E5%B8%B8%E8%A7%81%E7%94%B5%E8%B7%AF/</link>
+            <category>数字IC</category>
+            <category>Verilog</category>
+            <category>常见器件</category>
+            <pubDate>Thu, 22 Dec 2022 07:36:15 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;4选一&#34;&gt;4选一&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212221505165.png&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212221505165.png&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;4选一&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight verilog&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//两种，一种使用assign赋值语句，用三目运算符嵌套，不便于阅读&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;`&lt;span class=&#34;keyword&#34;&gt;timescale&lt;/span&gt; 1ns/1ns&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;module&lt;/span&gt; mux4_1(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]d1,d2,d3,d0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]sel,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;output&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]mux_out&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;assign&lt;/span&gt; mux_out = (sel == &lt;span class=&#34;number&#34;&gt;2&amp;#x27;b00&lt;/span&gt;) ? d3 : ((sel == &lt;span class=&#34;number&#34;&gt;2&amp;#x27;b01&lt;/span&gt;) ? d2 : (sel == &lt;span class=&#34;number&#34;&gt;2&amp;#x27;b10&lt;/span&gt;) ? d1 : d0);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;endmodule&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//使用case语句&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;`&lt;span class=&#34;keyword&#34;&gt;timescale&lt;/span&gt; 1ns/1ns&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;module&lt;/span&gt; mux4_1(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]d1,d2,d3,d0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]sel,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;output&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]mux_out&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;reg&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;] mux_out_reg;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;always&lt;/span&gt; @ (*)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;begin&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;case&lt;/span&gt;(sel)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b00&lt;/span&gt;:mux_out_reg = d3;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b01&lt;/span&gt;:mux_out_reg = d2;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b10&lt;/span&gt;:mux_out_reg = d1;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b11&lt;/span&gt;:mux_out_reg = d0;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;keyword&#34;&gt;default&lt;/span&gt; : mux_out_reg = d0;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;endcase&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;assign&lt;/span&gt; mux_out = mux_out_reg;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;endmodule&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://kirigayakazima.github.io/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/</guid>
+            <title>芯动力——高质量Verilog设计</title>
+            <link>https://kirigayakazima.github.io/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/</link>
+            <category>数字IC</category>
+            <category>Verilog</category>
+            <pubDate>Sat, 03 Dec 2022 13:06:07 +0800</pubDate>
+            <description><![CDATA[ &lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;高质量verilog设计&#34;&gt;高质量verilog设计&lt;/h2&gt;&lt;p&gt;可综合语句&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;always&lt;/li&gt;
+&lt;li&gt;if-else&lt;/li&gt;
+&lt;li&gt;case&lt;/li&gt;
+&lt;li&gt;assign&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;if语句&#34;&gt;if语句&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032046854.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032046854.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;if语句&#34;&gt;&lt;code&gt;if-else&lt;/code&gt;语句映射为多路选择器&lt;/p&gt;
+&lt;p&gt;不同的&lt;code&gt;if-else&lt;/code&gt;结构会导致不同的电路结构，根据约束不同，设计：先加法器后选择器；先选择器后加法器&lt;/p&gt;
+&lt;p&gt;加法器的面积比选择器大，但是先加法器后选择器的延时小。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032047446.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032047446.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;if-else&#34;&gt;&lt;/p&gt;
+&lt;p&gt;单独的&lt;code&gt;if-else&lt;/code&gt;语句没有优先级，会逐一检查，多个&lt;code&gt;if&lt;/code&gt;语句之间具有优先级，多个选择器之间级联，最后一级具有最高优先级。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032047060.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032047060.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;多if语句&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若某些设计中，有些信号要求先到达（如关键使能信号、选择信号等），而有些信号需要后到达（如慢速信号、有效时间较长的信号等），此时侧需要使用if…if…结构。&lt;br&gt;设计方法：最高优先级给最迟到达的关键信号&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;case语句&#34;&gt;case语句&lt;/h3&gt;&lt;p&gt;&lt;code&gt;case&lt;/code&gt;和单&lt;code&gt;if&lt;/code&gt;语句类似，但是&lt;code&gt;case&lt;/code&gt;语句互斥&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;case&lt;/code&gt;的使用注意点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;要在&lt;code&gt;always&lt;/code&gt;块里使用，如果是用&lt;code&gt;always&lt;/code&gt;块描述组合逻辑，注意括号里的敏感变量列表都是电平触发，并且赋值时都要用阻塞赋值“&amp;#x3D;”：&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;always&lt;/code&gt;块里的变量必须声明成reg类型，当然声明成&lt;code&gt;reg&lt;/code&gt;类型不代表一定会综合成寄存器，只是语法要求&lt;code&gt;always&lt;/code&gt;块里要这样；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;always&lt;/code&gt;：块描述组合逻辑时，用&lt;code&gt;*&lt;/code&gt;可以代表所有&lt;code&gt;always&lt;/code&gt;块内敏感信号；&lt;/li&gt;
+&lt;li&gt;分支条件要写全，最好补齐&lt;code&gt;default&lt;/code&gt;缺省条件，不然在组合逻辑中可能会由于条件不全导致出现锁存器&lt;code&gt;Latch&lt;/code&gt;；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;Latch语句&#34;&gt;Latch语句&lt;/h3&gt;&lt;p&gt;综合工具很难解释&lt;code&gt;Latch&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;latch&lt;/code&gt;由电平触发，非同步控制。在使能信号有效时&lt;code&gt;latch&lt;/code&gt;相当于通路，在使能信号无效时&lt;code&gt;latch&lt;/code&gt;保持输出状态。&lt;code&gt;DFF&lt;/code&gt;由时钟沿触发同步制。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;latch&lt;/code&gt;容易产生毛刺，&lt;code&gt;DFF&lt;/code&gt;则不易产生毛刺。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;latch&lt;/code&gt;将静态时序分析变得极为复杂。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;Latch&lt;/code&gt;容易在不完备的&lt;code&gt;if-else&lt;/code&gt;和&lt;code&gt;case&lt;/code&gt;中产生&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;使用完备&lt;code&gt;if-else&lt;/code&gt;语句&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;code&gt;default&lt;/code&gt;覆盖&lt;code&gt;case&lt;/code&gt;语句&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看综合工具的&lt;code&gt;warning&lt;/code&gt;信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;code&gt;full_case&lt;/code&gt;，告诉综合工具&lt;code&gt;case&lt;/code&gt;已经完备&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032048386.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032048386.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;full_case&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;code&gt;parallel_case&lt;/code&gt;，告诉综合工具，所有条件互斥且并行，没有优先权&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032049340.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032049340.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;parallel_case&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;资源重复利用&#34;&gt;资源重复利用&lt;/h3&gt;&lt;p&gt;负载均衡、逻辑复制&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032051244.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032051244.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;负载均衡、逻辑复制&#34;&gt;&lt;/p&gt;
+&lt;p&gt;资源共享、减小面积&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032052083.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032052083.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;资源共享、减小面积&#34;&gt;&lt;/p&gt;
+&lt;p&gt;顺序重排、降低延时&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032052317.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032052317.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;顺序重排、降低延时&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;赋值语句&#34;&gt;赋值语句&lt;/h3&gt;&lt;p&gt;关于&lt;code&gt;assign&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;仅用于信号连接&lt;/li&gt;
+&lt;li&gt;难以阅读，且多层嵌套后很难被综合器解释&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;可综合风格&#34;&gt;可综合风格&lt;/h3&gt;&lt;p&gt;&lt;code&gt;always&lt;/code&gt;敏感信号表&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;所有的组合逻辑或锁存的&lt;code&gt;always&lt;/code&gt;结构必须有敏感信号列表。这个敏感信号列表必须包含所有的输入信号。&lt;/li&gt;
+&lt;li&gt;综合过程将产生一个取决于除敏感列表中所有其它值的结构，它将可能在行为仿真和门级仿真间产生潜在的失配。&lt;/li&gt;
+&lt;li&gt;在综合过程中，每个&lt;code&gt;Verilog always&lt;/code&gt;敏感信号列表只能对应一个时钟。&lt;/li&gt;
+&lt;li&gt;这是将每一个过程限制在单一寄存器类型的要求。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;wait&lt;/code&gt;和&lt;code&gt;delay&lt;/code&gt;不能用于可综合&lt;code&gt;RTL&lt;/code&gt;设计&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原因：从&lt;code&gt;RTL&lt;/code&gt;级转换到&lt;code&gt;gate&lt;/code&gt;级的综合工具一般都不支持&lt;code&gt;Wait&lt;/code&gt;声明和&lt;code&gt;#delay&lt;/code&gt;声明，为了有效的综合，这些语句应该避免。&lt;/li&gt;
+&lt;li&gt;例外：在不需要行综合的行为模块中，如测试模块&lt;code&gt;Testbench&lt;/code&gt;、表示行为的虚拟器件模块中可以使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;非阻塞赋值和阻塞赋值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在时序电路中必须使用非阻塞赋值&lt;code&gt;&amp;lt;=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;组合逻辑电路必须使用阻塞赋值&lt;code&gt;=&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;异步逻辑和同步逻辑&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;建议分开异步逻辑与同步逻辑&lt;/li&gt;
+&lt;li&gt;避免综合时的问题，简化约束和编码难度。&lt;/li&gt;
+&lt;li&gt;不可应用于非综合模块中（例如：总线模块，总线监视器或是模拟模块）除非他们被设计来综合仿真。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;控制逻辑和存储器&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;建议控制逻辑和存储器逻辑分成独立的模块&lt;/li&gt;
+&lt;li&gt;便于高层的存储器模块的使用和便于重新描述为不同的存储器类型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;优秀的设计&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;牢记并理解可综合“四大法宝”所对应的硬件结构&lt;/li&gt;
+&lt;li&gt;写前确认电路指标是什么：性能？面积？&lt;/li&gt;
+&lt;li&gt;硬件思维方式，代码不再是一行行的代码而是一块一块的硬件模块&lt;/li&gt;
+&lt;li&gt;对所需实现的硬件电路“胸有成竹”，有足够的数电基础&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;降低延时&#34;&gt;降低延时&lt;/h2&gt;&lt;p&gt;尽可能将延时高的模块放在后面&lt;/p&gt;
+&lt;h3 id=&#34;RTL编码面积&#34;&gt;RTL编码面积&lt;/h3&gt;&lt;p&gt;减小设计面积：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;成本降低、功耗降低&lt;/li&gt;
+&lt;li&gt;特别是对于&lt;code&gt;FPGA&lt;/code&gt;的设计，直接决着&lt;code&gt;FPGA&lt;/code&gt;的选型&lt;/li&gt;
+&lt;li&gt;估计设计使用资源的数量，知道设计中哪些部分占用了较大的面积&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;触发器的数量有功能决定，很难减少，面积则很好估计&lt;/p&gt;
+&lt;p&gt;组合逻辑—》&lt;code&gt;RTL&lt;/code&gt;代码—》各种操作符&lt;/p&gt;
+&lt;p&gt;必须使用复杂运算符，需要考虑能否使用资源共享。&lt;/p&gt;
+&lt;p&gt;多比特操作，应该看一看这个信号的所有比特是否都需要参与操作，如果不是则可以只对需要的部分比特进行操作。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212062019510.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212062019510.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;多比特操作&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;addr&amp;lt;=addr+32;&lt;/code&gt;—》&lt;code&gt;addr[7:5]&amp;lt;=addr[7:5]+1;&lt;/code&gt; &lt;code&gt;addr[4:0]&amp;lt;=addr[4:0]+0;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;RTL编码功耗&#34;&gt;RTL编码功耗&lt;/h3&gt;&lt;p&gt;$$&lt;br&gt;p_d&amp;#x3D;∑afCV^2&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;p&lt;del&gt;d&lt;/del&gt;是电路割点功耗总和，a是该点电路翻转次数，f是电路工作频率，C是该点电容，V表示电压值&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;RTL&lt;/code&gt;无法改变负载电容、工作电压，只能考虑尽可能降低电路翻转频率&lt;/p&gt;
+&lt;p&gt;主要措施：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;门控时钟&lt;/li&gt;
+&lt;li&gt;增加使能信号，使得部分电路只有在需要工作时才工作；&lt;/li&gt;
+&lt;li&gt;对芯片各个模块进行控制，在需要工作时才工作；&lt;/li&gt;
+&lt;li&gt;除了有用信号和时钟的翻转会消耗功耗组合逻辑产生的毛刺也会大量消耗功耗。&lt;br&gt;但是，毛刺在设计中无法避免，因此，只有尽量减少毛刺在电路中的传播，才可以减少功耗。&lt;br&gt;即，在设计中，尽量把产生毛刺的电路放在传播路径的最后。另外，可以使用一些减少毛刺的技术。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h3 id=&#34;RTL编码布线&#34;&gt;RTL编码布线&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;但即使使用最好的布局工具，还是可能出现无法布通的情况。&lt;/li&gt;
+&lt;li&gt;如果可以在&lt;code&gt;RTL&lt;/code&gt;编码阶段考虑代码可能对布线产生的影响就可能避免最后出现无法布通的情况&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;RTL设计指导原则&#34;&gt;RTL设计指导原则&lt;/h2&gt;&lt;p&gt;指导原则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;面积与速度互换&lt;/li&gt;
+&lt;li&gt;乒乓操作&lt;/li&gt;
+&lt;li&gt;流水线设计&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/div&gt; ]]></description>
+        </item>
+    </channel>
+</rss>

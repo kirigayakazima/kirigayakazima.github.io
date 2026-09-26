@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "我的博客 • All posts by \"测试\" category",
+    "description": "技术博客，分享嵌入式开发、数据结构、数字IC设计等技术内容",
+    "home_page_url": "https://kirigayakazima.github.io",
+    "items": [
+        {
+            "id": "https://kirigayakazima.github.io/2022/11/26/%E6%B5%8B%E8%AF%95/",
+            "url": "https://kirigayakazima.github.io/2022/11/26/%E6%B5%8B%E8%AF%95/",
+            "title": "测试博客",
+            "date_published": "2022-11-26T04:41:21.000Z",
+            "content_html": "<p>测试volantis主题博客运行状态</p>\n\n",
+            "tags": [
+                "测试区"
+            ]
+        }
+    ]
+}

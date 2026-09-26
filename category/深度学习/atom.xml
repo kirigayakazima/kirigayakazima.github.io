@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kirigayakazima.github.io</id>
+    <title>我的博客 • Posts by &#34;深度学习&#34; category</title>
+    <link href="https://kirigayakazima.github.io" />
+    <updated>2022-12-01T03:21:58.000Z</updated>
+    <category term="51单片机" />
+    <category term="C语言基础" />
+    <category term="STM32" />
+    <category term="数字IC" />
+    <category term="FIFO" />
+    <category term="OLED" />
+    <category term="实用工具" />
+    <category term="Markdown" />
+    <category term="pandas" />
+    <category term="深度学习" />
+    <category term="数电" />
+    <category term="Verilog" />
+    <category term="常见器件" />
+    <category term="数据结构" />
+    <category term="TCL" />
+    <category term="静态时序分析" />
+    <category term="Linux" />
+    <category term="线性表" />
+    <category term="链表" />
+    <category term="测试区" />
+    <category term="时序" />
+    <entry>
+        <id>https://kirigayakazima.github.io/2022/12/01/Pandas%E6%8A%80%E5%B7%A7/</id>
+        <title>Pandas技巧</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2022/12/01/Pandas%E6%8A%80%E5%B7%A7/"/>
+        <content type="html">&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;差集&#34;&gt;差集&lt;/h2&gt;&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#取df_data1和df_data2的差集，剩下df_data1的余差&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;df_data3=pd.concat([df_data1,df_data2,df_data2]).drop_duplicates(keep=&lt;span class=&#34;literal&#34;&gt;False&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;掩膜&#34;&gt;掩膜&lt;/h2&gt;&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#取a列和b列相等的行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;df_data2=df_data1[df_data1[&lt;span class=&#34;string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;]==df_data1[&lt;span class=&#34;string&#34;&gt;&amp;#x27;b&amp;#x27;&lt;/span&gt;]]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#取a列不为null的行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;df_data2=df_data1[df_data1[&lt;span class=&#34;string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;].notna()]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;替换值&#34;&gt;替换值&lt;/h2&gt;&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#将a列的元素为 （null） 替换为空&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;df_data1.loc[:,&lt;span class=&#34;string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;]=df_data1.loc[:,&lt;span class=&#34;string&#34;&gt;&amp;#x27;a&amp;#x27;&lt;/span&gt;].replace(&lt;span class=&#34;string&#34;&gt;&amp;#x27;(null)&amp;#x27;&lt;/span&gt;,np.nan)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;</content>
+        <category term="pandas" />
+        <category term="深度学习" />
+        <updated>2022-12-01T03:21:58.000Z</updated>
+    </entry>
+</feed>

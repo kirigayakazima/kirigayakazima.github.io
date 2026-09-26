@@ -1,0 +1,527 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kirigayakazima.github.io</id>
+    <title>我的博客 • Posts by &#34;数字ic&#34; category</title>
+    <link href="https://kirigayakazima.github.io" />
+    <updated>2023-01-08T02:58:54.000Z</updated>
+    <category term="51单片机" />
+    <category term="C语言基础" />
+    <category term="STM32" />
+    <category term="数字IC" />
+    <category term="FIFO" />
+    <category term="OLED" />
+    <category term="实用工具" />
+    <category term="Markdown" />
+    <category term="pandas" />
+    <category term="深度学习" />
+    <category term="数电" />
+    <category term="Verilog" />
+    <category term="常见器件" />
+    <category term="数据结构" />
+    <category term="TCL" />
+    <category term="静态时序分析" />
+    <category term="Linux" />
+    <category term="线性表" />
+    <category term="链表" />
+    <category term="测试区" />
+    <category term="时序" />
+    <entry>
+        <id>https://kirigayakazima.github.io/2023/01/08/%E5%89%8D%E7%AB%AFIC%E2%80%94%E2%80%94%E6%95%B0%E7%94%B5%E5%9F%BA%E7%A1%80/</id>
+        <title>前端IC——数电基础</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2023/01/08/%E5%89%8D%E7%AB%AFIC%E2%80%94%E2%80%94%E6%95%B0%E7%94%B5%E5%9F%BA%E7%A1%80/"/>
+        <content type="html">&lt;h3 id=&#34;信息、编码和逻辑代数&#34;&gt;信息、编码和逻辑代数&lt;/h3&gt;&lt;p&gt;信息是用来消除不确定的东西✨&lt;/p&gt;
+&lt;p&gt;编码是一种映射或者描述关系。&lt;/p&gt;
+&lt;p&gt;常见编码：余三码、补码、反码、8421码、格雷码&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;反码：&lt;/strong&gt;除符号位外，按位取反&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;补码：&lt;/strong&gt;除符号位外，按位取反然后加1&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;正数的反码和补码都是其本身&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;逻辑代数计算：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(AB)’ = A’ + B’ &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(A + B)’ = A’B’&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;组合逻辑、时序逻辑电路&#34;&gt;组合逻辑、时序逻辑电路&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;组合逻辑电路&lt;/strong&gt;：是任意时刻的输出仅仅取决于当前时刻的输入，与电路之前的历史状态无关（即无记忆能力）&lt;/p&gt;
+&lt;p&gt;组合逻辑电路的设计通常包含以下几个步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进行逻辑抽象。分析事件的因果关系，确定输入变量和输出变量，列出输入变量和输出变量的逻辑真值表。&lt;/li&gt;
+&lt;li&gt;写出逻辑函数。将真值表转换为对应的逻辑函数式，或者直接画出卡诺图，然后使用第三章中介绍的卡诺图将逻辑函数进行化简。&lt;/li&gt;
+&lt;li&gt;根据化简后的逻辑函数，画出逻辑电路图。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;时序逻辑电路&lt;/strong&gt;：输出不仅取决于当前的输入，还取决于电路的历史状态。 因此我们需要一种元件能保存电路的状态信息。如果一个元件带有内部存储功能，它就包含状态，也称之为状态单元（State Element）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;锁存器&lt;/strong&gt;：锁存器在E的高(低)电平期间对信号敏感&lt;br&gt;&lt;strong&gt;触发器&lt;/strong&gt;：触发器在CP的上升沿(下降沿)对信号敏感&lt;br&gt;二者区别：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;具有0 和1两个稳定状态，一旦状态被确定，就能自行保持。一个锁存器或触发器能存储一位二进制码。&lt;/li&gt;
+&lt;li&gt;锁存器—对脉冲电平敏感的存储电路，在特定输入脉冲电平作用下改变状态。&lt;/li&gt;
+&lt;li&gt;触发器—对脉冲边沿敏感的存储电路，在时钟脉冲的上升沿或下降沿的变化瞬间改变状态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h3 id=&#34;亚稳态、稳定时间、保持时间&#34;&gt;亚稳态、稳定时间、保持时间&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;建立时间&lt;/strong&gt;：触发器在时钟上升沿到来之前，其数据输入端的数据必须保持不变的最小时间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;保持时间&lt;/strong&gt;：触发器在时钟上升沿到来之后，其数据输入端的数据必须保持不变的最小时间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建立时间裕量&lt;/strong&gt;：如果数据信号在时钟边沿触发之前的持续时间要大于建立时间Tsu，那么超出的部分时间即为建立时间裕量。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;保持时间裕量&lt;/strong&gt;：如果数据信号在时钟边沿触发之后的保持时间要大于保持时间Thd，那么超出的部分时间即为保持时间裕量。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+</content>
+        <category term="数字IC" />
+        <category term="数电" />
+        <updated>2023-01-08T02:58:54.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://kirigayakazima.github.io/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/</id>
+        <title>静态时序分析——建立保持时间</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2023/01/03/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8B%E4%BF%9D%E6%8C%81%E6%97%B6%E9%97%B4/"/>
+        <content type="html">&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;建立时间&#34;&gt;建立时间&lt;/h2&gt;&lt;p&gt;公式&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;T_{lanuch}+T_{ck2q}+T_{dp}&amp;lt;T_{capture}+T_{cycle}-T_{setup}&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212300941176.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212300941176.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;时序公式&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果组合逻辑的延时最大值也满足这个公式，则所有都满足，通常用组合逻辑最大延时检查建立时间&lt;/p&gt;
+&lt;p&gt;使用组合逻辑最小延时检查保持时间&lt;/p&gt;
+&lt;h3 id=&#34;输入端口到寄存器&#34;&gt;输入端口到寄存器&lt;/h3&gt;&lt;p&gt;公式&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;slack&amp;#x3D;T_{capture}+T_{cycle}-T_{setup}-T_{uncertainty}-(T_{lanuch}+T_{ck2q}+T_{dp})&amp;gt;0&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202301022237071.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202301022237071.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;计算余量大于零即可&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;输出端口到寄存器&#34;&gt;输出端口到寄存器&lt;/h3&gt;&lt;p&gt;公式&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;slack&amp;#x3D;T_{capture}+T_{cycle}-T_{setup}-T_{uncertainty}-T_{output_delay}-(T_{lanuch}+T_{ck2q}+T_{dp})&amp;gt;0&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202301022238602.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202301022238602.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;余量大于零&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;保持时间&#34;&gt;保持时间&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;捕获路径边沿比发射路径边沿晚一个时钟周期&lt;/li&gt;
+&lt;li&gt;保持时间和时钟周期无关&lt;/li&gt;
+&lt;li&gt;保持时间不能计算频率，只能用建立时间去计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;公式&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;T_{lanuch}+T_{ck2q}+T_{dp}&amp;gt;T_{capture}+T_{hold}&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202301031243348.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202301031243348.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;保持时间公式&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202301031244597.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202301031244597.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;实例&#34;&gt;&lt;/p&gt;
+&lt;p&gt;建立时间和保持时间的区别&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;保持时间的检查边沿都是同一个边沿&lt;/li&gt;
+&lt;li&gt;建立时间的检查边沿捕获的边沿要比发射的边沿晚一个时钟周期&lt;/li&gt;
+&lt;li&gt;保持时间的检查通常在建立时间检查的前一个上升沿&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;</content>
+        <category term="数字IC" />
+        <category term="静态时序分析" />
+        <updated>2023-01-02T22:05:42.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://kirigayakazima.github.io/2022/12/27/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E9%80%BB%E8%BE%91%E7%BB%BC%E5%90%88/</id>
+        <title>静态时序分析——逻辑综合</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2022/12/27/%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E9%80%BB%E8%BE%91%E7%BB%BC%E5%90%88/"/>
+        <content type="html">&lt;p&gt;逻辑综合三个阶段：转译、优化、映射&lt;/p&gt;
+&lt;h3 id=&#34;时序路径约束&#34;&gt;时序路径约束&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;输入到寄存器的路径&lt;/li&gt;
+&lt;li&gt;寄存器到寄存器之间的路径&lt;/li&gt;
+&lt;li&gt;寄存器到输出的路径&lt;/li&gt;
+&lt;li&gt;输入直接到输出的路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;create_clock-period &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt; [get_ports Clk]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_dont_touch_network [get_clocks Clk]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;对所有定义的时钟网络设置为&lt;code&gt;dont_touch&lt;/code&gt;，即综合的时候不对&lt;code&gt;Clk&lt;/code&gt;信号优化。&lt;/p&gt;
+&lt;p&gt;如果不加这句，DC会根据CIk的负载自动对他产生&lt;code&gt;Buffer&lt;/code&gt;，而在实际的电路设计中，时钟树（Clock Tree）的综合有自己特别的方法，它需要考虑到实际布线后的物理信息，所以DC不需要在这里对它进行处理，就算处理了也不会符合要求。&lt;/p&gt;
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#定义输入延迟&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_input_delay -max &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;-&lt;span class=&#34;keyword&#34;&gt;clock&lt;/span&gt; Clk [get_ports A]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#定义输出延迟&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_output_delay -max &lt;span class=&#34;number&#34;&gt;5.4&lt;/span&gt; -&lt;span class=&#34;keyword&#34;&gt;clock&lt;/span&gt; Clk [get_ports B]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;TCL脚本&#34;&gt;TCL脚本&lt;/h3&gt;&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sh date      //显示开始时间&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;remove_design-designs     //移除DC中原有的设计&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//下面是库的设置，对应图形界面操作的&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;###########井#############井&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#set library&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;###########井####井##井#####井&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; search_path [&lt;span class=&#34;keyword&#34;&gt;list&lt;/span&gt; *********]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; target_library &amp;#123;tt.db&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; link_library &amp;#123;*tt.db&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; symbol_library &amp;#123;tt.sdb&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//下面是屏蔽一些warning信息，DC在综合时遇到这些warning时就把它们忽略，&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//不会报告这些信息，VER&lt;span class=&#34;number&#34;&gt;-130&lt;/span&gt;，VER&lt;span class=&#34;number&#34;&gt;-129&lt;/span&gt;等是不同warning信息的编码，&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//具体含义可以查看帮助&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#void warning Info&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#############&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;suppress_message VER&lt;span class=&#34;number&#34;&gt;-130&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;suppress_message VER&lt;span class=&#34;number&#34;&gt;-129&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;suppress_message VER&lt;span class=&#34;number&#34;&gt;-318&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;suppress_message ELAB&lt;span class=&#34;number&#34;&gt;-311&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;suppress_message VER&lt;span class=&#34;number&#34;&gt;-936&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//读入example1.v文件，对应于图形界面的&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#################################&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#read&amp;amp;amp；link&amp;amp;amp；Check design#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;read_file -&lt;span class=&#34;keyword&#34;&gt;format&lt;/span&gt; verilog ~/example1.v&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#analyze -format verilog ~/example1.v&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#elaborate EXAMPLE1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;current_design EXAMPLE1  //把EXAMPLE1指定为当前设计的顶层模块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;uniquify &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;check design&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//设置一些变量&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;############################&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#define IO port name&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#############################&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; clk[get_ports clk] //设置变量clk的值是[get_ports clk],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//在下面的代码中若出现&lt;span class=&#34;variable&#34;&gt;$clk&lt;/span&gt;字样，则表示引用该变量的值，即用[get_ports clk]代替&lt;span class=&#34;variable&#34;&gt;$clk&lt;/span&gt;。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; rst_n [get_ports rst_n]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; general_inputs [&lt;span class=&#34;keyword&#34;&gt;list&lt;/span&gt; a b c]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; outputs [get_ports o]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;/设置约束条件，对应于图形界面的&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_constraints&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;############################井&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//设置时钟约束，对应于图形界面的&lt;span class=&#34;number&#34;&gt;4.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#1 set constraints for clock signals &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;create_clock -n &lt;span class=&#34;keyword&#34;&gt;clock&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$clk&lt;/span&gt; -period &lt;span class=&#34;number&#34;&gt;20&lt;/span&gt; -waveform&amp;#123;&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;&amp;#125; //创建一个周期为&lt;span class=&#34;number&#34;&gt;20&lt;/span&gt;ns，占空比为&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;的时钟&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_dont_touch_network[get_clocks &lt;span class=&#34;keyword&#34;&gt;clock&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_drive &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$clk&lt;/span&gt; //设置时钟端口的驱动为无穷大&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_ideal_network [get_ports clk] //设置时钟端为理想网络&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//设置复位信号约束，对应于图形界面的&lt;span class=&#34;number&#34;&gt;4.2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#2 set constraints for reset signals &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_dont_touch_network &lt;span class=&#34;variable&#34;&gt;$rst_n&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_drive &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$rst_n&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_ideal network[get_ports rst_n]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//设置输入延时，对应图形界面的&lt;span class=&#34;number&#34;&gt;4.3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#3 set input delay &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_input_delay -&lt;span class=&#34;keyword&#34;&gt;clock&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;clock&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable&#34;&gt;$general_inputs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;/设置输出延时，对应图形界面的&lt;span class=&#34;number&#34;&gt;4.4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#4 set output delay &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_output_delay -&lt;span class=&#34;keyword&#34;&gt;clock&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;clock&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable&#34;&gt;$outputs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//设置面积约束和设计约束，对应图形界面的&lt;span class=&#34;number&#34;&gt;4.5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#5 set design rule constraints&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_max_fanout &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$general_inputs&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_max_transition &lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt; [get_designs &lt;span class=&#34;string&#34;&gt;&amp;quot;EXAMPLE1&amp;quot;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#6 set area constraint &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;set_max_area &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+</content>
+        <category term="数字IC" />
+        <category term="静态时序分析" />
+        <updated>2022-12-27T02:33:14.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://kirigayakazima.github.io/2022/12/22/%E5%B8%B8%E8%A7%81%E7%94%B5%E8%B7%AF/</id>
+        <title>常见电路</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2022/12/22/%E5%B8%B8%E8%A7%81%E7%94%B5%E8%B7%AF/"/>
+        <content type="html">&lt;h3 id=&#34;4选一&#34;&gt;4选一&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212221505165.png&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212221505165.png&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;4选一&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight verilog&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//两种，一种使用assign赋值语句，用三目运算符嵌套，不便于阅读&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;`&lt;span class=&#34;keyword&#34;&gt;timescale&lt;/span&gt; 1ns/1ns&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;module&lt;/span&gt; mux4_1(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]d1,d2,d3,d0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]sel,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;output&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]mux_out&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;assign&lt;/span&gt; mux_out = (sel == &lt;span class=&#34;number&#34;&gt;2&amp;#x27;b00&lt;/span&gt;) ? d3 : ((sel == &lt;span class=&#34;number&#34;&gt;2&amp;#x27;b01&lt;/span&gt;) ? d2 : (sel == &lt;span class=&#34;number&#34;&gt;2&amp;#x27;b10&lt;/span&gt;) ? d1 : d0);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;endmodule&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//使用case语句&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;`&lt;span class=&#34;keyword&#34;&gt;timescale&lt;/span&gt; 1ns/1ns&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;module&lt;/span&gt; mux4_1(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]d1,d2,d3,d0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]sel,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;output&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]mux_out&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;reg&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;] mux_out_reg;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;always&lt;/span&gt; @ (*)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;begin&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;case&lt;/span&gt;(sel)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b00&lt;/span&gt;:mux_out_reg = d3;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b01&lt;/span&gt;:mux_out_reg = d2;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b10&lt;/span&gt;:mux_out_reg = d1;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b11&lt;/span&gt;:mux_out_reg = d0;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;keyword&#34;&gt;default&lt;/span&gt; : mux_out_reg = d0;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;endcase&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;assign&lt;/span&gt; mux_out = mux_out_reg;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;endmodule&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+</content>
+        <category term="数字IC" />
+        <category term="Verilog" />
+        <category term="常见器件" />
+        <updated>2022-12-21T23:36:15.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://kirigayakazima.github.io/2022/12/14/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF/</id>
+        <title>芯动力——同步时序电路</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2022/12/14/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF/"/>
+        <content type="html">&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;同步电路设计&#34;&gt;同步电路设计&lt;/h2&gt;&lt;p&gt;同步时钟电路的优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在同步设计中，EDA工具可以保证电路系统的时序收敛，有效避免了电路设计中竞争冒险现象。&lt;/li&gt;
+&lt;li&gt;由于触发器只有在时钟边缘才改变取值，很大限度地减少了整个电路受毛刺和噪声影响的可能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;亚稳态&#34;&gt;亚稳态&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;亚稳态是指触发器无法在某个规定时间段内达到一个可确认的状态。&lt;/li&gt;
+&lt;li&gt;当一个触发器进入亚稳态时，既无法预测该单元的输出电平，也无法预测何时输出才能稳定在某个正确的电平上。（电路在翻转的时候）&lt;/li&gt;
+&lt;li&gt;在这个期间，触发器输出一当中间级电平，或者可能处于振荡状态，并且这种无用的输出电平可以沿信号通道上的各个触发器级联式传播下去。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;亚稳态不能从根本上消除，但是可以降低影响&lt;/p&gt;
+&lt;p&gt;$MTBF&amp;#x3D;\frac{e^{t_{MET}&amp;#x2F;C_2}}{C_1f_{CLK}f_{DATA}}$&lt;/p&gt;
+&lt;p&gt;$t_{MEF}$&lt;br&gt;寄存器从时钟上升沿触发后的时序余量时间&lt;/p&gt;
+&lt;p&gt;指正常没有亚稳态情况下，寄存器输出信号从源寄存器到目的寄存器的建立时间余量。&lt;br&gt;$f_{CLK}$&lt;br&gt;接收时钟域的时钟频率&lt;br&gt;$f_{DATA}$&lt;br&gt;数据的变化频率&lt;br&gt;$C_1$、$C_2$&lt;br&gt;与器件有关的参数&lt;/p&gt;
+&lt;p&gt;为了避免上节所述的亚稳态问题，就应当使参数&lt;code&gt;MTBF&lt;/code&gt;尽可能的大，通常采用的方法是双锁存器法，即在一个信号进入另一个时钟域之前，将该信号用两个锁存器连续锁存两次，最后得到的采样结果就可以消除亚稳态问题。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212142033341.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212142033341.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;电平同步器&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优缺点&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结构简单、易实现。&lt;/li&gt;
+&lt;li&gt;增加了两级触发器延时&lt;/li&gt;
+&lt;li&gt;当快时钟域转到慢时钟域时，易造成慢时钟采样丢失（还未来得及采样，数据就变化了）。故常用于慢时钟域转到快时钟域&lt;/li&gt;
+&lt;li&gt;两级触发器已经将MTBF变得足够大&lt;/li&gt;
+&lt;li&gt;三级或者更多级虽然能将亚稳态出现概率降得更低，但是影响电路效率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;边沿检测同步器&#34;&gt;边沿检测同步器&lt;/h3&gt;&lt;p&gt;从慢时钟转变为快时钟&lt;/p&gt;
+&lt;p&gt;适用条件：&lt;/p&gt;
+&lt;p&gt;输入数据的宽度必须比一个接受时钟周期加上一个同步触发器的old时间要长，最安全的就是两个同步周期宽度。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212142034888.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212142034888.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;边沿检测同步器&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212142034354.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212142034354.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;原理分析&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h3 id=&#34;脉冲同步器&#34;&gt;脉冲同步器&lt;/h3&gt;&lt;p&gt;从快时钟变为慢时钟&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212142034430.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212142034430.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;脉冲同步器&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;同步器比较&#34;&gt;同步器比较&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;类型&lt;/th&gt;
+&lt;th&gt;应用&lt;/th&gt;
+&lt;th&gt;输入&lt;/th&gt;
+&lt;th&gt;输出&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;限制&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;电平检测&lt;/td&gt;
+&lt;td&gt;同步电平信号&lt;br /&gt;时钟域任何时钟域的传输&lt;br /&gt;&lt;/td&gt;
+&lt;td&gt;电平&lt;/td&gt;
+&lt;td&gt;电平&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;输入信号必须保持&lt;br /&gt;两个接受时钟周期宽度&lt;br /&gt;每一次同步之后&lt;br /&gt;输入信号必须恢复到无效状态&lt;br /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;边沿检测&lt;/td&gt;
+&lt;td&gt;检测输入信号的上升沿和下降沿&lt;br /&gt;适用于低频时钟域向高频时钟域传输&lt;br /&gt;&lt;/td&gt;
+&lt;td&gt;电平或脉冲&lt;/td&gt;
+&lt;td&gt;脉冲&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;输入信号必须保持&lt;br /&gt;两个接受时钟周期宽度&lt;br /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;脉冲检测&lt;/td&gt;
+&lt;td&gt;同步单周期脉冲信号&lt;br /&gt;适用于高频时钟域向低频时钟域传输&lt;br /&gt;&lt;/td&gt;
+&lt;td&gt;脉冲&lt;/td&gt;
+&lt;td&gt;脉冲&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;输入的脉冲时间的距离必须&lt;br /&gt;保持两个接收时钟周期以上&lt;br /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;单bit信号跨时钟域传输&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;信号从快时钟域到慢时钟域过渡时，慢时钟将可能无法对变化太快的信号实现正确采样&lt;/li&gt;
+&lt;li&gt;上述同步器法对两个时钟之间的关系要求很严格，而“结绳法”适合任何时钟域的过渡。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;将快时钟信号的脉冲周期延长，等到慢时钟同步采样后再“解绳”，还原为原来的脉冲周期宽度。&lt;/p&gt;
+&lt;p&gt;在慢时钟采样快时钟的时候，结绳法适合采样数据较少即脉冲间隔较大的控制信号。&lt;br&gt;即脉冲间隔Ta&amp;gt;3Tb；即等待3个clkB时钟后，完成复位，才允许下一个输入脉冲。&lt;/p&gt;
+&lt;h3 id=&#34;快时钟到慢时钟&#34;&gt;快时钟到慢时钟&lt;/h3&gt;&lt;p&gt;结绳就是将单脉冲延长，以方便采集到数据&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;利用脉冲的边沿做时钟&lt;/li&gt;
+&lt;li&gt;利用脉冲的电平（部分场合要求最小脉冲宽度）做选择器或者异步复位，置位。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;另外的关键点就是什么时候结绳结束（采集到了数据就要让对方回到初始状态）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;利用采集到的脉冲做异步复位，置位&lt;/li&gt;
+&lt;li&gt;利用采集到的脉冲再次结绳采集做握手响应信号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;特点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结绳法可以解决快时钟域向慢时钟域过渡的问题，且其适用的范围很广&lt;/li&gt;
+&lt;li&gt;结绳法实现较为复杂，特别是其效率不高，在对设计性能要求较高的场合应该慎用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;数据流&#34;&gt;数据流&lt;/h3&gt;&lt;p&gt;数据流大多具有连续性，即背靠背传输；数据流要求信号具有较快的传输速度；&lt;/p&gt;
+&lt;p&gt;通常使用&lt;code&gt;SRAM&lt;/code&gt;和&lt;code&gt;FIFO&lt;/code&gt;解决传输问题&lt;/p&gt;
+&lt;h3 id=&#34;打两拍&#34;&gt;打两拍&lt;/h3&gt;&lt;p&gt;将地址总线打两拍&lt;br&gt;●为了避免亚稳态传播&lt;br&gt;不能消除亚稳态现象&lt;br&gt;●因为时钟异步，亚稳态不可避免，但是可以极大降低亚稳态传播的概率&lt;br&gt;低频情况&lt;br&gt;●STA不需要分析这里的异步时序，因为寄存器都可以在一拍内将亚稳态消除，恢复到正常0&amp;#x2F;1态。&lt;br&gt;高频情况&lt;br&gt;●不一定，尤其在28m工艺以下，需要检查两级触发器的延迟保证延迟低，提高系统&lt;code&gt;MTBF&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h3 id=&#34;同步复位异步释放&#34;&gt;同步复位异步释放&lt;/h3&gt;&lt;p&gt;时序电路必须有复位，组合逻辑电路不需要复位&lt;/p&gt;
+&lt;h3 id=&#34;两段式FSM&#34;&gt;两段式FSM&lt;/h3&gt;&lt;p&gt;两段式&lt;code&gt;FSM&lt;/code&gt;描述方法&lt;br&gt;其输出一般使用组合逻辑描述，而组合逻辑易产生毛刺等不稳定因素。&lt;/p&gt;
+&lt;p&gt;如果时序允许插入一个额外的时钟节拍，用于消除毛刺&lt;/p&gt;
+&lt;p&gt;当不允许使用额外节拍，则改为使用三段式&lt;code&gt;FSM&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;三段式&lt;code&gt;FSM&lt;/code&gt;优势&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使&lt;code&gt;FSM&lt;/code&gt;做到了同步寄存器输出&lt;/li&gt;
+&lt;li&gt;消除了组合逻辑输出的不稳定与毛刺的隐患&lt;/li&gt;
+&lt;li&gt;更利于时序路径分组&lt;/li&gt;
+&lt;li&gt;在&lt;code&gt;FPGA/CPLD&lt;/code&gt;等可编程逻辑器件上的综合与布局布线效果更佳&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一段式、两段式、三段式分别使用1、2、3个&lt;code&gt;always&lt;/code&gt;块，反之则不成立&lt;/p&gt;
+
+&lt;/div&gt;</content>
+        <category term="数字IC" />
+        <category term="时序" />
+        <updated>2022-12-14T04:41:35.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://kirigayakazima.github.io/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/</id>
+        <title>芯动力——高质量Verilog设计</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2022/12/03/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E9%AB%98%E8%B4%A8%E9%87%8FVerilog%E8%AE%BE%E8%AE%A1/"/>
+        <content type="html">&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;高质量verilog设计&#34;&gt;高质量verilog设计&lt;/h2&gt;&lt;p&gt;可综合语句&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;always&lt;/li&gt;
+&lt;li&gt;if-else&lt;/li&gt;
+&lt;li&gt;case&lt;/li&gt;
+&lt;li&gt;assign&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;if语句&#34;&gt;if语句&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032046854.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032046854.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;if语句&#34;&gt;&lt;code&gt;if-else&lt;/code&gt;语句映射为多路选择器&lt;/p&gt;
+&lt;p&gt;不同的&lt;code&gt;if-else&lt;/code&gt;结构会导致不同的电路结构，根据约束不同，设计：先加法器后选择器；先选择器后加法器&lt;/p&gt;
+&lt;p&gt;加法器的面积比选择器大，但是先加法器后选择器的延时小。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032047446.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032047446.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;if-else&#34;&gt;&lt;/p&gt;
+&lt;p&gt;单独的&lt;code&gt;if-else&lt;/code&gt;语句没有优先级，会逐一检查，多个&lt;code&gt;if&lt;/code&gt;语句之间具有优先级，多个选择器之间级联，最后一级具有最高优先级。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032047060.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032047060.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;多if语句&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若某些设计中，有些信号要求先到达（如关键使能信号、选择信号等），而有些信号需要后到达（如慢速信号、有效时间较长的信号等），此时侧需要使用if…if…结构。&lt;br&gt;设计方法：最高优先级给最迟到达的关键信号&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;case语句&#34;&gt;case语句&lt;/h3&gt;&lt;p&gt;&lt;code&gt;case&lt;/code&gt;和单&lt;code&gt;if&lt;/code&gt;语句类似，但是&lt;code&gt;case&lt;/code&gt;语句互斥&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;case&lt;/code&gt;的使用注意点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;要在&lt;code&gt;always&lt;/code&gt;块里使用，如果是用&lt;code&gt;always&lt;/code&gt;块描述组合逻辑，注意括号里的敏感变量列表都是电平触发，并且赋值时都要用阻塞赋值“&amp;#x3D;”：&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;always&lt;/code&gt;块里的变量必须声明成reg类型，当然声明成&lt;code&gt;reg&lt;/code&gt;类型不代表一定会综合成寄存器，只是语法要求&lt;code&gt;always&lt;/code&gt;块里要这样；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;always&lt;/code&gt;：块描述组合逻辑时，用&lt;code&gt;*&lt;/code&gt;可以代表所有&lt;code&gt;always&lt;/code&gt;块内敏感信号；&lt;/li&gt;
+&lt;li&gt;分支条件要写全，最好补齐&lt;code&gt;default&lt;/code&gt;缺省条件，不然在组合逻辑中可能会由于条件不全导致出现锁存器&lt;code&gt;Latch&lt;/code&gt;；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;Latch语句&#34;&gt;Latch语句&lt;/h3&gt;&lt;p&gt;综合工具很难解释&lt;code&gt;Latch&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;latch&lt;/code&gt;由电平触发，非同步控制。在使能信号有效时&lt;code&gt;latch&lt;/code&gt;相当于通路，在使能信号无效时&lt;code&gt;latch&lt;/code&gt;保持输出状态。&lt;code&gt;DFF&lt;/code&gt;由时钟沿触发同步制。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;latch&lt;/code&gt;容易产生毛刺，&lt;code&gt;DFF&lt;/code&gt;则不易产生毛刺。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;latch&lt;/code&gt;将静态时序分析变得极为复杂。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;Latch&lt;/code&gt;容易在不完备的&lt;code&gt;if-else&lt;/code&gt;和&lt;code&gt;case&lt;/code&gt;中产生&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;使用完备&lt;code&gt;if-else&lt;/code&gt;语句&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;code&gt;default&lt;/code&gt;覆盖&lt;code&gt;case&lt;/code&gt;语句&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看综合工具的&lt;code&gt;warning&lt;/code&gt;信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;code&gt;full_case&lt;/code&gt;，告诉综合工具&lt;code&gt;case&lt;/code&gt;已经完备&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032048386.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032048386.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;full_case&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;code&gt;parallel_case&lt;/code&gt;，告诉综合工具，所有条件互斥且并行，没有优先权&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032049340.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032049340.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;parallel_case&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;资源重复利用&#34;&gt;资源重复利用&lt;/h3&gt;&lt;p&gt;负载均衡、逻辑复制&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032051244.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032051244.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;负载均衡、逻辑复制&#34;&gt;&lt;/p&gt;
+&lt;p&gt;资源共享、减小面积&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032052083.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032052083.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;资源共享、减小面积&#34;&gt;&lt;/p&gt;
+&lt;p&gt;顺序重排、降低延时&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212032052317.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212032052317.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;顺序重排、降低延时&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;赋值语句&#34;&gt;赋值语句&lt;/h3&gt;&lt;p&gt;关于&lt;code&gt;assign&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;仅用于信号连接&lt;/li&gt;
+&lt;li&gt;难以阅读，且多层嵌套后很难被综合器解释&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;可综合风格&#34;&gt;可综合风格&lt;/h3&gt;&lt;p&gt;&lt;code&gt;always&lt;/code&gt;敏感信号表&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;所有的组合逻辑或锁存的&lt;code&gt;always&lt;/code&gt;结构必须有敏感信号列表。这个敏感信号列表必须包含所有的输入信号。&lt;/li&gt;
+&lt;li&gt;综合过程将产生一个取决于除敏感列表中所有其它值的结构，它将可能在行为仿真和门级仿真间产生潜在的失配。&lt;/li&gt;
+&lt;li&gt;在综合过程中，每个&lt;code&gt;Verilog always&lt;/code&gt;敏感信号列表只能对应一个时钟。&lt;/li&gt;
+&lt;li&gt;这是将每一个过程限制在单一寄存器类型的要求。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;wait&lt;/code&gt;和&lt;code&gt;delay&lt;/code&gt;不能用于可综合&lt;code&gt;RTL&lt;/code&gt;设计&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原因：从&lt;code&gt;RTL&lt;/code&gt;级转换到&lt;code&gt;gate&lt;/code&gt;级的综合工具一般都不支持&lt;code&gt;Wait&lt;/code&gt;声明和&lt;code&gt;#delay&lt;/code&gt;声明，为了有效的综合，这些语句应该避免。&lt;/li&gt;
+&lt;li&gt;例外：在不需要行综合的行为模块中，如测试模块&lt;code&gt;Testbench&lt;/code&gt;、表示行为的虚拟器件模块中可以使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;非阻塞赋值和阻塞赋值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在时序电路中必须使用非阻塞赋值&lt;code&gt;&amp;lt;=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;组合逻辑电路必须使用阻塞赋值&lt;code&gt;=&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;异步逻辑和同步逻辑&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;建议分开异步逻辑与同步逻辑&lt;/li&gt;
+&lt;li&gt;避免综合时的问题，简化约束和编码难度。&lt;/li&gt;
+&lt;li&gt;不可应用于非综合模块中（例如：总线模块，总线监视器或是模拟模块）除非他们被设计来综合仿真。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;控制逻辑和存储器&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;建议控制逻辑和存储器逻辑分成独立的模块&lt;/li&gt;
+&lt;li&gt;便于高层的存储器模块的使用和便于重新描述为不同的存储器类型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;优秀的设计&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;牢记并理解可综合“四大法宝”所对应的硬件结构&lt;/li&gt;
+&lt;li&gt;写前确认电路指标是什么：性能？面积？&lt;/li&gt;
+&lt;li&gt;硬件思维方式，代码不再是一行行的代码而是一块一块的硬件模块&lt;/li&gt;
+&lt;li&gt;对所需实现的硬件电路“胸有成竹”，有足够的数电基础&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;降低延时&#34;&gt;降低延时&lt;/h2&gt;&lt;p&gt;尽可能将延时高的模块放在后面&lt;/p&gt;
+&lt;h3 id=&#34;RTL编码面积&#34;&gt;RTL编码面积&lt;/h3&gt;&lt;p&gt;减小设计面积：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;成本降低、功耗降低&lt;/li&gt;
+&lt;li&gt;特别是对于&lt;code&gt;FPGA&lt;/code&gt;的设计，直接决着&lt;code&gt;FPGA&lt;/code&gt;的选型&lt;/li&gt;
+&lt;li&gt;估计设计使用资源的数量，知道设计中哪些部分占用了较大的面积&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;触发器的数量有功能决定，很难减少，面积则很好估计&lt;/p&gt;
+&lt;p&gt;组合逻辑—》&lt;code&gt;RTL&lt;/code&gt;代码—》各种操作符&lt;/p&gt;
+&lt;p&gt;必须使用复杂运算符，需要考虑能否使用资源共享。&lt;/p&gt;
+&lt;p&gt;多比特操作，应该看一看这个信号的所有比特是否都需要参与操作，如果不是则可以只对需要的部分比特进行操作。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212062019510.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212062019510.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;多比特操作&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;addr&amp;lt;=addr+32;&lt;/code&gt;—》&lt;code&gt;addr[7:5]&amp;lt;=addr[7:5]+1;&lt;/code&gt; &lt;code&gt;addr[4:0]&amp;lt;=addr[4:0]+0;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;RTL编码功耗&#34;&gt;RTL编码功耗&lt;/h3&gt;&lt;p&gt;$$&lt;br&gt;p_d&amp;#x3D;∑afCV^2&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;p&lt;del&gt;d&lt;/del&gt;是电路割点功耗总和，a是该点电路翻转次数，f是电路工作频率，C是该点电容，V表示电压值&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;RTL&lt;/code&gt;无法改变负载电容、工作电压，只能考虑尽可能降低电路翻转频率&lt;/p&gt;
+&lt;p&gt;主要措施：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;门控时钟&lt;/li&gt;
+&lt;li&gt;增加使能信号，使得部分电路只有在需要工作时才工作；&lt;/li&gt;
+&lt;li&gt;对芯片各个模块进行控制，在需要工作时才工作；&lt;/li&gt;
+&lt;li&gt;除了有用信号和时钟的翻转会消耗功耗组合逻辑产生的毛刺也会大量消耗功耗。&lt;br&gt;但是，毛刺在设计中无法避免，因此，只有尽量减少毛刺在电路中的传播，才可以减少功耗。&lt;br&gt;即，在设计中，尽量把产生毛刺的电路放在传播路径的最后。另外，可以使用一些减少毛刺的技术。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h3 id=&#34;RTL编码布线&#34;&gt;RTL编码布线&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;但即使使用最好的布局工具，还是可能出现无法布通的情况。&lt;/li&gt;
+&lt;li&gt;如果可以在&lt;code&gt;RTL&lt;/code&gt;编码阶段考虑代码可能对布线产生的影响就可能避免最后出现无法布通的情况&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;RTL设计指导原则&#34;&gt;RTL设计指导原则&lt;/h2&gt;&lt;p&gt;指导原则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;面积与速度互换&lt;/li&gt;
+&lt;li&gt;乒乓操作&lt;/li&gt;
+&lt;li&gt;流水线设计&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/div&gt;</content>
+        <category term="数字IC" />
+        <category term="Verilog" />
+        <updated>2022-12-03T05:06:07.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://kirigayakazima.github.io/2022/11/27/TCL%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/</id>
+        <title>TCL入门</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2022/11/27/TCL%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/"/>
+        <content type="html">&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;变量&#34;&gt;变量&lt;/h2&gt;&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#置换变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; a &amp;#x27;snow&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$a&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印a的值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#命令置换&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#[]内部是一个独立tcl语句&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; a [&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;+&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#结果为7&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#转义字符&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &amp;#x27;a\tb&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &amp;#x27;a\nb&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#添加后缀&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$&amp;#123;a&amp;#125;&lt;/span&gt;_1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印7_1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;符号&#34;&gt;符号&lt;/h2&gt;&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#置换&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; x &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; Y &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;\t[expr $x + $Y]&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印3,&amp;quot;&amp;quot;中会置换命令和变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &amp;#123;\t[&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$x&lt;/span&gt; + &lt;span class=&#34;variable&#34;&gt;$Y&lt;/span&gt;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印\t[expr $x + $Y],&amp;#123;&amp;#125;中的内容当做普通字符&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;数组&#34;&gt;数组&lt;/h2&gt;&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#定义&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; cell_1(a_name) &lt;span class=&#34;string&#34;&gt;&amp;quot;array_1&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; cell_1(b_name) &lt;span class=&#34;string&#34;&gt;&amp;quot;array_2&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; cell_1(c_name) &lt;span class=&#34;string&#34;&gt;&amp;quot;array_3&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#取值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$cell_1&lt;/span&gt;(a_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;array&lt;/span&gt; size cell_1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印 3,数组长度为3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;array&lt;/span&gt; names cell_1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印a_name,b_name,c_name&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;列表&#34;&gt;列表&lt;/h2&gt;&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; ive_list&amp;#123;liv1,liv2,liv3&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$ive_list&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#合并列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; list1&amp;#123;l1,l2,l3&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; list2&amp;#123;s1,s2,s3&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;concat&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$list2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#查看长度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;llength&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;llength&lt;/span&gt; [&lt;span class=&#34;keyword&#34;&gt;concat&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#返回index的元素,下标从0开始&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;lindex&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印l2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#得到list1&amp;#123;a,b,c,d,e&amp;#125;的最后一个元素&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; list1 &amp;#123;a,b,c,d,e&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;lindex&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt; [&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; [&lt;span class=&#34;keyword&#34;&gt;llength&lt;/span&gt; list1] &lt;span class=&#34;number&#34;&gt;-1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#末尾追加新元素&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; list1 &amp;#123;a,b,c&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;lappend&lt;/span&gt; list1 d&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#排序,默认按照ASICC码排列&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; list1 &amp;#123;c,d,e,a,b&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;lsort&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; list1 &amp;#123;&lt;span class=&#34;number&#34;&gt;1.0&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;1.2&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;0.3&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;0.1&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;lsort&lt;/span&gt; -real &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#按照浮点数排列&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; list1 &amp;#123;a,a,e,e,c,c,b,b,d&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;lsort&lt;/span&gt; -unique &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#排序并唯一化元素&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;运算表达式&#34;&gt;运算表达式&lt;/h2&gt;&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#求运算表达式的值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; + &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; * &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;/&lt;span class=&#34;number&#34;&gt;2.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印浮点数,2.5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;/&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印整数,2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;流程控制**&lt;/p&gt;
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#if else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; a &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; b &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; &amp;#123;&lt;span class=&#34;variable&#34;&gt;$a&lt;/span&gt; &amp;gt; &lt;span class=&#34;variable&#34;&gt;$b&lt;/span&gt;&amp;#125; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; else &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$b&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#foreach&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; list1 &amp;#123;&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;foreach&lt;/span&gt; i &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$i&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印1,2,3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#break,continue&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; list1 &amp;#123;&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;foreach&lt;/span&gt; i &lt;span class=&#34;variable&#34;&gt;$list1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; &amp;#123;&lt;span class=&#34;variable&#34;&gt;$i&lt;/span&gt;==&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&amp;#125; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;break&lt;/span&gt;/&lt;span class=&#34;keyword&#34;&gt;continue&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$i&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#while&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; i &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; &amp;#123;&lt;span class=&#34;variable&#34;&gt;$i&lt;/span&gt;&amp;gt;&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;&amp;#125; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$i&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;incr&lt;/span&gt; i&lt;span class=&#34;number&#34;&gt;-1&lt;/span&gt;&lt;span class=&#34;comment&#34;&gt;; #等效于 set i [expr $i-1]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#for&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; &amp;#123;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; i &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;&amp;#125; &amp;#123;&lt;span class=&#34;variable&#34;&gt;$i&lt;/span&gt;&amp;gt;&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;&amp;#125; &amp;#123;&lt;span class=&#34;keyword&#34;&gt;incr&lt;/span&gt; i&lt;span class=&#34;number&#34;&gt;-1&lt;/span&gt;&amp;#125; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$i&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;proc函数&#34;&gt;proc函数&lt;/h2&gt;&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#过程函数proc&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;proc&lt;/span&gt;&lt;span class=&#34;title&#34;&gt; add&lt;/span&gt; &amp;#123;a b&amp;#125; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; sum [&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$a&lt;/span&gt; + &lt;span class=&#34;variable&#34;&gt;$b&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$sum&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;add &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印7&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#过程中使用global引用全局变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; a &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;proc&lt;/span&gt;&lt;span class=&#34;title&#34;&gt; sample&lt;/span&gt; &amp;#123;x&amp;#125; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;global&lt;/span&gt; a&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; a [&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$a&lt;/span&gt; + &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; [&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$a&lt;/span&gt; + &lt;span class=&#34;variable&#34;&gt;$x&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sample &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#打印5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;正则表达式&#34;&gt;正则表达式&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;符号&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;*&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;零次或多次&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;一次或多次&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;？&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;零次或一次&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;^&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;匹配字符串开头&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;匹配字符串结尾&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;\s&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;表示空格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;.&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;匹配任意一个字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;\w&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;匹配一个字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;\d&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;匹配一个数字&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;文本处理&#34;&gt;文本处理&lt;/h2&gt;&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#open,gets,close&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#只读模式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#第一行开始逐行读取&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#关闭文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; inputFiles [&lt;span class=&#34;keyword&#34;&gt;open&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;file&lt;/span&gt;.text r]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; &amp;#123;[&lt;span class=&#34;keyword&#34;&gt;gets&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$inputFiles&lt;/span&gt; line] &amp;gt;=&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;&amp;#125; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;$line&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;close&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$inputsFiles&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#写入模式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; outputFiles [&lt;span class=&#34;keyword&#34;&gt;open&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;file&lt;/span&gt;.text w]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$outputFiles&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;close&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$outputFiles&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;文本file.txt,读取内容求所有Slack的值之和&lt;/p&gt;
+&lt;p&gt;Slack &amp;#x3D; -0.0051&lt;/p&gt;
+&lt;p&gt;Slack &amp;#x3D; -0.0021&lt;/p&gt;
+&lt;p&gt;Slack &amp;#x3D; -0.0012&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; num &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$inputFiles&lt;/span&gt; [&lt;span class=&#34;keyword&#34;&gt;open&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;file&lt;/span&gt;.txt r]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; &amp;#123;[&lt;span class=&#34;keyword&#34;&gt;gets&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$inputFiles&lt;/span&gt; line] &amp;gt;=&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;&amp;#125; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; &amp;#123;[&lt;span class=&#34;keyword&#34;&gt;regexp&lt;/span&gt; &amp;#123;^Slack\s+=\s+(-?\d+.?\d+)&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;variable&#34;&gt;$line&lt;/span&gt; total slack]&amp;#125; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;set&lt;/span&gt; num [&lt;span class=&#34;keyword&#34;&gt;expr&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$sum&lt;/span&gt; + &lt;span class=&#34;variable&#34;&gt;$slack&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;close&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$inputFiles&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$sum&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;Synopsys-TCL&#34;&gt;Synopsys TCL&lt;/h2&gt;&lt;figure class=&#34;highlight tcl&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#查看design中的port&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;get_ports portsName&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#通配符查看&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;get_ports *&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#查看以C开头的port&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;get_ports C*&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#查看design中对应的cell的instance&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;get_cells cellsName&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#查看design中对应的net&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;get_nets netsName&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#查看nets的个数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;llength&lt;/span&gt; [get_object_name[get_nets *]]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#或者&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sizeof_collection[get_nets *]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#查看pins,以Z开头&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;get_pins */Z&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/div&gt;</content>
+        <category term="数字IC" />
+        <category term="TCL" />
+        <category term="静态时序分析" />
+        <updated>2022-11-27T06:35:27.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://kirigayakazima.github.io/2022/11/27/FIFO/</id>
+        <title>FIFO</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2022/11/27/FIFO/"/>
+        <content type="html">&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;FIFO&#34;&gt;FIFO&lt;/h2&gt;&lt;p&gt;FIFO（First In First Out）是一种数据缓冲器&lt;/p&gt;
+&lt;h3 id=&#34;异步FIFO&#34;&gt;异步FIFO&lt;/h3&gt;&lt;p&gt;同步FIFO可以看做异步FIFO的一个特例&lt;/p&gt;
+&lt;p&gt;异步FIFO可以分为&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;写时钟域地址管理&lt;/li&gt;
+&lt;li&gt;读时钟域地址管理&lt;/li&gt;
+&lt;li&gt;读时钟域读地址到写时钟域的格雷码同步&lt;/li&gt;
+&lt;li&gt;写时钟域写地址到读时钟域的格雷码同步&lt;/li&gt;
+&lt;li&gt;写时钟域的满和将满信号的产生&lt;/li&gt;
+&lt;li&gt;读时钟域的空和将空信号的产生&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;格雷码&#34;&gt;格雷码&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;避免采样时钟问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;引入格雷码，格雷码相邻地址只有1&lt;code&gt;bit&lt;/code&gt;跳变&lt;/p&gt;
+&lt;p&gt;格雷码的原理:从右往左，每2位异或&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;0000&lt;/code&gt;-&amp;gt;&lt;code&gt;0000&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;0010&lt;/code&gt;-&amp;gt;&lt;code&gt;0011&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight verilog&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//以FIFO深度16,格雷码编解码情况核心代码&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//编码&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;always&lt;/span&gt;@(&lt;span class=&#34;keyword&#34;&gt;posedge&lt;/span&gt; clka &lt;span class=&#34;keyword&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;posedge&lt;/span&gt; reset)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(reset)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    b&amp;lt;=&lt;span class=&#34;number&#34;&gt;4&amp;#x27;b00&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    b&amp;lt;=a^(a&amp;gt;&amp;gt;&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//异步采样&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;always&lt;/span&gt;@(&lt;span class=&#34;keyword&#34;&gt;posedge&lt;/span&gt; clka &lt;span class=&#34;keyword&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;posedge&lt;/span&gt; reset)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(reset)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    c&amp;lt;=&lt;span class=&#34;number&#34;&gt;4&amp;#x27;b00&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    c&amp;lt;=b;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//解码&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;always&lt;/span&gt;@(&lt;span class=&#34;keyword&#34;&gt;posedge&lt;/span&gt; clka &lt;span class=&#34;keyword&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;posedge&lt;/span&gt; reset)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(reset)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    d&amp;lt;=&lt;span class=&#34;number&#34;&gt;4&amp;#x27;b00&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;begin&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      d[&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;]=c[&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      d[&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;]=c[&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;]^c[&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      d[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]=c[&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;]^c[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      d[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]=c[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]^c[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;注意，先将&lt;code&gt;clka&lt;/code&gt;时钟的地址&lt;code&gt;Gray&lt;/code&gt;编码，然后用&lt;code&gt;b&lt;/code&gt;时钟采样&lt;code&gt;Gray&lt;/code&gt;编码地址并暂存，最后用&lt;code&gt;b&lt;/code&gt;时钟对暂存的&lt;code&gt;Gray&lt;/code&gt;编码地址进行译码。&lt;/p&gt;
+&lt;p&gt;省略&lt;code&gt;b&lt;/code&gt;时钟采样暂存的&lt;code&gt;Gray&lt;/code&gt;编&amp;#x2F;解码是没有任何意义的。&lt;/p&gt;
+&lt;h4 id=&#34;格雷码的问题&#34;&gt;格雷码的问题&lt;/h4&gt;&lt;p&gt;并不是一定要用格雷码做读写指针，而是当深度为2次幂的时候列好格雷码满足消除亚稳态的需求&lt;br&gt;在非2次幂深度情况下，格雷码已经不再适用，此时的解决方法通常有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若深度为偶数，可采用最接近的2次幂的格雷码编码，在此基础上修改；&lt;/li&gt;
+&lt;li&gt;深度为一般数值时，可自行设计一种逻辑电路，或者查找表，以实现指针每次只跳变一次的功能；&lt;/li&gt;
+&lt;li&gt;以上方法通常在设计层面较为复杂，若无特定需求，可将FIFO深度设置为2次幂，浪费一些存储空间，来化简控制电路的复杂度。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;FIFO深度&#34;&gt;FIFO深度&lt;/h3&gt;&lt;p&gt;吞吐量相同满足&lt;/p&gt;
+&lt;p&gt;(A&amp;#x2F;B) * f&lt;del&gt;1&lt;/del&gt;&amp;#x3D;(Y&amp;#x2F;X) * f&lt;del&gt;2&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;深度计算公式&lt;/p&gt;
+&lt;p&gt;fifo_depth&amp;#x3D;data_length-(data_length&amp;#x2F;f&lt;del&gt;1&lt;/del&gt;) * [(Y&amp;#x2F;X) * f&lt;del&gt;2&lt;/del&gt;]&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;/div&gt;</content>
+        <category term="数字IC" />
+        <category term="FIFO" />
+        <updated>2022-11-27T04:39:03.000Z</updated>
+    </entry>
+</feed>

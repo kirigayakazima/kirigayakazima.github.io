@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kirigayakazima.github.io</id>
+    <title>我的博客 • Posts by &#34;时序&#34; tag</title>
+    <link href="https://kirigayakazima.github.io" />
+    <updated>2022-12-14T04:41:35.000Z</updated>
+    <category term="51单片机" />
+    <category term="C语言基础" />
+    <category term="STM32" />
+    <category term="数字IC" />
+    <category term="FIFO" />
+    <category term="OLED" />
+    <category term="实用工具" />
+    <category term="Markdown" />
+    <category term="pandas" />
+    <category term="深度学习" />
+    <category term="数电" />
+    <category term="Verilog" />
+    <category term="常见器件" />
+    <category term="数据结构" />
+    <category term="TCL" />
+    <category term="静态时序分析" />
+    <category term="Linux" />
+    <category term="线性表" />
+    <category term="链表" />
+    <category term="测试区" />
+    <category term="时序" />
+    <entry>
+        <id>https://kirigayakazima.github.io/2022/12/14/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF/</id>
+        <title>芯动力——同步时序电路</title>
+        <link rel="alternate" href="https://kirigayakazima.github.io/2022/12/14/%E8%8A%AF%E5%8A%A8%E5%8A%9B%E2%80%94%E2%80%94%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF/"/>
+        <content type="html">&lt;div class=&#34;story post-story&#34;&gt;&lt;h2 id=&#34;同步电路设计&#34;&gt;同步电路设计&lt;/h2&gt;&lt;p&gt;同步时钟电路的优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在同步设计中，EDA工具可以保证电路系统的时序收敛，有效避免了电路设计中竞争冒险现象。&lt;/li&gt;
+&lt;li&gt;由于触发器只有在时钟边缘才改变取值，很大限度地减少了整个电路受毛刺和噪声影响的可能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;亚稳态&#34;&gt;亚稳态&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;亚稳态是指触发器无法在某个规定时间段内达到一个可确认的状态。&lt;/li&gt;
+&lt;li&gt;当一个触发器进入亚稳态时，既无法预测该单元的输出电平，也无法预测何时输出才能稳定在某个正确的电平上。（电路在翻转的时候）&lt;/li&gt;
+&lt;li&gt;在这个期间，触发器输出一当中间级电平，或者可能处于振荡状态，并且这种无用的输出电平可以沿信号通道上的各个触发器级联式传播下去。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;亚稳态不能从根本上消除，但是可以降低影响&lt;/p&gt;
+&lt;p&gt;$MTBF&amp;#x3D;\frac{e^{t_{MET}&amp;#x2F;C_2}}{C_1f_{CLK}f_{DATA}}$&lt;/p&gt;
+&lt;p&gt;$t_{MEF}$&lt;br&gt;寄存器从时钟上升沿触发后的时序余量时间&lt;/p&gt;
+&lt;p&gt;指正常没有亚稳态情况下，寄存器输出信号从源寄存器到目的寄存器的建立时间余量。&lt;br&gt;$f_{CLK}$&lt;br&gt;接收时钟域的时钟频率&lt;br&gt;$f_{DATA}$&lt;br&gt;数据的变化频率&lt;br&gt;$C_1$、$C_2$&lt;br&gt;与器件有关的参数&lt;/p&gt;
+&lt;p&gt;为了避免上节所述的亚稳态问题，就应当使参数&lt;code&gt;MTBF&lt;/code&gt;尽可能的大，通常采用的方法是双锁存器法，即在一个信号进入另一个时钟域之前，将该信号用两个锁存器连续锁存两次，最后得到的采样结果就可以消除亚稳态问题。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212142033341.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212142033341.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;电平同步器&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优缺点&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结构简单、易实现。&lt;/li&gt;
+&lt;li&gt;增加了两级触发器延时&lt;/li&gt;
+&lt;li&gt;当快时钟域转到慢时钟域时，易造成慢时钟采样丢失（还未来得及采样，数据就变化了）。故常用于慢时钟域转到快时钟域&lt;/li&gt;
+&lt;li&gt;两级触发器已经将MTBF变得足够大&lt;/li&gt;
+&lt;li&gt;三级或者更多级虽然能将亚稳态出现概率降得更低，但是影响电路效率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;边沿检测同步器&#34;&gt;边沿检测同步器&lt;/h3&gt;&lt;p&gt;从慢时钟转变为快时钟&lt;/p&gt;
+&lt;p&gt;适用条件：&lt;/p&gt;
+&lt;p&gt;输入数据的宽度必须比一个接受时钟周期加上一个同步触发器的old时间要长，最安全的就是两个同步周期宽度。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212142034888.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212142034888.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;边沿检测同步器&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212142034354.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212142034354.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;原理分析&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h3 id=&#34;脉冲同步器&#34;&gt;脉冲同步器&lt;/h3&gt;&lt;p&gt;从快时钟变为慢时钟&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212142034430.jpg&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212142034430.jpg&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;脉冲同步器&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;同步器比较&#34;&gt;同步器比较&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;类型&lt;/th&gt;
+&lt;th&gt;应用&lt;/th&gt;
+&lt;th&gt;输入&lt;/th&gt;
+&lt;th&gt;输出&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;限制&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;电平检测&lt;/td&gt;
+&lt;td&gt;同步电平信号&lt;br /&gt;时钟域任何时钟域的传输&lt;br /&gt;&lt;/td&gt;
+&lt;td&gt;电平&lt;/td&gt;
+&lt;td&gt;电平&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;输入信号必须保持&lt;br /&gt;两个接受时钟周期宽度&lt;br /&gt;每一次同步之后&lt;br /&gt;输入信号必须恢复到无效状态&lt;br /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;边沿检测&lt;/td&gt;
+&lt;td&gt;检测输入信号的上升沿和下降沿&lt;br /&gt;适用于低频时钟域向高频时钟域传输&lt;br /&gt;&lt;/td&gt;
+&lt;td&gt;电平或脉冲&lt;/td&gt;
+&lt;td&gt;脉冲&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;输入信号必须保持&lt;br /&gt;两个接受时钟周期宽度&lt;br /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;脉冲检测&lt;/td&gt;
+&lt;td&gt;同步单周期脉冲信号&lt;br /&gt;适用于高频时钟域向低频时钟域传输&lt;br /&gt;&lt;/td&gt;
+&lt;td&gt;脉冲&lt;/td&gt;
+&lt;td&gt;脉冲&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;输入的脉冲时间的距离必须&lt;br /&gt;保持两个接收时钟周期以上&lt;br /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;单bit信号跨时钟域传输&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;信号从快时钟域到慢时钟域过渡时，慢时钟将可能无法对变化太快的信号实现正确采样&lt;/li&gt;
+&lt;li&gt;上述同步器法对两个时钟之间的关系要求很严格，而“结绳法”适合任何时钟域的过渡。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;将快时钟信号的脉冲周期延长，等到慢时钟同步采样后再“解绳”，还原为原来的脉冲周期宽度。&lt;/p&gt;
+&lt;p&gt;在慢时钟采样快时钟的时候，结绳法适合采样数据较少即脉冲间隔较大的控制信号。&lt;br&gt;即脉冲间隔Ta&amp;gt;3Tb；即等待3个clkB时钟后，完成复位，才允许下一个输入脉冲。&lt;/p&gt;
+&lt;h3 id=&#34;快时钟到慢时钟&#34;&gt;快时钟到慢时钟&lt;/h3&gt;&lt;p&gt;结绳就是将单脉冲延长，以方便采集到数据&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;利用脉冲的边沿做时钟&lt;/li&gt;
+&lt;li&gt;利用脉冲的电平（部分场合要求最小脉冲宽度）做选择器或者异步复位，置位。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;另外的关键点就是什么时候结绳结束（采集到了数据就要让对方回到初始状态）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;利用采集到的脉冲做异步复位，置位&lt;/li&gt;
+&lt;li&gt;利用采集到的脉冲再次结绳采集做握手响应信号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;特点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结绳法可以解决快时钟域向慢时钟域过渡的问题，且其适用的范围很广&lt;/li&gt;
+&lt;li&gt;结绳法实现较为复杂，特别是其效率不高，在对设计性能要求较高的场合应该慎用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;数据流&#34;&gt;数据流&lt;/h3&gt;&lt;p&gt;数据流大多具有连续性，即背靠背传输；数据流要求信号具有较快的传输速度；&lt;/p&gt;
+&lt;p&gt;通常使用&lt;code&gt;SRAM&lt;/code&gt;和&lt;code&gt;FIFO&lt;/code&gt;解决传输问题&lt;/p&gt;
+&lt;h3 id=&#34;打两拍&#34;&gt;打两拍&lt;/h3&gt;&lt;p&gt;将地址总线打两拍&lt;br&gt;●为了避免亚稳态传播&lt;br&gt;不能消除亚稳态现象&lt;br&gt;●因为时钟异步，亚稳态不可避免，但是可以极大降低亚稳态传播的概率&lt;br&gt;低频情况&lt;br&gt;●STA不需要分析这里的异步时序，因为寄存器都可以在一拍内将亚稳态消除，恢复到正常0&amp;#x2F;1态。&lt;br&gt;高频情况&lt;br&gt;●不一定，尤其在28m工艺以下，需要检查两级触发器的延迟保证延迟低，提高系统&lt;code&gt;MTBF&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h3 id=&#34;同步复位异步释放&#34;&gt;同步复位异步释放&lt;/h3&gt;&lt;p&gt;时序电路必须有复位，组合逻辑电路不需要复位&lt;/p&gt;
+&lt;h3 id=&#34;两段式FSM&#34;&gt;两段式FSM&lt;/h3&gt;&lt;p&gt;两段式&lt;code&gt;FSM&lt;/code&gt;描述方法&lt;br&gt;其输出一般使用组合逻辑描述，而组合逻辑易产生毛刺等不稳定因素。&lt;/p&gt;
+&lt;p&gt;如果时序允许插入一个额外的时钟节拍，用于消除毛刺&lt;/p&gt;
+&lt;p&gt;当不允许使用额外节拍，则改为使用三段式&lt;code&gt;FSM&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;三段式&lt;code&gt;FSM&lt;/code&gt;优势&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使&lt;code&gt;FSM&lt;/code&gt;做到了同步寄存器输出&lt;/li&gt;
+&lt;li&gt;消除了组合逻辑输出的不稳定与毛刺的隐患&lt;/li&gt;
+&lt;li&gt;更利于时序路径分组&lt;/li&gt;
+&lt;li&gt;在&lt;code&gt;FPGA/CPLD&lt;/code&gt;等可编程逻辑器件上的综合与布局布线效果更佳&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一段式、两段式、三段式分别使用1、2、3个&lt;code&gt;always&lt;/code&gt;块，反之则不成立&lt;/p&gt;
+
+&lt;/div&gt;</content>
+        <category term="数字IC" />
+        <category term="时序" />
+        <updated>2022-12-14T04:41:35.000Z</updated>
+    </entry>
+</feed>

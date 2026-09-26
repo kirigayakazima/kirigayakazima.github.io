@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>我的博客 • Posts by &#34;常见器件&#34; tag</title>
+        <link>https://kirigayakazima.github.io</link>
+        <description>技术博客，分享嵌入式开发、数据结构、数字IC设计等技术内容</description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 22 Dec 2022 07:36:15 +0800</pubDate>
+        <lastBuildDate>Thu, 22 Dec 2022 07:36:15 +0800</lastBuildDate>
+        <category>51单片机</category>
+        <category>C语言基础</category>
+        <category>STM32</category>
+        <category>数字IC</category>
+        <category>FIFO</category>
+        <category>OLED</category>
+        <category>实用工具</category>
+        <category>Markdown</category>
+        <category>pandas</category>
+        <category>深度学习</category>
+        <category>数电</category>
+        <category>Verilog</category>
+        <category>常见器件</category>
+        <category>数据结构</category>
+        <category>TCL</category>
+        <category>静态时序分析</category>
+        <category>Linux</category>
+        <category>线性表</category>
+        <category>链表</category>
+        <category>测试区</category>
+        <category>时序</category>
+        <item>
+            <guid isPermalink="true">https://kirigayakazima.github.io/2022/12/22/%E5%B8%B8%E8%A7%81%E7%94%B5%E8%B7%AF/</guid>
+            <title>常见电路</title>
+            <link>https://kirigayakazima.github.io/2022/12/22/%E5%B8%B8%E8%A7%81%E7%94%B5%E8%B7%AF/</link>
+            <category>数字IC</category>
+            <category>Verilog</category>
+            <category>常见器件</category>
+            <pubDate>Thu, 22 Dec 2022 07:36:15 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;4选一&#34;&gt;4选一&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;/images/BlogImg/202212221505165.png&#34; class=&#34;lazyload&#34; data-srcset=&#34;/images/BlogImg/202212221505165.png&#34; srcset=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#34; alt=&#34;4选一&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight verilog&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//两种，一种使用assign赋值语句，用三目运算符嵌套，不便于阅读&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;`&lt;span class=&#34;keyword&#34;&gt;timescale&lt;/span&gt; 1ns/1ns&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;module&lt;/span&gt; mux4_1(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]d1,d2,d3,d0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]sel,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;output&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]mux_out&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;assign&lt;/span&gt; mux_out = (sel == &lt;span class=&#34;number&#34;&gt;2&amp;#x27;b00&lt;/span&gt;) ? d3 : ((sel == &lt;span class=&#34;number&#34;&gt;2&amp;#x27;b01&lt;/span&gt;) ? d2 : (sel == &lt;span class=&#34;number&#34;&gt;2&amp;#x27;b10&lt;/span&gt;) ? d1 : d0);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;endmodule&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;//使用case语句&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;`&lt;span class=&#34;keyword&#34;&gt;timescale&lt;/span&gt; 1ns/1ns&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;module&lt;/span&gt; mux4_1(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]d1,d2,d3,d0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;input&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]sel,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;output&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]mux_out&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;reg&lt;/span&gt; [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;] mux_out_reg;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;always&lt;/span&gt; @ (*)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;begin&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;case&lt;/span&gt;(sel)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b00&lt;/span&gt;:mux_out_reg = d3;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b01&lt;/span&gt;:mux_out_reg = d2;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b10&lt;/span&gt;:mux_out_reg = d1;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;number&#34;&gt;2&amp;#x27;b11&lt;/span&gt;:mux_out_reg = d0;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;keyword&#34;&gt;default&lt;/span&gt; : mux_out_reg = d0;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;keyword&#34;&gt;endcase&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;assign&lt;/span&gt; mux_out = mux_out_reg;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;endmodule&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+ ]]></description>
+        </item>
+    </channel>
+</rss>
