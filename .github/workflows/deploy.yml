@@ -8,49 +8,83 @@ on:
 
 # 同一时间只允许一个部署，新的会取消旧的
 concurrency:
-  group: pages-deploy
-  cancel-in-progress: true
+    group: pages-deploy
+    cancel-in-progress: true
 
 permissions:
-  contents: write # 需要向 main 分支推送构建产物
+    contents: write # 需要向 main 分支推送构建产物
+
+env:
+    # 必须与原站一致：GitHub Actions 默认 UTC，而 Hexo 用**系统时区**决定文章 URL 里的日期。
+    # 用 UTC 构建会让所有文章日期整体偏移（实测 2023/01/03 会变成 2023/01/02），
+    # 导致旧链接 404。本地开发机是 Asia/Shanghai，所以问题只在 CI 上暴露。
+    TZ: Asia/Shanghai
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+            - name: Install dependencies
+              run: npm ci
 
-      - name: Build
-        run: npx hexo clean && npx hexo generate
+            - name: Build
+              run: npx hexo clean && npx hexo generate
 
-      - name: Sanity check
-        # 构建产物必须包含首页和 404，否则不发布（避免把线上推成空站）
-        run: |
-          test -s public/index.html
-          test -s public/404.html
-          echo "HTML pages: $(find public -name '*.html' | wc -l)"
-          echo "Images:     $(find public/images -type f | wc -l)"
+            - name: Sanity check
+              # 产物必须存在且日期路径正确，否则不发布（避免把线上推成空站或错日期）
+              run: |
+                  set -e
+                  test -s public/index.html
+                  test -s public/404.html
+                  echo "HTML pages: $(find public -name '*.html' | wc -l)"
+                  echo "Images:     $(find public/images -type f | wc -l)"
 
-      - name: Publish to main
-        run: |
-          cd public
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B main
-          git add -A
-          git commit -m "Deploy ${GITHUB_SHA}" --quiet
-          git push --force \
-            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  # 逐篇校验：source/_posts/X.md 的 date（按 Asia/Shanghai 解析）
+                  # 必须对应 public/年/月/日/X/index.html
+                  node - <<'EOF'
+                  const fs = require('fs'), path = require('path');
+                  const dir = 'source/_posts';
+                  let checked = 0;
+                  const bad = [];
+                  for (const f of fs.readdirSync(dir)) {
+                    if (!f.endsWith('.md')) continue;
+                    const txt = fs.readFileSync(path.join(dir, f), 'utf8');
+                    const m = txt.match(/^date:\s*(\S+)/m);
+                    if (!m) continue;
+                    const d = new Date(m[1]);
+                    if (isNaN(d)) continue;
+                    const [y, mo, day] = new Intl.DateTimeFormat('en-CA', {
+                      timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
+                    }).format(d).split('-');
+                    const title = f.replace(/\.md$/, '');
+                    const expect = path.join('public', y, mo, day, title, 'index.html');
+                    checked++;
+                    if (!fs.existsSync(expect)) bad.push(`${f} -> 期望 ${expect}`);
+                  }
+                  console.log(`日期路径校验: ${checked} 篇, 异常 ${bad.length}`);
+                  bad.slice(0, 10).forEach((b) => console.log('  ✗', b));
+                  if (bad.length) process.exit(1);
+                  EOF
+
+            - name: Publish to main
+              run: |
+                  cd public
+                  git init
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  git checkout -B main
+                  git add -A
+                  git commit -m "Deploy ${GITHUB_SHA}" --quiet
+                  git push --force \
+                    "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" main
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
